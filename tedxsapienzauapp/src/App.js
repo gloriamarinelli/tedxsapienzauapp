@@ -1,83 +1,53 @@
-import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import LoadingScreen from './components/pages/LoadingScreen.jsx';
+import LoadingTransition from './components/pages/LoadingTransition.jsx';
+import GetStarted from './components/pages/GetStarted.jsx';
+
+const AppStack = createStackNavigator();
 
 const App = () => {
-	const [modalVisible, setModalVisible] = useState(false);
-	return (
-		<View style={styles.centeredView}>
-			<Modal
-				animationType="slide"
-				transparent={true}
-				visible={modalVisible}
-				onRequestClose={() => {
-					Alert.alert("Modal has been closed.");
-					setModalVisible(!modalVisible);
-				}}
-			>
-				<View style={styles.centeredView}>
-					<View style={styles.modalView}>
-						<Text style={styles.modalText}>Hello World!</Text>
-						<Pressable
-							style={[styles.button, styles.buttonClose]}
-							onPress={() => setModalVisible(!modalVisible)}
-						>
-							<Text style={styles.textStyle}>Hide Modal</Text>
-						</Pressable>
-					</View>
-				</View>
-			</Modal>
-			<Pressable
-				style={[styles.button, styles.buttonOpen]}
-				onPress={() => setModalVisible(true)}
-			>
-				<Text style={styles.textStyle}>Show Modal</Text>
-			</Pressable>
-		</View>
-	);
-};
+  const [isLoading, setIsLoading] = useState(true);
+  const [isTransitionLoading, setIsTransitionLoading] = useState(true);
 
-const styles = StyleSheet.create({
-	centeredView: {
-		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-		marginTop: 22,
-	},
-	modalView: {
-		margin: 20,
-		backgroundColor: "white",
-		borderRadius: 20,
-		padding: 35,
-		alignItems: "center",
-		shadowColor: "#000",
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.25,
-		shadowRadius: 4,
-		elevation: 5,
-	},
-	button: {
-		borderRadius: 20,
-		padding: 10,
-		elevation: 2,
-	},
-	buttonOpen: {
-		backgroundColor: "#F194FF",
-	},
-	buttonClose: {
-		backgroundColor: "#2196F3",
-	},
-	textStyle: {
-		color: "white",
-		fontWeight: "bold",
-		textAlign: "center",
-	},
-	modalText: {
-		marginBottom: 15,
-		textAlign: "center",
-	},
-});
+  useEffect(() => {
+    // Simulate initial loading with a setTimeout
+    setTimeout(() => {
+      setIsLoading(false);
+
+      setTimeout(() => {
+        setIsTransitionLoading(false);
+      }, 2000); // Adjust the duration of the "LoadingTransition" screen
+	  
+    }, 2000); // Adjust the duration of the "LoadingScreen" screen
+  }, []);
+
+  return (
+    <NavigationContainer>
+      <AppStack.Navigator>
+        {isLoading ? (
+          <AppStack.Screen
+            name="LoadingScreen"
+            component={LoadingScreen}
+            options={{ headerShown: false }}
+          />
+        ) : isTransitionLoading ? (
+          <AppStack.Screen
+            name="LoadingTransition"
+            component={LoadingTransition}
+            options={{ headerShown: false }}
+          />
+        ) : (
+          <AppStack.Screen
+            name="GetStarted"
+            component={GetStarted}
+            options={{ headerShown: false }}
+          />
+        )}
+      </AppStack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default App;
