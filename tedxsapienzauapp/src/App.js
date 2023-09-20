@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoadingScreen from './components/pages/LoadingScreen.jsx';
-import LoadingTransition from './components/pages/LoadingTransition.jsx';
-import GetStarted from './components/pages/GetStarted.jsx';
+import React, { useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import LoadingScreen from "./components/pages/LoadingScreen.jsx";
+import LoadingTransition from "./components/pages/LoadingTransition.jsx";
+import GetStarted from "./components/pages/GetStarted.jsx";
 
 const AppStack = createStackNavigator();
 
 const App = () => {
-
   return (
     <NavigationContainer>
       <AppStack.Navigator>
