@@ -19,10 +19,10 @@ const GetStarted = ({ navigation }) => {
       <View style={styles.imageContainer}>
         <ImageBackground source={PlaceholderImage} style={styles.image}>
           <Text style={styles.text}>Ideas • Worth • Spreading</Text>
-          <Text style={styles.text1}>___________________________</Text>
+          <Text style={styles.text1}>________________</Text>
           <Text style={styles.text2}>altre info qui</Text>
           <View style={styles.buttonContainer}>
-            <Pressable style={styles.button} onPress={() => navigation.navigate("Partners")}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate("Schedule")}>
               <Text style={styles.buttonLabel}>{'Get Started'}</Text>
             </Pressable>
           </View>
@@ -53,14 +53,14 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   text: {
-    fontSize: 36,
-    lineHeight: 21,
+    fontSize: 24,
     fontWeight: 'bold',
-    letterSpacing: 0.5,
     color: 'white',
     fontFamily: 'Helvetica',
-    bottom: 300,
+    bottom: 235,
     position: 'absolute',
+    textAlignVertical: "center",textAlign: "center",
+
   },
   text1: {
     fontSize: 36,
@@ -69,36 +69,35 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     color: 'white',
     fontFamily: 'Helvetica',
-    bottom: 270,
+    bottom: 215,
     position: 'absolute',
   },
   text2: {
-    fontSize: 30,
-    lineHeight: 21,
-    letterSpacing: 0.5,
+    fontSize: 20,
     color: 'white',
     fontFamily: 'Helvetica',
-    bottom: 215,
+    bottom: 160,
     position: 'absolute',
   },
 
   imageContainer: {
     display: 'flex',
     paddingTop: 58,
+    alignItems: 'center',
   },
   image: {
     width: windowWidth,
     height: windowHeight,
     borderRadius: 1,
     position: 'relative',
+    alignItems: 'center',
   },
   buttonContainer: {
     display: 'flex',
     width: 320,
-    height: 100,
+    height: 80,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 4, borderColor: "white", borderRadius: 18,
     bottom: 60,
     position: 'absolute',
     marginHorizontal: 'auto',
@@ -108,11 +107,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     borderRadius: 10,
     width: '100%',
-    height: '100%',
+    height: 70,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    backgroundColor: "red",
+    backgroundColor: "#eb0028",
     borderRadius: 18 ,
   },
   buttonIcon: {
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: 'white',
-    fontSize: 32,
+    fontSize: 24,
     justifyContent: 'center',
     alignItems: 'center',
     paddingRight: 15,
