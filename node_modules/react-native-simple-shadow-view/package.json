@@ -1,0 +1,28 @@
+{
+  "name": "react-native-simple-shadow-view",
+  "version": "1.6.3",
+  "description": "a Native shadow view for react native, for Android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConduitMobileRND/react-native-simple-shadow-view"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-shadow",
+    "react-native-shadow-view",
+    "react-native-simple-shadow-view",
+    "shadow in android",
+    "shadow",
+    "shadow-view",
+    "simple-shadow-view"
+  ],
+  "author": "Roy Ben-Sasson",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "0.51.0"
+  }
+}

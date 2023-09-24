@@ -21,7 +21,6 @@ const LoadingTransition = () => {
         source={require('../images/X_lowres.png')} // Replace with the correct image path
         style={styles.image}
       />
-      <Text style={styles.title}>Second loading screen</Text>
     </View>
   );
 };

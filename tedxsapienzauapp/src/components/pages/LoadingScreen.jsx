@@ -1,34 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { View, ActivityIndicator, Image, StyleSheet, Animated } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Svg, { Ellipse, Defs, Stop, LinearGradient } from 'react-native-svg';
 
-const LoadingScreen = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const opacity = new Animated.Value(1); // Initialize opacity value to 1 for initial visibility
+const LoadingTransition = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    const fadeOut = () => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 2000, // Adjust the duration as needed
-        useNativeDriver: false,
-      }).start(() => {
-        setIsLoading(false);
-        navigation.navigate('LoadingTransition');
-      });
-    };
-    // Start fading out after a delay (e.g., 3500 milliseconds to ensure animation completion)
-    fadeOut()
-  }, [opacity, navigation]);
-  
+    // Simulate a timeout in LoadingTransition and navigate to GetStarted
+    const timeout = setTimeout(() => {
+      navigation.navigate('LoadingTransition');
+    }, 1500); // Adjust the duration as needed
+
+    // Clear the timeout when the component unmounts
+    return () => clearTimeout(timeout);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
-      <Animated.Image
-        source={require('../images/logo-white.png')}
-        style={[styles.image, { opacity }]}
-      />
-      {<ActivityIndicator size="large" color="white" />}
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('../images/logo-white.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Svg style={styles.shadow} width={styles.logo.width} height={100}>
+          <LinearGradient id="gradient" x1={0} y1={0} x2={0} y2={1}>
+            <Stop offset="0" stopColor="black" />
+            <Stop offset="1" stopColor="grey" />
+          </LinearGradient>
+          <Ellipse cx={150} cy={50} rx={150} ry={10} fill="url(#gradient)" opacity={0.2} />
+        </Svg>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="red" />
+        </View>
+      </View>
     </View>
   );
 };
@@ -40,11 +46,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
-    width: 200, // Adjust the width and height as needed
-    height: 80,
-    resizeMode: 'contain', // Adjust the resizeMode as needed
+  logoContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 300,
+    height: 150,
+    marginTop: 40,
+    marginBottom: -30
+  },
+  shadow: {
+  },
+  loadingContainer: {
+    marginTop: 30,
   },
 });
 
-export default LoadingScreen;
+export default LoadingTransition;

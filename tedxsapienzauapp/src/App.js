@@ -33,7 +33,7 @@ const App = () => {
     <NavigationContainer>
       <AppStack.Navigator>
         <>
-          {/* <AppStack.Screen
+          <AppStack.Screen
             name="LoadingScreen"
             component={LoadingScreen}
             options={{ headerShown: false }}
@@ -42,7 +42,7 @@ const App = () => {
             name="LoadingTransition"
             component={LoadingTransition}
             options={{ headerShown: false }}
-          /> */}
+          /> 
           <AppStack.Screen
             name="GetStarted"
             component={GetStarted}
