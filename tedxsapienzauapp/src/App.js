@@ -5,18 +5,26 @@ import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
-import { Image, View, Text, StyleSheet } from "react-native";
+import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 
 const AppStack = createStackNavigator();
 
 const App = () => {
-  const CustomHeader = () => {
+  const CustomHeader = ({ navigation }) => {
     return (
       <View style={styles.headerStyle}>
         <Image
-          style={{ width: 250, height: 50 }}
-          source={require("./components//images/logo-white.png")}
+          style={{ width: 250, height: 40 }}
+          source={require("./components/images/logo-white.png")}
         />
+        <View style={styles.headerButtonsContainer}>
+          <Pressable onPress={() => navigation.navigate("GetStarted")}>
+            <Text style={styles.headerButton}>GET STARTED</Text>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("Vision")}>
+            <Text style={styles.headerButton}>VISION</Text>
+          </Pressable>
+        </View>
       </View>
     );
   };
@@ -43,16 +51,16 @@ const App = () => {
           <AppStack.Screen
             name="Partners"
             component={Partners}
-            options={{
+            options={({ navigation, route }) => ({
               headerShown: true,
-              headerTitle: (props) => <CustomHeader {...props} />,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
                 backgroundColor: "#000",
-                height: 130,
+                height: 150,
               },
-            }}
+            })}
           />
         </>
       </AppStack.Navigator>
@@ -66,9 +74,19 @@ const styles = StyleSheet.create({
   headerStyle: {
     width: "100%",
     display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    gap: 10,
+  },
+  headerButtonsContainer: {
+    display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    padding: 20,
+    gap: 10,
+  },
+  headerButton: {
+    color: "#fff",
   },
 });

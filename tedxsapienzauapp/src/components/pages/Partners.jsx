@@ -16,6 +16,8 @@ const Partners = () => {
     { id: "2", logo: require("../images/partners23/CNR.webp") },
     { id: "3", logo: require("../images/partners23/Eni.webp") },
     { id: "4", logo: require("../images/partners23/Unicredit.webp") },
+    { id: "5", logo: require("../images/partners23/Roma.webp") },
+    { id: "6", logo: require("../images/partners23/Thesis4u.webp") },
   ];
 
   // Calculate the number of columns based on screen width and desired maximum per row
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
   card: {
     width: "45%",
     margin: 10,
-    borderRadius: 8,
+    borderRadius: 4,
     elevation: 2,
   },
   logo: {
