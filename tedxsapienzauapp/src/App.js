@@ -6,6 +6,7 @@ import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
+import Schedule from "./components/pages/Schedule.jsx";
 
 const AppStack = createStackNavigator();
 
@@ -23,6 +24,9 @@ const App = () => {
           </Pressable>
           <Pressable onPress={() => navigation.navigate("Vision")}>
             <Text style={styles.headerButton}>VISION</Text>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("Schedule")}>
+            <Text style={styles.headerButton}>SCHEDULE</Text>
           </Pressable>
         </View>
       </View>
@@ -46,6 +50,11 @@ const App = () => {
           <AppStack.Screen
             name="GetStarted"
             component={GetStarted}
+            options={{ headerShown: false }}
+          />
+          <AppStack.Screen
+            name="Schedule"
+            component={Schedule}
             options={{ headerShown: false }}
           />
           <AppStack.Screen
