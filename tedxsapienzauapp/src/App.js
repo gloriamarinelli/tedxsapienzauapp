@@ -22,6 +22,9 @@ const App = () => {
           <Pressable onPress={() => navigation.navigate("GetStarted")}>
             <Text style={styles.headerButton}>GET STARTED</Text>
           </Pressable>
+          <Pressable onPress={() => navigation.navigate("Partners")}>
+            <Text style={styles.headerButton}>PARTNERS</Text>
+          </Pressable>
           <Pressable onPress={() => navigation.navigate("Vision")}>
             <Text style={styles.headerButton}>VISION</Text>
           </Pressable>
@@ -55,7 +58,16 @@ const App = () => {
           <AppStack.Screen
             name="Schedule"
             component={Schedule}
-            options={{ headerShown: false }}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+              headerStyle: {
+                backgroundColor: "#000",
+                height: 150,
+              },
+            })}
           />
           <AppStack.Screen
             name="Partners"
