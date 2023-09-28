@@ -5,7 +5,14 @@ import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
-import { Image, View, Text, StyleSheet, Pressable } from "react-native";
+import {
+  Image,
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
 
 const AppStack = createStackNavigator();
@@ -18,7 +25,7 @@ const App = () => {
           style={{ width: 250, height: 40 }}
           source={require("./components/images/logo-white.png")}
         />
-        <View style={styles.headerButtonsContainer}>
+        <ScrollView horizontal style={styles.headerButtonsContainer}>
           <Pressable onPress={() => navigation.navigate("GetStarted")}>
             <Text style={styles.headerButton}>GET STARTED</Text>
           </Pressable>
@@ -31,7 +38,10 @@ const App = () => {
           <Pressable onPress={() => navigation.navigate("Schedule")}>
             <Text style={styles.headerButton}>SCHEDULE</Text>
           </Pressable>
-        </View>
+          <Pressable onPress={() => navigation.navigate("FAQ")}>
+            <Text style={styles.headerButton}>FAQ</Text>
+          </Pressable>
+        </ScrollView>
       </View>
     );
   };
@@ -49,7 +59,7 @@ const App = () => {
             name="LoadingTransition"
             component={LoadingTransition}
             options={{ headerShown: false }}
-          /> 
+          />
           <AppStack.Screen
             name="GetStarted"
             component={GetStarted}
@@ -101,13 +111,12 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   headerButtonsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    gap: 10,
+    width: "100%",
   },
   headerButton: {
     color: "#fff",
+    padding: 10,
+    fontSize: 20,
+    fontFamily: "Farah",
   },
 });
