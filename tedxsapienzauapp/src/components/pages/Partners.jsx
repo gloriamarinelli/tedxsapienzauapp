@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  Image,
-  StyleSheet,
-  Dimensions,
-  SafeAreaView,
-} from "react-native";
+import { FlatList, Image, StyleSheet, SafeAreaView } from "react-native";
 import { Card } from "react-native-elements";
 
 const Partners = () => {

@@ -4,85 +4,71 @@ import {
   Text,
   Image,
   StyleSheet,
-  Pressable,
   Dimensions,
+  ScrollView,
 } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
+import { RFValue } from "react-native-responsive-fontsize";
 const windowWidth = Dimensions.get("window").width;
 
 const Vision = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
         <Image
-          source={require("../images/logo-white.png")}
-          resizeMode="contain"
+          source={require("../images/logo_Bto0_bianco.png")}
+          style={styles.image}
         />
-        <Text style={styles.text}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </Text>
-      </View>
-    </View>
+
+        <View style={styles.container1}>
+          <Text style={styles.text1}>
+            ❝ L'uomo e il mondo che lo circonda non sono binari separati, ma
+            rotaie che si muovono insieme, hanno bisogno l'uno dell'altro. ❞
+          </Text>
+          <Text style={styles.text}>
+            Il nostro obiettivo è azzerare, ricercare un punto zero: le
+            disuguaglianze, i conflitti, i cattivi stili di vita, le emissioni e
+            i rifiuti. Ridurre quei fattori inquinanti che rallentano la
+            crescita della nostra società, peggiorando la qualità della nostra
+            vita. Riconsiderare noi stessi ed il nostro modo di confrontarci.
+            Imparare ed interagire con la società contemporanea, con le arti e
+            le scienze. È fondamentale per costruire un mondo dove l'essere
+            umano possa 'rinascere', prosperando ed esprimendosi al meglio in
+            ogni disciplina. Riscoprire le basi per rinascere, diventare persone
+            migliori in un luogo migliore.
+          </Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#000",
+  },
+  container1: {
+    flex: 1,
     backgroundColor: "black",
-    justifyContent: "center",
-    alignItems: "center",
+    paddingTop: 20,
   },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-  },
-
   text: {
-    fontSize: 18,
-    letterSpacing: 0.5,
+    paddingTop: 15,
+    fontSize: RFValue(18),
     color: "white",
-    fontFamily: "Helvetica",
-    bottom: 215,
+    textAlign: "justify",
   },
-
-  imageContainer: {
-    display: "flex",
-    paddingTop: 58,
-    alignItems: "center",
+  text1: {
+    paddingTop: 15,
+    fontSize: RFValue(24),
+    color: "white",
+    textAlign: "center",
   },
   image: {
     width: windowWidth,
-    height: 10,
-    borderRadius: 1,
-    position: "relative",
-    alignItems: "center",
-  },
-  buttonContainer: {
-    display: "flex",
-    width: 320,
-    height: 80,
-    alignItems: "center",
-    justifyContent: "center",
-    bottom: 60,
-    position: "absolute",
-    marginHorizontal: "auto",
+    height: 200,
+    resizeMode: "contain",
   },
 });
 

@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
-<<<<<<< HEAD
 import Vision from "./components/pages/Vision.jsx";
+import FAQ from "./components/pages/FAQ.jsx";
+import Speaker from "./components/pages/Speaker.jsx";
+import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
-=======
-import {
-  Image,
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  ScrollView,
-} from "react-native";
->>>>>>> 9e96b5bff6334a1748fd1038280581fdf004d7bb
 import Schedule from "./components/pages/Schedule.jsx";
 
 const AppStack = createStackNavigator();
@@ -27,24 +19,26 @@ const App = () => {
     return (
       <View style={styles.headerStyle}>
         <Image
-          style={{ width: 250, height: 40 }}
+          style={{ width: 200, height: 30 }}
           source={require("./components/images/logo-white.png")}
         />
+
         <ScrollView horizontal style={styles.headerButtonsContainer}>
-          <Pressable onPress={() => navigation.navigate("GetStarted")}>
-            <Text style={styles.headerButton}>GET STARTED</Text>
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("Partners")}>
-            <Text style={styles.headerButton}>PARTNERS</Text>
-          </Pressable>
           <Pressable onPress={() => navigation.navigate("Vision")}>
-            <Text style={styles.headerButton}>VISION</Text>
+            <Text style={styles.headerButton}>Vision</Text>
           </Pressable>
           <Pressable onPress={() => navigation.navigate("Schedule")}>
-            <Text style={styles.headerButton}>SCHEDULE</Text>
+            <Text style={styles.headerButton}>Schedule</Text>
           </Pressable>
+          <Pressable onPress={() => navigation.navigate("Speaker")}>
+            <Text style={styles.headerButton}>Speaker</Text>
+          </Pressable>
+
           <Pressable onPress={() => navigation.navigate("FAQ")}>
             <Text style={styles.headerButton}>FAQ</Text>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("Partners")}>
+            <Text style={styles.headerButton}>Partners</Text>
           </Pressable>
         </ScrollView>
       </View>
@@ -71,6 +65,21 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <AppStack.Screen
+            name="Vision"
+            component={Vision}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+
+              headerStyle: {
+                backgroundColor: "#000",
+                height: 150,
+              },
+            })}
+          />
+          <AppStack.Screen
             name="Schedule"
             component={Schedule}
             options={({ navigation, route }) => ({
@@ -85,8 +94,8 @@ const App = () => {
             })}
           />
           <AppStack.Screen
-            name="Partners"
-            component={Partners}
+            name="Speaker"
+            component={Speaker}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
@@ -99,8 +108,22 @@ const App = () => {
             })}
           />
           <AppStack.Screen
-            name="Vision"
-            component={Vision}
+            name="FAQ"
+            component={FAQ}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+              headerStyle: {
+                backgroundColor: "#000",
+                height: 150,
+              },
+            })}
+          />
+          <AppStack.Screen
+            name="Partners"
+            component={Partners}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,

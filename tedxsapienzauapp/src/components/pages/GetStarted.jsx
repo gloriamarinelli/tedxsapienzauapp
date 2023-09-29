@@ -2,35 +2,28 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   ImageBackground,
   Pressable,
   Dimensions,
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const PlaceholderImage = require("../images/location2b.png");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 const GetStarted = ({ navigation }) => {
-  const handlePress = () => {
-    alert("non faccio nulla");
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageBackground source={PlaceholderImage} style={styles.image}>
           <Text style={styles.text}>Ideas • Worth • Spreading</Text>
           <Text style={styles.text1}>________________</Text>
-          <Text style={styles.text2}>altre info qui</Text>
+          <Text style={styles.text2}></Text>
           <View style={styles.buttonContainer}>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("Partners")}
+              onPress={() => navigation.navigate("Vision")}
             >
               <Text style={styles.buttonLabel}>{"Get Started"}</Text>
             </Pressable>
@@ -44,27 +37,17 @@ const GetStarted = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "black",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#000",
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
   },
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-  },
+
   text: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    fontFamily: "Helvetica",
     bottom: 235,
     position: "absolute",
     textAlignVertical: "center",
@@ -76,28 +59,24 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.5,
     color: "white",
-    fontFamily: "Helvetica",
     bottom: 215,
     position: "absolute",
   },
   text2: {
     fontSize: 20,
     color: "white",
-    fontFamily: "Helvetica",
     bottom: 160,
     position: "absolute",
   },
 
   imageContainer: {
     display: "flex",
-    paddingTop: 58,
     alignItems: "center",
   },
   image: {
     width: windowWidth,
     height: windowHeight,
     borderRadius: 1,
-    position: "relative",
     alignItems: "center",
   },
   buttonContainer: {
@@ -133,7 +112,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingRight: 15,
     textAlign: "center",
-    fontFamily: "Helvetica",
     fontWeight: "bold",
   },
 });
