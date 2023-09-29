@@ -11,7 +11,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const PlaceholderImage = require("../images/_106396958_ted.jpg");
+const PlaceholderImage = require("../images/location2b.png");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
