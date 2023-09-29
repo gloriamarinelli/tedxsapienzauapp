@@ -12,10 +12,10 @@ import { Card } from "react-native-elements";
 const Partners = () => {
   // Sample partner logos data
   const partnerLogos = [
-    { id: "1", logo: require("../images/partners23/Tim.webp"), title: "Tim" },
-    { id: "2", logo: require("../images/partners23/CNR.webp") },
-    { id: "3", logo: require("../images/partners23/Eni.webp") },
-    { id: "4", logo: require("../images/partners23/Unicredit.webp") },
+    { id: "1", logo: require("../images/partners23/Eni.webp") },
+    { id: "2", logo: require("../images/partners23/Tim.webp") },
+    { id: "3", logo: require("../images/partners23/Unicredit.webp") },
+    { id: "4", logo: require("../images/partners23/Balduina1.webp") },
     { id: "5", logo: require("../images/partners23/Roma.webp") },
     { id: "6", logo: require("../images/partners23/Thesis4u.webp") },
   ];

@@ -5,6 +5,7 @@ import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
+import Vision from "./components/pages/Vision.jsx";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
 
@@ -60,6 +61,20 @@ const App = () => {
           <AppStack.Screen
             name="Partners"
             component={Partners}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+              headerStyle: {
+                backgroundColor: "#000",
+                height: 150,
+              },
+            })}
+          />
+          <AppStack.Screen
+            name="Vision"
+            component={Vision}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
