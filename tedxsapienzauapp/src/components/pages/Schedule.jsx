@@ -24,10 +24,14 @@ const Schedule = () => {
               <Text style={styles.text}>9</Text>
             </ImageBackground>
           </View>
+          <View style={styles.container1}>
           <Text style={styles.text1}>
-            testo testo testo testo testo testo testo testo testo testo testo
-            testo testo testo testo testo testo testo
+            testo testo testo
           </Text>
+          <Text style={styles.text2}>
+            testo testo testo
+          </Text>
+          </View>
         </View>
         <View style={styles.eventContainer}>
           <Text style={styles.text1}>testo testo qualcosa bla </Text>
@@ -103,15 +107,16 @@ const styles = StyleSheet.create({
     color: "white",
     justifyContent: "center",
     alignItems: "center",
+    padding: 90,
   },
   text1: {
-    fontSize: 36,
+    fontSize: 30,
     lineHeight: 21,
     fontWeight: "bold",
     color: "white",
   },
   text2: {
-    fontSize: 30,
+    fontSize: 15,
     lineHeight: 21,
     letterSpacing: 0.5,
     color: "white",
@@ -119,6 +124,14 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
+  },
+  container1: {
+    display: "flex",
+    backgroundColor: "#0000",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    flexWrap: "wrap",
+    flexDirection: "column",
   },
 });
 
