@@ -26,6 +26,7 @@
     "react-native-screens": "~3.22.0",
     "react-native-shadow": "^1.2.2",
     "react-native-svg": "13.9.0",
+    "react-native-vector-icons": "^10.0.0",
     "react-native-web": "~0.19.6",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
