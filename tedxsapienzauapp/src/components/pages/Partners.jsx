@@ -20,7 +20,7 @@ const Partners = () => {
       <FlatList
         columnWrapperStyle={{ justifyContent: "center" }}
         data={partnerLogos}
-        numColumns={2}
+        numColumns={3}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Card containerStyle={styles.card}>

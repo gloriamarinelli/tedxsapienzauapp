@@ -156,8 +156,9 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   headerButton: {
-    color: "#fff",
+    color: "#eb0028",
     padding: 10,
-    fontSize: 20,
+    fontSize: 30,
+    fontWeight: "bold",
   },
 });
