@@ -132,7 +132,6 @@ const App = () => {
               headerTitle: () => <CustomHeader navigation={navigation} />,
               headerBackTitleVisible: false,
               headerLeft: () => null,
-
               headerStyle: {
                 backgroundColor: "#000",
                 height: 150,
