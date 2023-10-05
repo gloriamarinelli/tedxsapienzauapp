@@ -15,10 +15,7 @@ const Speaker = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Image
-          source={require("../images/logo_Bto0_bianco.png")}
-          style={styles.image}
-        />
+        <Text style={{ color: "white" }}> Speakers </Text>
       </ScrollView>
     </SafeAreaView>
   );
