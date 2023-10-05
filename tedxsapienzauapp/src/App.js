@@ -11,6 +11,7 @@ import Speakers from "./components/pages/Speakers.jsx";
 import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const routes = [
   "LoadingScreen",
@@ -38,10 +39,21 @@ const App = () => {
 
     return (
       <View style={styles.headerStyle}>
-        <Image
-          style={{ width: 200, height: 30 }}
-          source={require("./components/images/logo-white.png")}
-        />
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <FontAwesome5 name="language" size={24} color="white" />
+          <Image
+            style={{ width: 200, height: 30 }}
+            source={require("./components/images/logo-white.png")}
+          />
+          <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+        </View>
 
         <ScrollView horizontal style={styles.headerButtonsContainer}>
           <Pressable onPress={() => navigation.navigate("Vision")}>
