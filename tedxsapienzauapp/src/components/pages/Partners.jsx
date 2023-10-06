@@ -9,8 +9,14 @@ const Partners = () => {
     { id: "2", logo: require("../images/partners23/Tim.webp") },
     { id: "3", logo: require("../images/partners23/Unicredit.webp") },
     { id: "4", logo: require("../images/partners23/Balduina1.webp") },
-    { id: "5", logo: require("../images/partners23/Roma.webp") },
-    { id: "6", logo: require("../images/partners23/Thesis4u.webp") },
+    { id: "6", logo: require("../images/partners23/SFClubSapienza.webp") },
+    { id: "5", logo: require("../images/partners23/Copernico.webp") },
+    { id: "7", logo: require("../images/partners23/MentorsNova.webp") },
+    { id: "8", logo: require("../images/partners23/Thesis4u.webp") },
+    { id: "9", logo: require("../images/partners23/JESAP.webp") },
+    { id: "10", logo: require("../images/partners23/CNR.webp") },
+    { id: "11", logo: require("../images/partners23/Enea.png") },
+    { id: "12", logo: require("../images/partners23/Roma.webp") },
   ];
 
   // Calculate the number of columns based on screen width and desired maximum per row
@@ -40,14 +46,14 @@ const styles = StyleSheet.create({
   card: {
     width: "30%",
     margin: 10,
-    borderRadius: 4,
+    borderRadius: 5,
     elevation: 2,
   },
   logo: {
     width: "100%",
-    height: 100, // Adjust the height as needed
+    height: 50, // Adjust the height as needed
     resizeMode: "contain",
-    transform: [{ scale: 1.3 }],
+    transform: [{ scale: 1.35 }],
   },
 });
 

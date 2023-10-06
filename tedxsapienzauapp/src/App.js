@@ -8,6 +8,7 @@ import Partners from "./components/pages/Partners.jsx";
 import Vision from "./components/pages/Vision.jsx";
 import FAQ from "./components/pages/FAQ.jsx";
 import Speakers from "./components/pages/Speakers.jsx";
+import Map from "./components/pages/Map.jsx";
 import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
@@ -22,6 +23,7 @@ const routes = [
   "Speakers",
   "FAQ",
   "Partners",
+  "Map",
 ];
 
 const AppStack = createStackNavigator();
@@ -52,7 +54,9 @@ const App = () => {
             style={{ width: 200, height: 30 }}
             source={require("./components/images/logo-white.png")}
           />
-          <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+          <Pressable onPress={() => navigation.navigate("Map")}>
+            <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+          </Pressable>
         </View>
 
         <ScrollView horizontal style={styles.headerButtonsContainer}>
@@ -195,6 +199,20 @@ const App = () => {
           <AppStack.Screen
             name="Partners"
             component={Partners}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+              headerStyle: {
+                backgroundColor: "#000",
+                height: 150,
+              },
+            })}
+          />
+          <AppStack.Screen
+            name="Map"
+            component={Map}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
