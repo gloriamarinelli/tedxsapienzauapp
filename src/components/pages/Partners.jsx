@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   card: {
-    width: "45%",
+    width: "30%",
     margin: 10,
     borderRadius: 4,
     elevation: 2,
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 100, // Adjust the height as needed
     resizeMode: "contain",
+    transform: [{ scale: 1.3 }],
   },
 });
 
