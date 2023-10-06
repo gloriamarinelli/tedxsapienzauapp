@@ -15,10 +15,10 @@ const Map = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={{ color: "white" }}>
-          {" "}
-          Università La Sapienza - Aula Magna Rettorato Piazzale Aldo Moro, 5,
-          00185 Roma RM{" "}
+        <Text style={styles.text}>
+          Università La Sapienza {"\n"}
+          Aula Magna Rettorato {"\n"}
+          Piazzale Aldo Moro, 5, Roma RM{" "}
         </Text>
       </ScrollView>
     </SafeAreaView>
@@ -29,24 +29,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
+    paddingLeft: 10,
+    paddingRight: 10,
   },
-  container1: {
-    flex: 1,
-    backgroundColor: "black",
-    paddingTop: 20,
-  },
+
   text: {
     paddingTop: 15,
     fontSize: RFValue(18),
     color: "white",
     textAlign: "justify",
   },
-  text1: {
-    paddingTop: 15,
-    fontSize: RFValue(24),
-    color: "white",
-    textAlign: "center",
-  },
+
   image: {
     width: windowWidth,
     height: 200,
