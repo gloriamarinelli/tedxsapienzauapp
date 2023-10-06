@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoadingScreen from "./components/pages/LoadingScreen.jsx";
@@ -7,38 +7,110 @@ import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
 import Vision from "./components/pages/Vision.jsx";
 import FAQ from "./components/pages/FAQ.jsx";
-import Speaker from "./components/pages/Speaker.jsx";
+import Speakers from "./components/pages/Speakers.jsx";
 import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
+import { FontAwesome5 } from "@expo/vector-icons";
+
+const routes = [
+  "LoadingScreen",
+  "LoadingTransition",
+  "GetStarted",
+  "Vision",
+  "Schedule",
+  "Speakers",
+  "FAQ",
+  "Partners",
+];
 
 const AppStack = createStackNavigator();
 
 const App = () => {
   const CustomHeader = ({ navigation }) => {
+    const [selectedButton, setSelectedButton] = useState("Vision");
+
+    useEffect(() => {
+      let currentPage =
+        navigation.getState().routes[navigation.getState().routes.length - 1]
+          .name;
+      setSelectedButton(currentPage);
+    });
+
     return (
       <View style={styles.headerStyle}>
-        <Image
-          style={{ width: 200, height: 30 }}
-          source={require("./components/images/logo-white.png")}
-        />
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <FontAwesome5 name="language" size={24} color="white" />
+          <Image
+            style={{ width: 200, height: 30 }}
+            source={require("./components/images/logo-white.png")}
+          />
+          <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+        </View>
 
         <ScrollView horizontal style={styles.headerButtonsContainer}>
           <Pressable onPress={() => navigation.navigate("Vision")}>
-            <Text style={styles.headerButton}>Vision</Text>
+            <Text
+              style={
+                selectedButton === "Vision"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              Vision
+            </Text>
           </Pressable>
           <Pressable onPress={() => navigation.navigate("Schedule")}>
-            <Text style={styles.headerButton}>Schedule</Text>
+            <Text
+              style={
+                selectedButton === "Schedule"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              Schedule
+            </Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate("Speaker")}>
-            <Text style={styles.headerButton}>Speaker</Text>
+          <Pressable onPress={() => navigation.navigate("Speakers")}>
+            <Text
+              style={
+                selectedButton === "Speakers"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              Speakers
+            </Text>
           </Pressable>
 
           <Pressable onPress={() => navigation.navigate("FAQ")}>
-            <Text style={styles.headerButton}>FAQ</Text>
+            <Text
+              style={
+                selectedButton === "FAQ"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              FAQ
+            </Text>
           </Pressable>
           <Pressable onPress={() => navigation.navigate("Partners")}>
-            <Text style={styles.headerButton}>Partners</Text>
+            <Text
+              style={
+                selectedButton === "Partners"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              Partners
+            </Text>
           </Pressable>
         </ScrollView>
       </View>
@@ -72,7 +144,6 @@ const App = () => {
               headerTitle: () => <CustomHeader navigation={navigation} />,
               headerBackTitleVisible: false,
               headerLeft: () => null,
-
               headerStyle: {
                 backgroundColor: "#000",
                 height: 150,
@@ -94,8 +165,8 @@ const App = () => {
             })}
           />
           <AppStack.Screen
-            name="Speaker"
-            component={Speaker}
+            name="Speakers"
+            component={Speakers}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
@@ -156,9 +227,15 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   headerButton: {
-    color: "#eb0028",
+    color: "#fff",
     padding: 10,
-    fontSize: 30,
+    fontSize: 20,
+  },
+  selectedButton: {
+    color: "#eb0028",
     fontWeight: "bold",
+    transform: [{ scale: 1.1 }],
   },
 });
+
+//#eb0028
