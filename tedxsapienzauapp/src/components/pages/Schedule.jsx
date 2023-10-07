@@ -23,15 +23,15 @@ const Schedule = () => {
         <View style={styles.card1}>
         <View containerStyle={styles.imageContainer}>
             <ImageBackground source={PlaceholderImage} style={styles.image}>
-              <Text style={styles.text}>9</Text>
+              <Text style={styles.text}>9:00</Text>
               </ImageBackground>
               </View>
               <View containerStyle={styles.container}>
       <Text style={styles.text1}>
-           testo testo testo
+           Nome dell'evento 1
       </Text>
       <Text style={styles.text2}>
-            testo testo testo 2
+            descrizione dell' evento 1
           </Text>
           </View>
           </View>
@@ -41,15 +41,15 @@ const Schedule = () => {
         <View style={styles.card1}>
         <View containerStyle={styles.imageContainer2}>
             <ImageBackground source={PlaceholderImage} style={styles.image}>
-              <Text style={styles.text}>9</Text>
+              <Text style={styles.text}>18:00</Text>
               </ImageBackground>
               </View>
               <View containerStyle={styles.container2}>
       <Text style={styles.text1}>
-           testo testo testo
+      Nome dell'evento 2
       </Text>
       <Text style={styles.text2}>
-            testo testo testo 2
+      descrizione dell' evento 2
           </Text>
           </View>
           </View>
@@ -71,13 +71,26 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     display:'flex',
     flexDirection: 'row',
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    borderRadius: 10,
+    borderColor: '#181818',
   },
   card1:{
     color: 'black',
     backgroundColor: 'black',
     display:'flex',
     flexDirection: 'row',
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    borderRadius: 10,
+    borderColor: ' 	#181818',
   },
+
 
   text: {
     fontSize: 36,
@@ -100,18 +113,22 @@ const styles = StyleSheet.create({
     float: 'left',
   },
   text1: {
-    fontSize: 30,
+    adjustsFontSizeToFit:'true',
+    numberOfLines:1,
     lineHeight: 21,
     fontWeight: "bold",
     color: "white",
     flexDirection: 'row',
+    padding: '10px',
   },
   text2: {
-    fontSize: 15,
+    adjustsFontSizeToFit:'true',
+    numberOfLines:1,
     lineHeight: 21,
     letterSpacing: 0.5,
     color: "white",
     flexDirection: 'row',
+    padding: '10px',
   },
   imageContainer: {
     width: 130,

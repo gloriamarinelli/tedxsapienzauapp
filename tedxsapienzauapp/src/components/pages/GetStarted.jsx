@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.5,
     color: "white",
-    bottom: 215,
+    bottom: 230,
     position: "absolute",
   },
   text2: {
