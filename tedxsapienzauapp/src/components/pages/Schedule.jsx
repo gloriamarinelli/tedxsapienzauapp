@@ -13,49 +13,84 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const PlaceholderImage = require("../images/Red-Circle.png");
-//anche questo provvisorio
+const Sfondo1 = require("../images/bubble.png");
 
 const Schedule = () => {
   
   return (
     <ScrollView style={styles.page}>
+      <ImageBackground source={Sfondo1} resizeMode="cover">
+      {/* evento 1 */}
       <Card containerStyle={styles.card}>
         <View style={styles.card1}>
-        <View containerStyle={styles.imageContainer}>
+          <View containerStyle={styles.imageContainer}>
             <ImageBackground source={PlaceholderImage} style={styles.image}>
               <Text style={styles.text}>9:00</Text>
-              </ImageBackground>
-              </View>
-              <View containerStyle={styles.container}>
-      <Text style={styles.text1}>
-           Nome dell'evento 1
-      </Text>
-      <Text style={styles.text2}>
-            descrizione dell' evento 1
-          </Text>
+            </ImageBackground>
           </View>
+          <View containerStyle={styles.container}>
+            <Text style={styles.text1}>Nome dell'evento 1</Text>
+            <Text style={styles.text2}>descrizione dell' evento 1</Text>
           </View>
+        </View>
       </Card>
-
+{/* evento 2 */}
       <Card containerStyle={styles.card}>
         <View style={styles.card1}>
-        <View containerStyle={styles.imageContainer2}>
+          <View containerStyle={styles.container2}>
+            <Text style={styles.text1}>Nome dell'evento 2</Text>
+            <Text style={styles.text2}>descrizione dell' evento 2</Text>
+          </View>
+          <View containerStyle={styles.imageContainer2}>
+            <ImageBackground source={PlaceholderImage} style={styles.image}>
+              <Text style={styles.text}>12:00</Text>
+            </ImageBackground>
+          </View>
+        </View>
+      </Card>
+      {/* evento 3 */}
+      <Card containerStyle={styles.card}>
+        <View style={styles.card1}>
+          <View containerStyle={styles.imageContainer}>
+            <ImageBackground source={PlaceholderImage} style={styles.image}>
+              <Text style={styles.text}>15:00</Text>
+            </ImageBackground>
+          </View>
+          <View containerStyle={styles.container}>
+            <Text style={styles.text1}>Nome dell'evento 3</Text>
+            <Text style={styles.text2}>descrizione dell' evento 3</Text>
+          </View>
+        </View>
+      </Card>
+      {/* evento 4 */}
+      <Card containerStyle={styles.card}>
+        <View style={styles.card1}>
+          <View containerStyle={styles.container2}>
+            <Text style={styles.text1}>Nome dell'evento 4</Text>
+            <Text style={styles.text2}>descrizione dell' evento 4</Text>
+          </View>
+          <View containerStyle={styles.imageContainer2}>
             <ImageBackground source={PlaceholderImage} style={styles.image}>
               <Text style={styles.text}>18:00</Text>
-              </ImageBackground>
-              </View>
-              <View containerStyle={styles.container2}>
-      <Text style={styles.text1}>
-      Nome dell'evento 2
-      </Text>
-      <Text style={styles.text2}>
-      descrizione dell' evento 2
-          </Text>
+            </ImageBackground>
           </View>
-          </View>
+        </View>
       </Card>
-
-      
+      {/* evento 5 */}
+      <Card containerStyle={styles.card}>
+        <View style={styles.card1}>
+          <View containerStyle={styles.imageContainer}>
+            <ImageBackground source={PlaceholderImage} style={styles.image}>
+              <Text style={styles.text}>21:00</Text>
+            </ImageBackground>
+          </View>
+          <View containerStyle={styles.container}>
+            <Text style={styles.text1}>Nome dell'evento 5</Text>
+            <Text style={styles.text2}>descrizione dell' evento 5</Text>
+          </View>
+        </View>
+      </Card>
+    </ImageBackground>
     </ScrollView>
   );
 };
@@ -68,7 +103,7 @@ const styles = StyleSheet.create({
   },
   card:{
     color: 'black',
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
     display:'flex',
     flexDirection: 'row',
     shadowColor: 'black',
@@ -80,7 +115,7 @@ const styles = StyleSheet.create({
   },
   card1:{
     color: 'black',
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
     display:'flex',
     flexDirection: 'row',
     shadowColor: 'black',
@@ -89,32 +124,30 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26,
     borderRadius: 10,
     borderColor: ' 	#181818',
+    gap: 30,
   },
 
 
   text: {
     fontSize: 36,
-    lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.5,
     color: "white",
     justifyContent: "center",
     alignItems: "center",
-    padding: 90,
   },
   image: {
     width: 130,
     height: 130,
     justifyContent: 'center',
     alignItems: 'center', 
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
     color: 'black',
     flexDirection: 'row',
     float: 'left',
   },
   text1: {
-    adjustsFontSizeToFit:'true',
-    numberOfLines:1,
+    fontSize: 20,
     lineHeight: 21,
     fontWeight: "bold",
     color: "white",
@@ -122,8 +155,7 @@ const styles = StyleSheet.create({
     padding: '10px',
   },
   text2: {
-    adjustsFontSizeToFit:'true',
-    numberOfLines:1,
+    fontSize: 15,
     lineHeight: 21,
     letterSpacing: 0.5,
     color: "white",
@@ -135,35 +167,35 @@ const styles = StyleSheet.create({
     height: 130,
     justifyContent: 'flex-start',
     alignItems: 'center', 
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
     color: 'black',
     float: 'left',
     flex: 1,
 
   },
-  imageContainer: {
+  imageContainer2: {
     width: 130,
     height: 130,
     justifyContent: 'flex-end',
     alignItems: 'center', 
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
     color: 'black',
-    float: 'left',
     flex: 1,
 
   },
   container:{
     flex:2,
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
     color: 'black',
     justifyContent: 'flex-end',
 
   },
   container2:{
     flex:2,
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
     color: 'black',
     justifyContent: 'flex-start',
+    
 
   },
 
