@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26,
     borderRadius: 10,
     borderColor: ' 	#181818',
-    gap: 30,
+    gap: 20,
   },
 
 
