@@ -49,7 +49,7 @@ const App = () => {
             justifyContent: "space-around",
           }}
         >
-          <FontAwesome5 name="language" size={24} color="white" />
+          <FontAwesome5 name="bell" size={25} color="white" />
           <Image
             style={{ width: 200, height: 30 }}
             source={require("./components/images/logo-white.png")}

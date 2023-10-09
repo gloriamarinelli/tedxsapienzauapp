@@ -17,34 +17,40 @@ const FAQ = () => {
   // domande e risposte
   const faqData = [
     {
-      question: "Domanda 1?",
+      question: "Come troverò l'Aula Magna?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Potrai recarti presso l’Aula Magna tramite l’ingresso laterale del Palazzo del Rettorato, raggiungendo il secondo piano. Ad ogni modo, non preoccuparti: consulta la mappa!",
     },
     {
-      question: "Domanda 2?",
+      question: "Come avverrà l'accredito all'evento?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Gli accrediti avverranno dalle ore 08:45 alle ore 09:30. Ti basterà mostrare ai volontari TEDxSapienzaU il QRCode del biglietto che avrai ricevuto in fase di prenotazione.",
     },
     {
-      question: "Domanda 3?",
+      question: "Quanto durerà l'evento?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "L’evento si svolgerà dalle ore 09:30 alle ore 17:00. Non ti preoccupare, avrai modo di sgranchirti le gambe: sono previsti ben due momenti di break!",
     },
     {
-      question: "Domanda 4?",
+      question: "Come potrò ritirare il mio lunch box?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Potrai ritirare il tuo lunch box presso il Village TEDxSapienzaU, durante la pausa prevista dalle ore 13:30 alle ore 15:00.",
     },
     {
-      question: "Domanda 5?",
+      question:
+        "Ho delle intolleranze/sono vegetarian*, potrò ritirare un lunch box adatto alle mie esigenze? ",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Certamente. I lunch box sono pensati per essere inclusivi: tutti i pasti saranno vegetariani, gluten free o vegani. Per ulteriori indicazioni su questo punto, contattaci tramite l'indirizzo mail info@tedxsapienzau.com.",
     },
     {
-      question: "Domanda 6?",
+      question: "Ho difficoltà motorie, potrò portare un accompagnatore?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Se hai difficoltà motorie, ti basterà farcelo sapere: un posto sarà riservato al tuo accompagnatore. Contattaci tramite l’indirizzo mail info+biglietti@tedxsapienzau.com",
+    },
+    {
+      question: "Ho bisogno di ulteriori informazioni, a chi posso rivolgermi?",
+      answer:
+        "Se hai bisogno di ulteriori informazioni, non esitare a contattare i volontari TEDxSapienzaU tramite l’indirizzo mail info@tedxsapienzau.com.",
     },
   ];
 
@@ -118,9 +124,8 @@ const styles = StyleSheet.create({
   answerText: {
     color: "lightgrey",
     fontSize: RFValue(16),
-    padding: 15,
+    padding: 10,
     textAlign: "justify",
-
   },
 });
 
