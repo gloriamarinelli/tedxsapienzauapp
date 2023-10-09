@@ -12,10 +12,32 @@ import { RFValue } from "react-native-responsive-fontsize";
 const windowWidth = Dimensions.get("window").width;
 
 const Speaker = () => {
+  const SpeakerCard = ({ name, image, description }) => {
+    //Craete a speaker card to be displayed vertically
+    return (
+      <View
+        style={{
+          width: "100%",
+          height: 250,
+          backgroundColor: "red",
+        }}
+      >
+        <Image
+          source={image}
+          style={{ position: "absolute", maxHeight: 250, width: "100%" }}
+        />
+        <Text style={styles.text1}>{name}</Text>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={{ color: "white" }}> Speakers </Text>
+        <SpeakerCard
+          name={"Nome Cognome"}
+          image={require("../images/speakers/rose_villain.png")}
+        />
       </ScrollView>
     </SafeAreaView>
   );
