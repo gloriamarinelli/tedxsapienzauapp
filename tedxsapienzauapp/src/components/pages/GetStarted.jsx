@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -6,13 +6,32 @@ import {
   ImageBackground,
   Pressable,
   Dimensions,
+  Image,
+  TouchableOpacity,
 } from "react-native";
 
-const PlaceholderImage = require("../images/location2bis-transformed.png");
+const PlaceholderImage = require("../images/sfondo3.png");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
+const itaFlag = require("../images/itaFlag.png");
+const ukFlag = require("../images/ukFlag.png");
+
 
 const GetStarted = ({ navigation }) => {
+
+  const [buttonText, setButtonText] = useState('Iniziamo');
+  const [attivo, setAttivo] = useState('1');
+  function handleClickEng() {
+    setButtonText('Get Started');
+    setAttivo('2');
+
+  }
+  function handleClickIta() {
+    setButtonText('Iniziamo');
+    setAttivo('1');
+  }
+
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -22,29 +41,29 @@ const GetStarted = ({ navigation }) => {
           <Text style={styles.text2}></Text>
           
           <View style={styles.buttonContainer1}>
-            <Pressable
-              style={styles.button1}
-              onPress={() => navigation.navigate("Vision")}
-            >
+            <TouchableOpacity
+              style={attivo=='1'?styles.button1:styles.button2}
+              onPress={handleClickIta}>
+                <Image source={itaFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ITA"}</Text>
-            </Pressable>
+            </TouchableOpacity>
             <Text style={styles.text2}>'   '</Text>
-            <Pressable
-              style={styles.button2}
-              onPress={() => navigation.navigate("Vision")}
-            >
+            <TouchableOpacity
+              style={attivo=='2'?styles.button1:styles.button2}
+              onPress={handleClickEng}>
+                <Image source={ukFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ENG"}</Text>
-            </Pressable>
+            </TouchableOpacity>
 
           </View>
 
           <View style={styles.buttonContainer}>
-            <Pressable
+            <TouchableOpacity
               style={styles.button}
               onPress={() => navigation.navigate("Vision")}
             >
-              <Text style={styles.buttonLabel}>{"Get Started"}</Text>
-            </Pressable>
+              <Text style={styles.buttonLabel}>{buttonText}</Text>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
       </View>
@@ -151,7 +170,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    backgroundColor: "#eb0028",
+    backgroundColor: "#001111",
     borderRadius: 18,
     gap: 10,
   },
@@ -169,6 +188,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
+  flagIcon:{
+    justifyContent: "center",
+    alignItems: "center",
+    width: 45,
+    height: 45,
+
+  }
 });
 
 export default GetStarted;
