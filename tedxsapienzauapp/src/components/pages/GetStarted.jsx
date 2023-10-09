@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -16,21 +16,17 @@ const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
 const ukFlag = require("../images/ukFlag.png");
 
-
 const GetStarted = ({ navigation }) => {
-
-  const [buttonText, setButtonText] = useState('Iniziamo');
-  const [attivo, setAttivo] = useState('1');
+  const [buttonText, setButtonText] = useState("Iniziamo");
+  const [attivo, setAttivo] = useState("1");
   function handleClickEng() {
-    setButtonText('Get Started');
-    setAttivo('2');
-
+    setButtonText("Get Started");
+    setAttivo("2");
   }
   function handleClickIta() {
-    setButtonText('Iniziamo');
-    setAttivo('1');
+    setButtonText("Iniziamo");
+    setAttivo("1");
   }
-
 
   return (
     <View style={styles.container}>
@@ -39,22 +35,22 @@ const GetStarted = ({ navigation }) => {
           <Text style={styles.text}>Ideas • Worth • Spreading</Text>
           <Text style={styles.text1}>________________</Text>
           <Text style={styles.text2}></Text>
-          
+
           <View style={styles.buttonContainer1}>
             <TouchableOpacity
-              style={attivo=='1'?styles.button1:styles.button2}
-              onPress={handleClickIta}>
-                <Image source={itaFlag} style={styles.flagIcon}></Image>
+              style={attivo === "1" ? styles.button1 : styles.button2}
+              onPress={handleClickIta}
+            >
+              <Image source={itaFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ITA"}</Text>
             </TouchableOpacity>
-            <Text style={styles.text2}>'   '</Text>
             <TouchableOpacity
-              style={attivo=='2'?styles.button1:styles.button2}
-              onPress={handleClickEng}>
-                <Image source={ukFlag} style={styles.flagIcon}></Image>
+              style={attivo === "2" ? styles.button1 : styles.button2}
+              onPress={handleClickEng}
+            >
+              <Image source={ukFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ENG"}</Text>
             </TouchableOpacity>
-
           </View>
 
           <View style={styles.buttonContainer}>
@@ -124,7 +120,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     bottom: 60,
     position: "absolute",
-    
   },
   buttonContainer1: {
     display: "flex",
@@ -133,9 +128,8 @@ const styles = StyleSheet.create({
     bottom: 140,
     position: "absolute",
     marginHorizontal: "auto",
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 20,
-    
   },
   button: {
     display: "flex",
@@ -150,7 +144,7 @@ const styles = StyleSheet.create({
   },
   button1: {
     display: "flex",
-    flex:1,
+    flex: 1,
     borderRadius: 10,
     width: 120,
     height: 50,
@@ -163,7 +157,7 @@ const styles = StyleSheet.create({
   },
   button2: {
     display: "flex",
-    flex:1,
+    flex: 1,
     borderRadius: 10,
     width: 120,
     height: 50,
@@ -181,20 +175,19 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: "white",
-    fontSize: 24,
+    fontSize: 19,
     justifyContent: "center",
     alignItems: "center",
     paddingRight: 15,
     textAlign: "center",
     fontWeight: "bold",
   },
-  flagIcon:{
+  flagIcon: {
     justifyContent: "center",
     alignItems: "center",
-    width: 45,
-    height: 45,
-
-  }
+    width: 30,
+    height: 30,
+  },
 });
 
 export default GetStarted;

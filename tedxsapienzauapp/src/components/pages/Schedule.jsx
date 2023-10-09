@@ -13,13 +13,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const PlaceholderImage = require("../images/Red-Circle.png");
-const Sfondo1 = require("../images/bubble.png");
 
 const Schedule = () => {
-  
   return (
     <ScrollView style={styles.page}>
-      <ImageBackground source={Sfondo1} resizeMode="cover">
       {/* evento 1 */}
       <Card containerStyle={styles.card}>
         <View style={styles.card1}>
@@ -34,7 +31,7 @@ const Schedule = () => {
           </View>
         </View>
       </Card>
-{/* evento 2 */}
+      {/* evento 2 */}
       <Card containerStyle={styles.card}>
         <View style={styles.card1}>
           <View containerStyle={styles.container2}>
@@ -90,43 +87,40 @@ const Schedule = () => {
           </View>
         </View>
       </Card>
-    </ImageBackground>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  page:{
-    backgroundColor: 'black',
-    display:'flex',
-
+  page: {
+    backgroundColor: "black",
+    display: "flex",
   },
-  card:{
-    color: 'black',
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    display:'flex',
-    flexDirection: 'row',
-    shadowColor: 'black',
+  card: {
+    color: "black",
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
+    display: "flex",
+    flexDirection: "row",
+    shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
     shadowOpacity: 0.26,
     borderRadius: 10,
-    borderColor: '#181818',
+    borderColor: "#181818",
   },
-  card1:{
-    color: 'black',
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    display:'flex',
-    flexDirection: 'row',
-    shadowColor: 'black',
+  card1: {
+    color: "black",
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
+    display: "flex",
+    flexDirection: "row",
+    shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
     shadowOpacity: 0.26,
     borderRadius: 10,
-    borderColor: ' 	#181818',
+    borderColor: " 	#181818",
     gap: 20,
   },
-
 
   text: {
     fontSize: 36,
@@ -139,67 +133,60 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 130,
-    justifyContent: 'center',
-    alignItems: 'center', 
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    color: 'black',
-    flexDirection: 'row',
-    float: 'left',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
+    color: "black",
+    flexDirection: "row",
+    float: "left",
   },
   text1: {
     fontSize: 20,
     lineHeight: 21,
     fontWeight: "bold",
     color: "white",
-    flexDirection: 'row',
-    padding: '10px',
+    flexDirection: "row",
+    padding: "10px",
   },
   text2: {
     fontSize: 15,
     lineHeight: 21,
     letterSpacing: 0.5,
     color: "white",
-    flexDirection: 'row',
-    padding: '10px',
+    flexDirection: "row",
+    padding: "10px",
   },
   imageContainer: {
     width: 130,
     height: 130,
-    justifyContent: 'flex-start',
-    alignItems: 'center', 
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    color: 'black',
-    float: 'left',
+    justifyContent: "flex-start",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
+    color: "black",
+    float: "left",
     flex: 1,
-
   },
   imageContainer2: {
     width: 130,
     height: 130,
-    justifyContent: 'flex-end',
-    alignItems: 'center', 
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    color: 'black',
+    justifyContent: "flex-end",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
+    color: "black",
     flex: 1,
-
   },
-  container:{
-    flex:2,
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    color: 'black',
-    justifyContent: 'flex-end',
-
+  container: {
+    flex: 2,
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
+    color: "black",
+    justifyContent: "flex-end",
   },
-  container2:{
-    flex:2,
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    color: 'black',
-    justifyContent: 'flex-start',
-    
-
+  container2: {
+    flex: 2,
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
+    color: "black",
+    justifyContent: "flex-start",
   },
-
 });
-
 
 export default Schedule;

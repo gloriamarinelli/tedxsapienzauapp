@@ -13,7 +13,6 @@ const windowWidth = Dimensions.get("window").width;
 
 const Speaker = () => {
   const SpeakerCard = ({ name, image, description }) => {
-    //Craete a speaker card to be displayed vertically
     return (
       <View
         style={{
@@ -36,7 +35,7 @@ const Speaker = () => {
       <ScrollView>
         <SpeakerCard
           name={"Nome Cognome"}
-          image={require("../images/speakers/rose_villain.png")}
+          image={require("../images/speakers/rose_villain.jpg")}
         />
       </ScrollView>
     </SafeAreaView>

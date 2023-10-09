@@ -47,24 +47,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    paddingLeft: 10,
-    paddingRight: 10,
   },
   container1: {
     flex: 1,
     backgroundColor: "black",
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
+    padding: 15
+
   },
   text: {
-    paddingTop: 15,
+    marginTop: 18,
     fontSize: RFValue(18),
     color: "white",
     textAlign: "justify",
   },
   text1: {
-    paddingTop: 15,
     fontSize: RFValue(20),
     color: "white",
     textAlign: "center",

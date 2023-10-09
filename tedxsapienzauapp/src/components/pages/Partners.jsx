@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: "100%",
-    height: 50, // Adjust the height as needed
+    height: 50,
     resizeMode: "contain",
     transform: [{ scale: 1.35 }],
   },
