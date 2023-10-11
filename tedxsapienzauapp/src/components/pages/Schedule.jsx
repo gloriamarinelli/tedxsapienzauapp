@@ -93,7 +93,7 @@ const Schedule = () => {
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: "black",
+    backgroundColor: "#0b0c0e",
     display: "flex",
   },
   card: {

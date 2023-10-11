@@ -99,7 +99,7 @@ const FAQ = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#0b0c0e",
   },
   faqItem: {
     borderBottomColor: "white",
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionText: {
-    color: "#E62B1E",
+    color: "#eb0028",
     fontSize: RFValue(20),
     fontWeight: "bold",
   },

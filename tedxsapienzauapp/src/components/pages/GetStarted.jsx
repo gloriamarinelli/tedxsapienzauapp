@@ -19,6 +19,7 @@ const ukFlag = require("../images/ukFlag.png");
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
   const [attivo, setAttivo] = useState("1");
+  
   function handleClickEng() {
     setButtonText("Get Started");
     setAttivo("2");
@@ -70,7 +71,7 @@ const GetStarted = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "#000",
+    backgroundColor: "#0b0c0e",
   },
   title: {
     fontSize: 24,

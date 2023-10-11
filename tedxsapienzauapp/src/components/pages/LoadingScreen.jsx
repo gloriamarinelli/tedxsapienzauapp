@@ -42,7 +42,7 @@ const LoadingTransition = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#0b0c0e',
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -149,7 +149,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}
@@ -163,7 +163,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}
@@ -177,7 +177,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}
@@ -191,7 +191,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}
@@ -205,7 +205,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}
@@ -219,7 +219,7 @@ const App = () => {
               headerBackTitleVisible: false,
               headerLeft: () => null,
               headerStyle: {
-                backgroundColor: "#000",
+                backgroundColor: "#0b0c0e",
                 height: 150,
               },
             })}

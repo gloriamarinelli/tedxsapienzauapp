@@ -45,11 +45,11 @@ const Speaker = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#0b0c0e",
   },
   container1: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#0b0c0e",
     paddingTop: 20,
   },
   text: {
