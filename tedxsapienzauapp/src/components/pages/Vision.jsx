@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -6,12 +6,21 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
+  useAnimatedValue,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 const windowWidth = Dimensions.get("window").width;
 
-const Vision = () => {
+const Vision = ({ language }) => {
+  useEffect(() => {
+    if (language == "en") {
+      console.log("en");
+    } else {
+      console.log("it");
+    }
+  }, [language]);
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -51,8 +60,7 @@ const styles = StyleSheet.create({
   container1: {
     flex: 1,
     backgroundColor: "black",
-    padding: 15
-
+    padding: 15,
   },
   text: {
     marginTop: 18,

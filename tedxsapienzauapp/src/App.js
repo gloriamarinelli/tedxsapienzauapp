@@ -31,6 +31,7 @@ const AppStack = createStackNavigator();
 const App = () => {
   const CustomHeader = ({ navigation }) => {
     const [selectedButton, setSelectedButton] = useState("Vision");
+    const [language, setLanguage] = useState("ita");
 
     useEffect(() => {
       let currentPage =
@@ -142,7 +143,6 @@ const App = () => {
           />
           <AppStack.Screen
             name="Vision"
-            component={Vision}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
@@ -153,7 +153,9 @@ const App = () => {
                 height: 150,
               },
             })}
-          />
+          >
+            {(language) => <Vision language={language} />}
+          </AppStack.Screen>
           <AppStack.Screen
             name="Schedule"
             component={Schedule}

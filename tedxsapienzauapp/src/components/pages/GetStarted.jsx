@@ -18,6 +18,7 @@ const ukFlag = require("../images/ukFlag.png");
 
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
+  
   const [attivo, setAttivo] = useState("1");
   
   function handleClickEng() {
