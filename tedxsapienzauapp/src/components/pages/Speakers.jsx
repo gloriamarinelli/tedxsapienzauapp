@@ -16,7 +16,7 @@ const windowWidth = Dimensions.get("window").width;
 const PlaceholderImage = require("../images/Red-Circle.png");
 
 const Speaker = () => {
-  const SpeakerCard = ({ name, image, description, time }) => {
+  const SpeakerCard = ({ name, image, description, time, circlePosition }) => {
     return (
       <View
         style={{
@@ -24,6 +24,7 @@ const Speaker = () => {
           height: 250,
           backgroundColor: "#000",
           position: "relative",
+          marginBottom: 20,
         }}
       >
         <Image
@@ -37,7 +38,7 @@ const Speaker = () => {
         />
         <LinearGradient
           style={{ width: "100%", height: "100%", position: "absolute" }}
-          colors={["transparent", "rgba(0, 0, 0, 0.8)"]}
+          colors={["transparent", "rgba(0, 0, 0, 0.65)"]}
           locations={[0, 0.85]}
         >
           <Text style={styles.text1}>{name}</Text>
@@ -45,7 +46,8 @@ const Speaker = () => {
             source={PlaceholderImage}
             style={{
               position: "absolute",
-              right: 5,
+              right: circlePosition === "left" ? null : 5,
+              left: circlePosition === "left" ? 5 : null,
               top: 5,
               width: 80,
               aspectRatio: 1,
@@ -67,12 +69,30 @@ const Speaker = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <SpeakerCard
+          name={"Damiano Tullio"}
+          image={require("../images/speakers/damiano_tullio.jpg")}
+          time={"10:15"}
+        />
+        <SpeakerCard
+          name={"Ilaria Lucrezia Rossi"}
+          image={require("../images/speakers/ilaria_rossi.jpg")}
+          time={"15:45"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
           name={"Rose Villain"}
           image={require("../images/speakers/rose_villain.jpg")}
-          description={
-            "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-          }
-          time={"17:00"}
+          time={"15:45"}
+        />
+        <SpeakerCard
+          name={"Nakita Aboya"}
+          image={require("../images/speakers/nakita.jpg")}
+          time={"16:15"}
+        />
+        <SpeakerCard
+          name={"Nina Lambarelli"}
+          image={require("../images/speakers/nina.jpg")}
+          time={"12:45"}
         />
       </ScrollView>
     </SafeAreaView>
