@@ -9,6 +9,7 @@ import Vision from "./components/pages/Vision.jsx";
 import FAQ from "./components/pages/FAQ.jsx";
 import Speakers from "./components/pages/Speakers.jsx";
 import Map from "./components/pages/Map.jsx";
+import Bacheca from "./components/pages/Bacheca.jsx";
 import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
@@ -24,6 +25,7 @@ const routes = [
   "FAQ",
   "Partners",
   "Map",
+  "Bacheca",
 ];
 
 const AppStack = createStackNavigator();
@@ -49,7 +51,9 @@ const App = () => {
             justifyContent: "space-around",
           }}
         >
-          <FontAwesome5 name="bell" size={25} color="white" />
+          <Pressable onPress={() => navigation.navigate("Bacheca")}>
+            <FontAwesome5 name="bell" size={25} color="white" />
+          </Pressable>
           <Image
             style={{ width: 200, height: 30 }}
             source={require("./components/images/logo-white.png")}
@@ -213,6 +217,20 @@ const App = () => {
           <AppStack.Screen
             name="Map"
             component={Map}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: () => <CustomHeader navigation={navigation} />,
+              headerBackTitleVisible: false,
+              headerLeft: () => null,
+              headerStyle: {
+                backgroundColor: "#0b0c0e",
+                height: 150,
+              },
+            })}
+          />
+          <AppStack.Screen
+            name="Bacheca"
+            component={Bacheca}
             options={({ navigation, route }) => ({
               headerShown: true,
               headerTitle: () => <CustomHeader navigation={navigation} />,
