@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoadingScreen from "./components/pages/LoadingScreen.jsx";
@@ -14,6 +14,8 @@ import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
 import { FontAwesome5 } from "@expo/vector-icons";
+
+export const LanguageContext = createContext();
 
 const routes = [
   "LoadingScreen",
@@ -31,6 +33,8 @@ const routes = [
 const AppStack = createStackNavigator();
 
 const App = () => {
+  const [language, setLanguage] = useState('ita');
+
   const CustomHeader = ({ navigation }) => {
     const [selectedButton, setSelectedButton] = useState("Vision");
 
@@ -126,125 +130,127 @@ const App = () => {
   };
 
   return (
-    <NavigationContainer>
-      <AppStack.Navigator>
-        <>
-          <AppStack.Screen
-            name="LoadingScreen"
-            component={LoadingScreen}
-            options={{ headerShown: false }}
-          />
-          <AppStack.Screen
-            name="LoadingTransition"
-            component={LoadingTransition}
-            options={{ headerShown: false }}
-          />
-          <AppStack.Screen
-            name="GetStarted"
-            component={GetStarted}
-            options={{ headerShown: false }}
-          />
-          <AppStack.Screen
-            name="Vision"
-            component={Vision}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="Schedule"
-            component={Schedule}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="Speakers"
-            component={Speakers}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="FAQ"
-            component={FAQ}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="Partners"
-            component={Partners}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="Map"
-            component={Map}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-          <AppStack.Screen
-            name="Bacheca"
-            component={Bacheca}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: () => <CustomHeader navigation={navigation} />,
-              headerBackTitleVisible: false,
-              headerLeft: () => null,
-              headerStyle: {
-                backgroundColor: "#0b0c0e",
-                height: 150,
-              },
-            })}
-          />
-        </>
-      </AppStack.Navigator>
-    </NavigationContainer>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      <NavigationContainer>
+        <AppStack.Navigator>
+          <>
+            <AppStack.Screen
+              name="LoadingScreen"
+              component={LoadingScreen}
+              options={{ headerShown: false }}
+            />
+            <AppStack.Screen
+              name="LoadingTransition"
+              component={LoadingTransition}
+              options={{ headerShown: false }}
+            />
+            <AppStack.Screen
+              name="GetStarted"
+              component={GetStarted}
+              options={{ headerShown: false }}
+            />
+            <AppStack.Screen
+              name="Vision"
+              component={Vision}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="Schedule"
+              component={Schedule}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="Speakers"
+              component={Speakers}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="FAQ"
+              component={FAQ}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="Partners"
+              component={Partners}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="Map"
+              component={Map}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+            <AppStack.Screen
+              name="Bacheca"
+              component={Bacheca}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+          </>
+        </AppStack.Navigator>
+      </NavigationContainer>
+    </LanguageContext.Provider>
   );
 };
 
