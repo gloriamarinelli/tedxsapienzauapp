@@ -18,20 +18,32 @@ import { Feather } from "@expo/vector-icons";
 const windowWidth = Dimensions.get("window").width;
 const PlaceholderImage = require("../images/Red-Circle.png");
 
+const speakersBio = {
+  "Damiano Tullio": "Descrizione di Damiano Tullio ",
+  "Ilaria Lucrezia Rossi": "Descrizione di Ilaria Lucrezia Rossi",
+  "Edward von Freymann": "Descrizione di Edward von Freymann ",
+  "Riccardo Basilone": "Descrizione di Riccardo Basilone ",
+  "Gloria Schito": "Descrizione di Gloria Schito",
+  "Matteo Cervellini": "Descrizione di Matteo Cervellini ",
+  "Ana Estrela": "Descrizione di Ana Estrela",
+  "Nina Lambarelli": "Descrizione di Nina Lambarelli ",
+  "Marcello Ienca": "Descrizione di Marcello Ienca ",
+  "Rose Villain": "Descrizione di Rose Villain",
+  "Silvano Onofri": "Descrizione di Silvano Onofri ",
+  "Nakita Aboya": "Descrizione di Nakita Aboya ",
+};
+
 const Speaker = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentDescription, setCurrentDescription] = useState(
     "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
   );
+  const [currentSpeakerImage, setCurrentSpeakerImage] = useState("");
+  const [currentSpeaker, setCurrentSpeaker] = useState("");
 
-  const DescriptionModal = ({ name, image, description }) => {
+  const DescriptionModal = ({ description }) => {
     return (
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
+      <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View
           style={{
             flex: 1,
@@ -46,10 +58,39 @@ const Speaker = () => {
               height: "60%",
               backgroundColor: "#fff",
               borderRadius: 10,
+              display: "flex",
+              alignItems: "center",
               padding: 20,
             }}
           >
-            <Text style={{ fontSize: 16, color: "black" }}>{description}</Text>
+            <Text
+              style={{ fontSize: 25, fontWeight: "bold", marginBottom: 10 }}
+            >
+              {currentSpeaker}
+            </Text>
+            <Text style={{ fontSize: 18, color: "black" }}>{description}</Text>
+            <Pressable
+              style={{
+                position: "absolute",
+                bottom: 20,
+                backgroundColor: "#eb0028",
+                borderRadius: 10,
+              }}
+            >
+              <Text
+                onPress={() => setModalVisible(false)}
+                style={{
+                  color: "white",
+                  fontSize: 16,
+                  paddingTop: 10,
+                  paddingBottom: 10,
+                  paddingLeft: 20,
+                  paddingRight: 20,
+                }}
+              >
+                Close
+              </Text>
+            </Pressable>
           </View>
         </View>
       </Modal>
@@ -83,7 +124,12 @@ const Speaker = () => {
         >
           <Pressable
             style={{ position: "absolute", bottom: 0, left: 0 }}
-            onPress={() => setModalVisible(true)}
+            onPress={() => {
+              setModalVisible(true);
+              setCurrentDescription(speakersBio[name]);
+              setCurrentSpeakerImage(image);
+              setCurrentSpeaker(name);
+            }}
           >
             <Text style={styles.nameText}>
               {name}
@@ -114,7 +160,7 @@ const Speaker = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <DescriptionModal description={currentDescription} />
       <ScrollView>
         {/**
@@ -189,7 +235,7 @@ const Speaker = () => {
           time={"16:15"}
         />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -197,6 +243,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#0b0c0e",
+    paddingTop: 20,
   },
   nameText: {
     fontSize: RFValue(20),

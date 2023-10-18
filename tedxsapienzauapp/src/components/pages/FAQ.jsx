@@ -55,7 +55,8 @@ const FAQ = () => {
   ];
 
   const iconRotationValues = faqData.map(
-    () => useRef(new Animated.Value(0)).current);
+    () => useRef(new Animated.Value(0)).current
+  );
 
   const toggleAnswer = (index) => {
     Animated.timing(iconRotationValues[index], {
