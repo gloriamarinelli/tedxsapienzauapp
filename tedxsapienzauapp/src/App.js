@@ -33,7 +33,7 @@ const routes = [
 const AppStack = createStackNavigator();
 
 const App = () => {
-  const [language, setLanguage] = useState('ita');
+  const [language, setLanguage] = useState("ita");
 
   const CustomHeader = ({ navigation }) => {
     const [selectedButton, setSelectedButton] = useState("Vision");
@@ -58,10 +58,12 @@ const App = () => {
           <Pressable onPress={() => navigation.navigate("Bacheca")}>
             <FontAwesome5 name="bell" size={25} color="white" />
           </Pressable>
-          <Image
-            style={{ width: 200, height: 30 }}
-            source={require("./components/images/logo-white.png")}
-          />
+          <Pressable onPress={() => navigation.navigate("GetStarted")}>
+            <Image
+              style={{ width: 200, height: 30 }}
+              source={require("./components/images/logo-white.png")}
+            />
+          </Pressable>
           <Pressable onPress={() => navigation.navigate("Map")}>
             <FontAwesome5 name="map-marked-alt" size={24} color="white" />
           </Pressable>

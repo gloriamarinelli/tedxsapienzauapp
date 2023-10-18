@@ -1,22 +1,20 @@
 import React, { useState, useContext } from "react";
-import { LanguageContext } from '../../App.js';
+import { LanguageContext } from "../../App.js";
 import {
   View,
   Text,
   StyleSheet,
   ImageBackground,
-  
   Dimensions,
   Image,
   TouchableOpacity,
 } from "react-native";
 
-const PlaceholderImage = require("../images/sfondo3.png");
+const PlaceholderImage = require("../images/sapienza1X.webp");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
 const ukFlag = require("../images/ukFlag.png");
-
 
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
@@ -36,24 +34,22 @@ const GetStarted = ({ navigation }) => {
       <View style={styles.imageContainer}>
         <ImageBackground source={PlaceholderImage} style={styles.image}>
           <Text style={styles.text}>Ideas • Worth • Spreading</Text>
-          <Text style={styles.text1}>________________</Text>
-          <Text style={styles.text2}></Text>
-
           <View style={styles.buttonContainer1}>
             <TouchableOpacity
               style={language === "ita" ? styles.button1 : styles.button2}
               onPress={handleClickIta}
             >
+
               <Image source={itaFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ITA"}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={language === "eng"? styles.button1 : styles.button2}
+              style={language === "eng" ? styles.button1 : styles.button2}
               onPress={handleClickEng}
             >
               <Image source={ukFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ENG"}</Text>
-            </TouchableOpacity> 
+            </TouchableOpacity>
           </View>
 
           <View style={styles.buttonContainer}>
@@ -61,7 +57,7 @@ const GetStarted = ({ navigation }) => {
               style={styles.button}
               onPress={() => navigation.navigate("Vision")}
             >
-              <Text style={styles.buttonLabel}>{buttonText}</Text>
+              <Text style={styles.buttonLabel1}>{buttonText}</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -178,7 +174,16 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: "white",
-    fontSize: 19,
+    fontSize: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingRight: 15,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+  buttonLabel1: {
+    color: "white",
+    fontSize: 23,
     justifyContent: "center",
     alignItems: "center",
     paddingRight: 15,

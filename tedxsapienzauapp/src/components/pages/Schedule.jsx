@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ImageBackground,
   FlatList,
+  ScrollView,
 } from "react-native";
 import { Card } from "react-native-elements";
 const PlaceholderImage = require("../images/Red-Circle.png");
@@ -60,12 +61,14 @@ const Schedule = () => {
   );
 
   return (
-    <FlatList
-      data={schedule}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.time}
-      style={styles.page}
-    />
+    <ScrollView>
+      <FlatList
+        data={schedule}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.time}
+        style={styles.page}
+      />
+    </ScrollView>
   );
 };
 
