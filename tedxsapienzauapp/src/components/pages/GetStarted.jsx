@@ -73,7 +73,7 @@ const GetStarted = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "#000",
+    backgroundColor: "#00000",
   },
   title: {
     fontSize: 24,
