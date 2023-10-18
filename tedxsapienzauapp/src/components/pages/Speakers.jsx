@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Pressable,
   Modal,
+  Button,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -24,13 +25,17 @@ const Speaker = () => {
     "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
   );
 
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   const DescriptionModal = ({ name, image, description }) => {
     return (
       <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
+        onRequestClose={closeModal}
       >
         <View
           style={{

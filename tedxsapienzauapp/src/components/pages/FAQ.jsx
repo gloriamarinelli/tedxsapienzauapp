@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
+import { LanguageContext } from '../../App.js';
 import {
   View,
   Text,
@@ -13,9 +14,10 @@ import Feather from "react-native-vector-icons/Feather";
 
 const FAQ = () => {
   const [selectedFaqIndex, setSelectedFaqIndex] = useState(null);
-
+  const { language } = useContext(LanguageContext);
+  
   // domande e risposte
-  const faqData = [
+  const faqDataita = [
     {
       question: "Come troverò l'Aula Magna?",
       answer:
@@ -54,6 +56,39 @@ const FAQ = () => {
     },
   ];
 
+  const faqDataeng =[
+    {
+      question: "Where can I find the Aula Magna?",
+      answer: "You will be able to go to the Aula Magna via the side entrance of Palazzo del Rettorato, reaching the second floor. In any case, don't worry: You can consult the map!"
+    },
+    {
+      question: "How can I check-in at the event?",
+      answer: "The Check-in will take place from 08:45 am to 09:30 am. You will just need to show the TEDxSapienzaU volunteers the QRCode of the ticket you received when you made your reservation."
+    },
+    {
+      question: "How long will the event last?",
+      answer: "The event will run from 09:30 to 17:00. Don't worry, you will have a chance to stretch your legs:  two break times are already planned!"
+    },
+    {
+      question: "How can I pick up my lunch box?",
+      answer: "You will be able to pick up your lunch box at the TEDxSapienzaU Village, during the scheduled break from 1:30 pm to 3:00 pm."
+    },
+    {
+      question: "I have intolerances/I am vegetarian, is there any lunch box suitable for my needs?",
+      answer: "Absolutely. Lunch boxes are designed to be inclusive: all meals will be vegetarian, gluten free or vegan. For further guidance regarding the matter, please contact us via email info@tedxsapienzau.com. "
+    },
+    {
+      question: "I have mobility difficulties, will I be able to bring a companion?",
+      answer: "If you have mobility difficulties, just let us know: a place will be reserved for your companion. Contact us via the email address info+biglietti@tedxsapienzau.com."
+    },
+    {
+      question: "I need some additional information, who can I contact?",
+      answer: "If you need more information, please feel free to contact TEDxSapienzaU volunteers via email info@tedxsapienzau.com."
+    },
+  ];
+
+  const faqData = language === 'ita' ? faqDataita : faqDataeng;
+  
   const iconRotationValues = faqData.map(
     () => useRef(new Animated.Value(0)).current);
 

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { LanguageContext } from '../../App.js';
 import {
   View,
   Text,
@@ -16,16 +17,18 @@ const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
 const ukFlag = require("../images/ukFlag.png");
 
+
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
-  const [attivo, setAttivo] = useState("1");
+  const { language, setLanguage } = useContext(LanguageContext);
+
   function handleClickEng() {
     setButtonText("Get Started");
-    setAttivo("2");
+    setLanguage("eng");
   }
   function handleClickIta() {
     setButtonText("Iniziamo");
-    setAttivo("1");
+    setLanguage("ita");
   }
 
   return (
@@ -38,19 +41,19 @@ const GetStarted = ({ navigation }) => {
 
           <View style={styles.buttonContainer1}>
             <TouchableOpacity
-              style={attivo === "1" ? styles.button1 : styles.button2}
+              style={language === "ita" ? styles.button1 : styles.button2}
               onPress={handleClickIta}
             >
               <Image source={itaFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ITA"}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={attivo === "2" ? styles.button1 : styles.button2}
+              style={language === "eng"? styles.button1 : styles.button2}
               onPress={handleClickEng}
             >
               <Image source={ukFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ENG"}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> 
           </View>
 
           <View style={styles.buttonContainer}>
@@ -70,7 +73,7 @@ const GetStarted = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "#000",
+    backgroundColor: "#00000",
   },
   title: {
     fontSize: 24,
