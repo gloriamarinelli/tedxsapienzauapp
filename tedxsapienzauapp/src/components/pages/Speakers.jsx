@@ -70,7 +70,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "60%",
+              height: "75%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
