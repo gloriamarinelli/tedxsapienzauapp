@@ -90,6 +90,7 @@ const Speaker = () => {
                     fontSize: 15,
                     color: "black",
                     lineHeight: 20,
+                    textAlign: "justify",
                   }}
                 >
                   {description}
