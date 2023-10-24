@@ -15,6 +15,7 @@ const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
 const ukFlag = require("../images/ukFlag.png");
+import global from "../../resources/global.json";
 
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
@@ -39,7 +40,6 @@ const GetStarted = ({ navigation }) => {
               style={language === "ita" ? styles.button1 : styles.button2}
               onPress={handleClickIta}
             >
-
               <Image source={itaFlag} style={styles.flagIcon}></Image>
               <Text style={styles.buttonLabel}>{"ITA"}</Text>
             </TouchableOpacity>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    backgroundColor: "#eb0028",
+    backgroundColor: global.COLORS.RED,
     borderRadius: 18,
   },
   button1: {
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    backgroundColor: "#eb0028",
+    backgroundColor: global.COLORS.RED,
     borderRadius: 18,
     gap: 10,
   },

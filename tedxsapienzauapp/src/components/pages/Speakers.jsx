@@ -15,6 +15,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
+import global from "../../resources/global.json";
 
 const windowWidth = Dimensions.get("window").width;
 const PlaceholderImage = require("../images/Red-Circle.png");
@@ -101,7 +102,7 @@ const Speaker = () => {
               style={{
                 position: "absolute",
                 bottom: 20,
-                backgroundColor: "#eb0028",
+                backgroundColor: global.COLORS.RED,
                 borderRadius: 10,
               }}
             >

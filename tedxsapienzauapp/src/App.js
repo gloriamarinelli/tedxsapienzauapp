@@ -14,6 +14,7 @@ import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
 import { FontAwesome5 } from "@expo/vector-icons";
+import global from "./resources/global.json";
 
 export const LanguageContext = createContext();
 
@@ -276,10 +277,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   selectedButton: {
-    color: "#eb0028",
+    color: global.COLORS.RED,
     fontWeight: "bold",
     transform: [{ scale: 1.1 }],
   },
 });
 
-//#eb0028
+//global.COLORS.RED

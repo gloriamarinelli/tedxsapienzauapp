@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import Feather from "react-native-vector-icons/Feather";
+import global from "../../resources/global.json";
 
 const FAQ = () => {
   const [selectedFaqIndex, setSelectedFaqIndex] = useState(null);
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionText: {
-    color: "#eb0028",
+    color: global.COLORS.RED,
     fontSize: RFValue(20),
     fontWeight: "bold",
   },
