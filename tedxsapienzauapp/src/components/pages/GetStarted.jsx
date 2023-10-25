@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const PlaceholderImage = require("../images/sapienza1X.webp");
+const PlaceholderImage = require("../images/sapienza1Xv2.webp");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    bottom: 235,
+    bottom: 205,
     position: "absolute",
     textAlignVertical: "center",
     textAlign: "center",
@@ -117,14 +117,14 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     justifyContent: "center",
-    bottom: 60,
+    bottom: 20,
     position: "absolute",
   },
   buttonContainer1: {
     display: "flex",
     width: 320,
     height: 60,
-    bottom: 140,
+    bottom: 90,
     position: "absolute",
     marginHorizontal: "auto",
     flexDirection: "row",

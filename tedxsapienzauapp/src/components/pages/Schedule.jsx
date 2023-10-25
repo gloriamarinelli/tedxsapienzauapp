@@ -35,6 +35,46 @@ const Schedule = () => {
       titolo: "Sessione I",
       text: "Damiano Tullio, Ilaria Lucrezia Rossi, Edward von Freymann, Riccardo Basilone",
     },
+    {
+      time: "11:30",
+      titolo: "I break",
+    },
+    {
+      time: "12:00",
+      titolo: "Sessione II",
+      text: "GLoria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
+    },
+    {
+      time: "13:00",
+      titolo: "Lunch break presso il Village TEDxSapienzaU",
+    },
+    {
+      time: "15:00",
+      titolo: "TED GLOBAL",
+    },
+    {
+      time: "15:15",
+      titolo: "Interventi istituzionali",
+      text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma ",
+    },
+    {
+      time: "15:30",
+      titolo: "Sessione III",
+      text: "Marcello Ienca, Rose Villain, Silvano Onofri, Nakita Aboya",
+    },
+    {
+      time: "16:30",
+      titolo: "Ringraziamenti da parte dei volontari e del team TEDxSapienzaU",
+    },
+    {
+      time: "16:45",
+      titolo: "Intrattenimento Musicale - MUSA Sapienza",
+    },
+    {
+      time: "17:00",
+      titolo: "Saluti finali",
+    },
+
   ];
 
   const scheduleEng = [
@@ -42,6 +82,60 @@ const Schedule = () => {
       time: "08:45",
       titolo: "Credits",
     },
+    {
+      time: "09:45",
+      titolo: "Initial Presentation",
+    },
+    {
+      time: "10:00",
+      titolo: "Institutional greetings",
+      text: "Prof. Massimo Ralli, Delegato per il TEDxSapienzaU",
+    },
+    {
+      time: "10:15",
+      titolo: "Session I",
+      text: "Damiano Tullio, Ilaria Lucrezia Rossi, Edward von Freymann, Riccardo Basilone",
+    },
+    {
+      time: "11:30",
+      titolo: "I break",
+    },
+    {
+      time: "12:00",
+      titolo: "Session II",
+      text: "GLoria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
+    },
+    {
+      time: "13:00",
+      titolo: "Lunch break at the Village TEDxSapienzaU",
+    },
+    {
+      time: "15:00",
+      titolo: "TED GLOBAL",
+    },
+    {
+      time: "15:15",
+      titolo: "institutional Interventions",
+      text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma ",
+    },
+    {
+      time: "15:30",
+      titolo: "Session III",
+      text: "Marcello Ienca, Rose Villain, Silvano Onofri, Nakita Aboya",
+    },
+    {
+      time: "16:30",
+      titolo: "Thanks from the volunteers and TEDxSapienzaU team",
+    },
+    {
+      time: "16:45",
+      titolo: "Musical Entertainment - MUSA Sapienza",
+    },
+    {
+      time: "17:00",
+      titolo: "Final greetings",
+    },
+
   ];
 
   const schedule = language === "ita" ? scheduleIta : scheduleEng;
