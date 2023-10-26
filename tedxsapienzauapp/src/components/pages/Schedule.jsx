@@ -74,7 +74,6 @@ const Schedule = () => {
       time: "17:00",
       titolo: "Saluti finali",
     },
-
   ];
 
   const scheduleEng = [
@@ -135,14 +134,13 @@ const Schedule = () => {
       time: "17:00",
       titolo: "Final greetings",
     },
-
   ];
 
   const schedule = language === "ita" ? scheduleIta : scheduleEng;
 
   const renderItem = ({ item }) => (
     <View key={item.time} style={{ flexDirection: "row", marginBottom: 10 }}>
-      <ImageBackground source={PlaceholderImage} style={styles.image}>
+      <ImageBackground source={PlaceholderImage} style={styles.imageBackground}>
         <Text style={styles.text}>{item.time}</Text>
       </ImageBackground>
       <Card containerStyle={styles.card}>
@@ -159,7 +157,7 @@ const Schedule = () => {
       <FlatList
         data={schedule}
         renderItem={renderItem}
-        keyExtractor={(item) => item.time}
+        keyExtractor={(item, index) => `${item.time}-${index}`}
         style={styles.page}
       />
     </ScrollView>
@@ -185,15 +183,12 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
   },
-  image: {
+  imageBackground: {
     width: 130,
     height: 130,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.0)",
-    color: "black",
-    flexDirection: "row",
-    float: "left",
     marginRight: 10,
   },
   text: {
@@ -205,7 +200,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text1: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
     color: "white",
     textAlign: "center",
