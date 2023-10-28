@@ -21,29 +21,53 @@ const PlaceholderImage = require("../images/Red-Circle.png");
 
 const speakersBio = {
   "Damiano Tullio":
-    "Damiano Tullio è un antropologo ,divulgatore, naturalista,Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi.  Il suo vero spazio didattico sono  i luoghi  incontaminati, gran parte del suo lavoro consiste nel riavvicinare le persone alla natura selvaggia, che risiede nei  luoghi non antropizzati e nelle isole addormentate dell’anima,  troppo spesso lasciate dai più inesplorate. Dimensioni di avventura, consapevolezza ed evoluzione  personale che vedono  la loro completa realizzazione non solo nel suo lavoro di antropologo, ma anche  nelle sue attività di Guida Federtrek, e Formatore Nazionale CSEN per il Forestbathing,  che confluiscono  con un approccio integrato nel progetto Antropostudio, fondato nel 2007 e che, ad oggi, raggiunge con la sua missione centinaia di persone coinvolgendole in esperienze dirette sul campo ed attraverso le diverse presenze in seminari, congressi e trasmissioni , che hanno raccontato la storia del progetto Antropostudio. In questo paradigma, i boschi stessi, le grotte e le vette si trasformano in un’aula di lavoro in cui svolgere attività di Formazione in ambito  scolastico, aziendale e terapeutico per aprire le porte del proprio ascolto interiore verso l’indagine del mondo selvaggio che risiede dentro e fuori di noi.  Nei suoi corsi di formazione definisce questo metodo di riavvicinamento ad orientamento AntropoEcologico come Rewilding Esistenziale, un processo che permette un risveglio emozionale dell’individuo  attraverso il rapporto diretto con gli elementi naturali. Il Rewilding mira ad un reinserimento  dell’Uomo in contesti totalmente non antropizzati ed al suo riadattamento dal punto di vista esperienziale e psicologico verso l’autentico orizzonte archetipico Uomo/Natura.   Per realizzare tutto questo è costante durante questi progetti il riferimento alle società tradizionali studiate sul campo che ancora oggi conservano tali sopravvivenze primitive,  un patrimonio di saperi , competenze e tradizioni vernacolari fondamentali per il nostro futuro che debbono essere tutelati e tramandati alle generazioni future.  ",
+    "Damiano Tullio è un antropologo, divulgatore, naturalista, Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi. ",
   "Ilaria Lucrezia Rossi": "Descrizione di Ilaria Lucrezia Rossi",
-  "Edward von Freymann": "Descrizione di Edward von Freymann ",
+  "Edward von Freymann":
+    "Edward von Freymann: un padre che dopo la morte prematura della sua unica figlia Gaia, ha costituito la fondazione Gaia von Freymann per tenere sempre vivo il suo ricordo andando nelle scuole insieme alla polizia stradale a sensibilizzare i ragazzi nell'educazione stradale e l'abbattimento delle barriere architettoniche. Dopo 2 processi, ha messo a disposizione gratuitamente i propri avvocati e psicologi per le famiglie vittime della strada.  ",
   "Riccardo Basilone":
-    "Riccardo Basilone ha 24 anni ed è nato e cresciuto a Toronto, in Canada. Ha imparato l’italiano dopo essersi trasferito a Milano, dove ha frequentato il liceo classico e si è laureato in Fisica. Vive a Roma da due anni, per finire i suoi studi magistrali di Fisica e per suonare nelle strade della città. L’arte di strada è il suo lavoro, che gli dà la possibilità di comunicare ogni giorno con il resto del mondo, attraverso la sua musica. Gli esseri umani sono gli unici animali in grado di esprimere incomprensione. Come facciamo a capirci tra di noi, e perché vogliamo di farlo? Il discorso di Riccardo esplora la comunicazione umana attraverso la storia della sua vita. L’arte e la scienza fanno trionfare la civiltà umana in un problema che all’apparenza sembra semplice, ma nasconde complessità di livello filosofico.",
+    "Riccardo Basilone ha 24 anni ed è nato e cresciuto a Toronto, in Canada. Ha imparato l'italiano dopo essersi trasferito a Milano, dove ha frequentato il liceo classico e si è laureato in Fisica. Vive a Roma da due anni, per finire i suoi studi magistrali di Fisica e per suonare nelle strade della città. L'arte di strada è il suo lavoro, che gli dà la possibilità di comunicare ogni giorno con il resto del mondo, attraverso la sua musica. Gli esseri umani sono gli unici animali in grado di esprimere incomprensione. Come facciamo a capirci tra di noi, e perché vogliamo di farlo? Il discorso di Riccardo esplora la comunicazione umana attraverso la storia della sua vita. L'arte e la scienza fanno trionfare la civiltà umana in un problema che all'apparenza sembra semplice, ma nasconde complessità di livello filosofico.",
   "Gloria Schito":
-    "Gloria Schito, in arte glojoined, è una fashion content creator e imprenditrice. Classe 1995, muove i suoi primi passi nel mondo del digitale giovanissima grazie alla sua passione: la moda. In breve tempo crea una community solida e affiatata, con cui condivide look, consigli, pensieri. Nel frattempo è Ingegnere informatico e si specializza in management engineering. Dopo qualche anno, nel 2021, Gloria arriva anche nelle librerie con una guida su come trovare il proprio stile, intitolata “A far la moda comincia tu”. La sua innata curiosità l’ha sempre spinta a cercare e innovare, e recentemente è atterrata nel mondo del Metaverso, creando il concetto di Metafashion. Metafashion è un termine che  identifica una moda innovativa nel metaverso, che a differenza  sarà più interattiva e stimolante di quella reale, offrendo un’esperienza di shopping immersiva svolta digitalmente comodamente da casa.",
+    "Gloria Schito, in arte @glojoined, è una fashion content creator e imprenditrice. Classe 1995, muove i suoi primi passi nel mondo del digitale giovanissima grazie alla sua passione: la moda. In breve tempo crea una community solida e affiatata, con cui condivide look, consigli, pensieri. Nel frattempo è Ingegnere informatico e si specializza in management engineering. Dopo qualche anno, nel 2021, Gloria arriva anche nelle librerie con una guida su come trovare il proprio stile, intitolata 'A far la moda comincia tu'. La sua innata curiosità l'ha sempre spinta a cercare e innovare, e recentemente è atterrata nel mondo del Metaverso, creando il concetto di Metafashion. Metafashion è un termine che  identifica una moda innovativa nel metaverso, che a differenza  sarà più interattiva e stimolante di quella reale, offrendo un'esperienza di shopping immersiva svolta digitalmente comodamente da casa.",
   "Matteo Cervellini":
     "Matteo Cervellini, fisioterapista di 25 anni. Dall’influenza di Youtubers famosi e libri di crescita personale, ha spesso inseguito il successo per sentirsi soddisfatto, fino al momento in cui ha realizzato di non essere per niente felice. Da un anno sta recuperando tutto il tempo passato ad ispirarsi ad un eroe che non sarebbe mai diventato, sperimenta esperienze come se fosse un bambino che non conosce il mondo. Gli piace far sorridere le persone, la montagna e il cibo gratis. ",
   "Ana Estrela":
-    "Mi chiamo Ana Estrela .Sono nata a Salvador di Bahia, Brasile dove sono diventata ballerina e assistente di coreografia della “Companhia Brasileira de Danças Populare”. Ho utilizzato la mia arte nella promozione di percorsi di socializzazione per ragazzi di strada, bambini e adolescenti a rischio, persone con abilità altre, pazienti psichiatrici prima in Brasile poi in Italia dal 1998.  Nel 2008 fondai a Bari l'associazione Origens, che promuove la cultura brasiliana attraverso l'arte, la gastronomia ed eventi culturali e che negli anni è diventata un’associazione multietnica.  Nel 2013 ho avuto l'intuizione di usare la cucina come ponte tra le persone, oltre che come percorso professionalizzante. Fondai allora Ethnic Cook, un laboratorio in cui rifugiati e immigrati, sopratutto donne, possono imparare un lavoro e conoscersi, abituarsi all'altro, scambiare idee e competenze, esserci. Il progetto vince un finanziamento della Regione Puglia, un finanziamento comunale e un finanziamento di una fondazione privata in partenariato con l’ antitratta. Viene invitato da UNHCR e dell’Università di Scienze Gastronomiche di Pollenzo per il modo in cui stimola e sostiene l'integrazione delle partecipanti. l'Università di Bari, insieme a Fondazione ISMU,  sceglie il progetto come una delle tre migliori realtà che, al Sud, valorizzano le competenze dei migranti. Per l’impegno nell'inclusione sociale attraverso il cibo ho ricevuto una menzione speciale della Basque Culinary world prize 2021, sono stata scelta come uno dei 20 volti del cibo 2021 sezione empowerment da Cook, rubrica del Corriere della Sera. Nel 2020 con le mie compagne/sorelle abbiamo aperto il Bistrot Sociale Multietnico nel cuore della città di Bari e  stampato il nostro libro “Ethnic Cook – Sapori e storie dal Mondo”. In questo momento dirigo il Bistrot e organizzo gli eventi ed i corsi di formazione dedicati alle donne rifugiate, faccio la consulente per le associazioni che vogliono sviluppare progetti simili. Rappresento il Coordinamento Diaspore in Puglia per la cooperazione internazionale.",
+    "Ana Estrela, nata a Salvador di Bahia, Brasile, è una ballerina e assistente di coreografia presso la 'Companhia Brasileira de Danças Populares'. Ha dedicato la sua arte alla promozione di percorsi di socializzazione per ragazzi di strada, bambini e adolescenti a rischio, nonché per persone con abilità diverse e pazienti psichiatrici, inizialmente in Brasile e successivamente in Italia a partire dal 1998. Nel 2008, Ana ha fondato a Bari l'associazione Origens, che si impegna a promuovere la cultura brasiliana attraverso l'arte, la gastronomia e eventi culturali, evolvendosi nel tempo in un'associazione multietnica. Nel 2013, ha avuto l'idea di utilizzare la cucina come mezzo per connettere le persone e come percorso professionale. Così, ha creato Ethnic Cook, un laboratorio in cui rifugiati e migranti, soprattutto donne, possono apprendere un mestiere, interagire tra loro, abituarsi alle diversità, scambiare idee e competenze. Il progetto ha ottenuto finanziamenti dalla Regione Puglia, dal comune e da una fondazione privata in collaborazione con l'antitratta. È stato riconosciuto da entità come l'UNHCR e l'Università di Scienze Gastronomiche di Pollenzo per il suo contributo stimolante e di supporto all'integrazione dei partecipanti. L'Università di Bari, insieme alla Fondazione ISMU, ha selezionato il progetto come una delle tre migliori iniziative nel Sud Italia che valorizzano le competenze dei migranti. Per il suo impegno nell'inclusione sociale attraverso il cibo, Ana Estrela ha ricevuto una menzione speciale al Basque Culinary World Prize 2021 e è stata scelta come uno dei '20 volti del cibo 2021' nella sezione empowerment da Cook, la rubrica del Corriere della Sera. Nel 2020, insieme alle sue compagne, ha aperto il Bistrot Sociale Multietnico nel cuore di Bari e ha pubblicato il libro 'Ethnic Cook - Sapori e storie dal Mondo'. Attualmente, Ana dirige il Bistrot, organizza eventi e corsi di formazione dedicati alle donne rifugiate e presta consulenza alle associazioni interessate a sviluppare progetti simili. Rappresenta il Coordinamento Diaspore in Puglia per la cooperazione internazionale.",
   "Nina Lambarelli":
-    'Nina Lambarelli è una poetessa performativa. Ha debuttato con il suo spettacolo "L\' appelle du vide" nel 2020 ed ha continuato per la strada del Poetry Slam e del teatro d\'improvvisazione, dove lo spettacolo " A mille ce n\'è " ha preso forma per arrivare al TedxAwards Sapienza 2023. Ha partecipato come artista per uno spettacolo della FAO ed al festival "Arterie - Rassegna di Ipotesi espressive". È prossima alla laurea in Lingue e letterature straniere dopo aver passato un periodo alla Sorbonne Nouvelle di Parigi e prevede di continuare gli studi in ambito postcoloniale.',
-  "Marcello Ienca": "Descrizione di Marcello Ienca ",
-  "Rose Villain": "Descrizione di Rose Villain",
+    "Nina Lambarelli è una poetessa performativa. Ha debuttato con il suo spettacolo 'L'appel du vide' nel 2020 ed ha continuato per la strada del Poetry Slam e del teatro d'improvvisazione, dove lo spettacolo 'A mille ce n'è' ha preso forma per arrivare al Back to Zero Awards 2023. Ha partecipato come artista per uno spettacolo della FAO ed al festival 'Arterie - Rassegna di Ipotesi espressive'. È prossima alla laurea in Lingue e letterature straniere dopo aver passato un periodo alla Sorbonne Nouvelle di Parigi e prevede di continuare gli studi in ambito postcoloniale.",
+  "Marcello Ienca":
+    "Marcello Ienca, nato nel 1988, ha alle spalle una lunga carriera nel campo delle neurotecnologie: è stato studente di filosofia e scienze cognitive presso varie università sparse in giro per il mondo, tra cui la Sapienza (Roma), Humboldt (Berlino) e la New York University. Nel 2018 ha conseguito il dottorato in etica biomedica presso l'Università di Basilea, per poi lavorare come ricercatore presso l'ETH di Zurigo. In tempi più recenti ha fondato l'Intelligent Systems Ethics Group presso l'EPFL ed è stato visiting scholar all'Università di Oxford. Dal 2023 è titolare della cattedra di Etica delle IA e delle Neuroscienze presso il Politecnico di Monaco (TUM) in Germania. Utilizza metodi teorici ed empirici per indagare le implicazioni etiche, sociali e politiche di tecnologie come le BCI ('Brain Computer Interface') e gli algoritmi di elaborazione dei Big Data, concentrandosi su argomenti come la relazione tra intelligenza artificiale e cognizione umana. È noto per il suo lavoro pionieristico sui cosiddetti 'neurodiritti' (neurorights), tema portante del TED Talk che porterà sul palco della Sapienza: un ritorno alle origini non solo nell'edizione (Back To Zero), ma anche dal punto di vista professionale.  ",
+  "Rose Villain":
+    "Nata a Milano e poi trasferitasi a New York, la cantante e autrice ha all'attivo milioni di stream. Rose Villain ha tutte le carte in regola per ribaltare l'attuale scena musicale, curando lei stessa in prima persona la creatività di ogni progetto artistico che la riguarda.  A gennaio 2023 esce il suo primo lavoro discografico, 'Radio Gotham': un album esplosivo, inaspettato e ricco di tematiche personali, che ha entusiasmato pubblico e critica.",
   "Silvano Onofri": "Descrizione di Silvano Onofri ",
   "Nakita Aboya":
-    "A genius brain in a Gen Z body, Aboya Nakita started her Ph.D. Economics at 20 years old at La Sapienza University of Rome. She does a co-direction with the renowned Philippe Aghion, Harvard graduate and Professor at the Paris School of Economics, where she took advanced doctoral courses and carried research in the development group. During her time in the French Capital, she mixed research with teaching assistantships and was also in the organizing team of the Second World Inequality Conference. Her research interests lie between macroeconomics and development economics: fiscal policies, inequality, and poverty. Professionally, she has worked for leading institutions such as the World Bank and the United Nations. Ranked as a High Potential Individual (H.P.I), she received many distinctions for starting university at 14 years old as well as her commitment to fighting poverty and inequality. A native of Cameroon, Nakita joined the prestigious M.I.T/Harvard Economics Mentoring Program in 2020 during which she was mentored by Antoine Levy, another High Potential Individual and Ph.D. Economics holder from the Massachusetts Institute of Technology, USA. Coming from a humble background, her speech will be centered around how she made it to top institutions at a young age despite the difficulties of traveling alone to Europe. Vision, Action, and Kindness – three ingredients of her recipe.  ",
+    "Originaria del Camerun, Nakita ha iniziato il suo dottorato di ricerca in Economia a 20 anni presso Sapienza Università di Roma. Nel 2020 è anche entrata a far parte del prestigioso M.I.T/Harvard Economics Mentoring Program. Ora lavora per la FAO. Provenendo da un ambiente umile, il suo discorso sarà incentrato su come sia riuscita a raggiungere le maggiori istituzioni in giovane età, nonostante le difficoltà di viaggiare da sola verso l'Europa.",
 };
 
 const speakersBioEng = {
+  "Damiano Tullio":
+    "Damiano Tullio is an anthropologist, popularizer, naturalist, educator in AnthropoEcology, and creator of the practice of Existential Rewilding. In 2007, he founded Antropostudio, an interdisciplinary project where Anthropology, Ecology and Outdoor meet to create educational experiences aimed at understanding the primordial relationship that binds our species to wild environments.",
+  "Ilaria Lucrezia Rossi":
+    "Ilaria Rossi: physics graduate and science populariser. On her social channels, she fights for women's empowerment and gender equality in STEM disciplines, hoping to contribute to an academic environment free of discrimination.",
+  "Edward von Freymann":
+    "Edward von Freymann: a father who, after the untimely death of his only daughter Gaia, set up the Gaia von Freymann Foundation to always keep her memory alive by going to schools together with the traffic police to raise awareness among young people in road safety education and the removal of architectural barriers. After two trials, he made his lawyers and psychologists available free of charge to families affected by road accidents.  ",
   "Riccardo Basilone":
-    "Riccardo Basilone is 24 years old and was born and raised in Toronto, Canada. He learned Italian after moving to Milan, where he attended classical high school and graduated in Physics. He has been living in Rome for two years, finishing his master's degree in Physics and playing in the streets of the city. Street art is his job, which gives him the opportunity to communicate with the rest of the world every day through his music. Human beings are the only animals capable of expressing incomprehension. How do we understand each other, and why do we want to? Riccardo's speech explores human communication through his life story. Art and science triumph over human civilisation in a problem that on the surface seems simple, but hides complexities on a philosophical level.",
+    "How do we communicate? And why do we do it? This subject has fascinated Riccardo from a young age, ever since he moved to Italy from Canada. A physics student at university, it is with the notes of piano, guitar and voice that Riccardo brings us into the most human dimension of our being together: communicating, and loving each other.",
+  "Gloria Schito":
+    "Gloria Schito is an Italian entrepreneur and influencer working in the fashion world. Author of the book 'A far la moda comincia tu', she argues for the idea that fashion is an industry for everyone and that it is an excellent field for experimentation and innovation: this is the case with Metafashion.",
+  "Matteo Cervellini":
+    "A 25-year-old physiotherapist, Matteo often chased success to feel satisfied, until the moment he realized that it did not make him happy. The hero he was chasing was completely alien to him, and ever since he understood this, he started to live his life again as he never had before.",
+  "Ana Estrela":
+    "Born in Salvador di Bahia in Brazil, she became a dancer and assistant choreographer for the 'Companhia Brasileira de Danças Populare'.  In 2013, in Italy, she had the intuition to use cooking as a bridge between people, as well as a career path. She then founded Ethnic Cook, a workshop where refugees and immigrants, especially women, can learn a job and get to know each other, get used to each other, exchange ideas and skills, be there.",
+  "Nina Lambarelli":
+    "Nina Lambarelli is a performance poet. She debuted with her show 'L'appel du vide' in 2020 and continued down the road of Poetry Slam and improvisational theater, where the show 'A thousand is one' took shape to reach the Back to Zero Awards 2023. She participated as an artist in an FAO show and in the festival 'Arterie - Rassegna di Ipotesi espressive'. She is close to graduating in Foreign Languages and Literatures after spending a period at the Sorbonne Nouvelle in Paris and plans to continue her studies in the postcolonial field.",
+  "Marcello Ienca":
+    "Marcello Ienca is a Professor of Ethics of AI and Neuroscience at the Technical University of Munich and a Senior Scientist at the Swiss Federal Institute of Technology, in Lausanne. His research focuses on the ethics of human-machine interaction, with a particular interest in the responsible development and human rights implications of neurotechnologies, artificial intelligence, big data, robotics and virtual environments. Marcello Ienca will address these topics on the TEDx stage, with a specific emphasis on the concept of 'neurorights.'",
+  "Rose Villain":
+    "Born in Milan and later settled in New York, the singer and songwriter has millions of streams to her credit. Rose Villain has all the credentials to turn the current music scene upside down, curating the creativity of each of her artistic projects herself. In January 2023, she released her first record, 'Radio Gotham': an explosive, unexpected and thematically personal album, which delighted audiences and critics alike.",
+  "Silvano Onofri": "Descrizione di Silvano Onofri ",
+  "Nakita Aboya":
+    "A native of Cameroon, Nakita started her Ph.D. Economics at 20 years old at Sapienza University of Rome. She also joined the prestigious M.I.T/Harvard Economics Mentoring Program in 2020. She now works for the FAO. Coming from a humble background, her speech will be centered around how she made it to top institutions at a young age despite the difficulties of traveling alone to Europe.",
 };
 
 const Speaker = () => {
@@ -70,7 +94,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "75%",
+              height: "60%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -197,26 +221,26 @@ const Speaker = () => {
          * FIRTS BLOCK
          */}
         <SpeakerCard
-          name={"Silvano Onofri"}
-          image={require("../images/speakers23/tullio.jpg")}
+          name={"Damiano Tullio"}
+          image={require("../images/speakers23/tullio.webp")}
           time={"16:00"}
           circlePosition={"left"}
         />
         <SpeakerCard
           name={"Ilaria Lucrezia Rossi"}
-          image={require("../images/speakers23/rossi.jpg")}
+          image={require("../images/speakers23/rossi.webp")}
           time={"10:30"}
           circlePosition={"left"}
         />
         <SpeakerCard
           name={"Edward von Freymann"}
-          image={require("../images/speakers23/von_freymann.png")}
+          image={require("../images/speakers23/von_freymann.webp")}
           time={"11:00"}
           circlePosition={"left"}
         />
         <SpeakerCard
           name={"Riccardo Basilone"}
-          image={require("../images/speakers23/basilone.jpg")}
+          image={require("../images/speakers23/basilone.webp")}
           time={"11:15"}
           circlePosition={"left"}
         />
@@ -225,22 +249,22 @@ const Speaker = () => {
          */}
         <SpeakerCard
           name={"Gloria Schito"}
-          image={require("../images/speakers23/schito.jpg")}
+          image={require("../images/speakers23/schito.webp")}
           time={"12:00"}
         />
         <SpeakerCard
           name={"Matteo Cervellini"}
-          image={require("../images/speakers23/cervellini.jpg")}
+          image={require("../images/speakers23/cervellini.webp")}
           time={"12:15"}
         />
         <SpeakerCard
           name={"Ana Estrela"}
-          image={require("../images/speakers23/estrela.jpg")}
+          image={require("../images/speakers23/estrela.webp")}
           time={"12:30"}
         />
         <SpeakerCard
           name={"Nina Lambarelli"}
-          image={require("../images/speakers23/lambarelli.jpg")}
+          image={require("../images/speakers23/lambarelli.webp")}
           time={"12:45"}
         />
         {/**
@@ -248,31 +272,27 @@ const Speaker = () => {
          */}
         <SpeakerCard
           name={"Marcello Ienca"}
-          image={require("../images/speakers23/tullio.jpg")}
+          image={require("../images/speakers23/tullio.webp")}
           time={"15:30"}
           circlePosition={"left"}
-
         />
         <SpeakerCard
           name={"Rose Villain"}
-          image={require("../images/speakers23/villain.png")}
+          image={require("../images/speakers23/villain.webp")}
           time={"15:45"}
           circlePosition={"left"}
-
         />
         <SpeakerCard
           name={"Silvano Onofri"}
-          image={require("../images/speakers23/tullio.jpg")}
+          image={require("../images/speakers23/tullio.webp")}
           time={"16:00"}
           circlePosition={"left"}
-
         />
         <SpeakerCard
           name={"Nakita Aboya"}
-          image={require("../images/speakers23/aboya.png")}
+          image={require("../images/speakers23/aboya.webp")}
           time={"16:15"}
           circlePosition={"left"}
-
         />
       </ScrollView>
     </View>
