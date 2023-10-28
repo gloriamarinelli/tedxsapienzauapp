@@ -11,7 +11,6 @@ import {
   Pressable,
   Modal,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
@@ -198,48 +197,50 @@ const Speaker = () => {
          * FIRTS BLOCK
          */}
         <SpeakerCard
-          name={"Damiano Tullio"}
-          image={require("../images/speakers/damiano_tullio.jpg")}
-          time={"10:15"}
+          name={"Silvano Onofri"}
+          image={require("../images/speakers23/tullio.jpg")}
+          time={"16:00"}
+          circlePosition={"left"}
         />
         <SpeakerCard
           name={"Ilaria Lucrezia Rossi"}
-          image={require("../images/speakers/ilaria_rossi.jpg")}
+          image={require("../images/speakers23/rossi.jpg")}
           time={"10:30"}
           circlePosition={"left"}
         />
         <SpeakerCard
           name={"Edward von Freymann"}
-          image={require("../images/speakers/von_freymann.jpg")}
+          image={require("../images/speakers23/von_freymann.png")}
           time={"11:00"}
-          circlePosition={"right"}
+          circlePosition={"left"}
         />
         <SpeakerCard
           name={"Riccardo Basilone"}
-          image={require("../images/speakers/riccardo_basilone.jpg")}
+          image={require("../images/speakers23/basilone.jpg")}
           time={"11:15"}
+          circlePosition={"left"}
         />
         {/**
          * SECOND BLOCK
          */}
         <SpeakerCard
           name={"Gloria Schito"}
-          image={require("../images/speakers/gloria_schito.jpg")}
+          image={require("../images/speakers23/schito.jpg")}
           time={"12:00"}
         />
         <SpeakerCard
           name={"Matteo Cervellini"}
-          image={require("../images/speakers/matteo_cervellini.jpg")}
+          image={require("../images/speakers23/cervellini.jpg")}
           time={"12:15"}
         />
         <SpeakerCard
           name={"Ana Estrela"}
-          image={require("../images/speakers/ana_estrela.jpg")}
+          image={require("../images/speakers23/estrela.jpg")}
           time={"12:30"}
         />
         <SpeakerCard
           name={"Nina Lambarelli"}
-          image={require("../images/speakers/nina.jpg")}
+          image={require("../images/speakers23/lambarelli.jpg")}
           time={"12:45"}
         />
         {/**
@@ -247,23 +248,31 @@ const Speaker = () => {
          */}
         <SpeakerCard
           name={"Marcello Ienca"}
-          image={require("../images/speakers/rose_villain.jpg")}
+          image={require("../images/speakers23/tullio.jpg")}
           time={"15:30"}
+          circlePosition={"left"}
+
         />
         <SpeakerCard
           name={"Rose Villain"}
-          image={require("../images/speakers/rose_villain.jpg")}
+          image={require("../images/speakers23/villain.png")}
           time={"15:45"}
+          circlePosition={"left"}
+
         />
         <SpeakerCard
           name={"Silvano Onofri"}
-          image={require("../images/speakers/nakita.jpg")}
+          image={require("../images/speakers23/tullio.jpg")}
           time={"16:00"}
+          circlePosition={"left"}
+
         />
         <SpeakerCard
           name={"Nakita Aboya"}
-          image={require("../images/speakers/nakita.jpg")}
+          image={require("../images/speakers23/aboya.png")}
           time={"16:15"}
+          circlePosition={"left"}
+
         />
       </ScrollView>
     </View>
