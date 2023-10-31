@@ -42,7 +42,7 @@ const Schedule = () => {
     {
       time: "12:00",
       titolo: "Sessione II",
-      text: "GLoria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
+      text: "Gloria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
     },
     {
       time: "13:00",
@@ -102,7 +102,7 @@ const Schedule = () => {
     {
       time: "12:00",
       titolo: "Session II",
-      text: "GLoria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
+      text: "Gloria Schito, Matteo Cervellini, Ana Estrela, Nina Lambarelli",
     },
     {
       time: "13:00",
