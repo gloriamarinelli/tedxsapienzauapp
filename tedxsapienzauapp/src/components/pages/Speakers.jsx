@@ -22,7 +22,8 @@ const PlaceholderImage = require("../images/Red-Circle.png");
 const speakersBio = {
   "Damiano Tullio":
     "Damiano Tullio è un antropologo, divulgatore, naturalista, Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi. ",
-  "Ilaria Lucrezia Rossi": "Descrizione di Ilaria Lucrezia Rossi",
+  "Ilaria Lucrezia Rossi":
+    "Ilaria Rossi: laureanda in fisica e divulgatrice scientifica. Nei suoi canali social si batte per l'empowerment femminile e l'uguaglianza di genere nelle discipline STEM, nella speranza di contribuire a creare un ambiente accademico libero dalle discriminazioni.  ",
   "Edward von Freymann":
     "Edward von Freymann: un padre che dopo la morte prematura della sua unica figlia Gaia, ha costituito la fondazione Gaia von Freymann per tenere sempre vivo il suo ricordo andando nelle scuole insieme alla polizia stradale a sensibilizzare i ragazzi nell'educazione stradale e l'abbattimento delle barriere architettoniche. Dopo 2 processi, ha messo a disposizione gratuitamente i propri avvocati e psicologi per le famiglie vittime della strada.  ",
   "Riccardo Basilone":
