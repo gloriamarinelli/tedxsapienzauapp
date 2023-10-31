@@ -9,13 +9,13 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import global from "../../resources/global.json";
 
 const PlaceholderImage = require("../images/sapienza1Xv2.webp");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
 const ukFlag = require("../images/ukFlag.png");
-import global from "../../resources/global.json";
 
 const GetStarted = ({ navigation }) => {
   const [buttonText, setButtonText] = useState("Iniziamo");
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    bottom: 205,
+    bottom: 185,
     position: "absolute",
     textAlignVertical: "center",
     textAlign: "center",
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     display: "flex",
     width: 320,
     height: 60,
-    bottom: 90,
+    bottom: 85,
     position: "absolute",
     marginHorizontal: "auto",
     flexDirection: "row",
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     display: "flex",
     borderRadius: 10,
     width: "100%",
-    height: 70,
+    height: 55,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
