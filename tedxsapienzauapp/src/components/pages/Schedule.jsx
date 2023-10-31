@@ -88,7 +88,7 @@ const Schedule = () => {
     {
       time: "10:00",
       titolo: "Institutional greetings",
-      text: "Prof. Massimo Ralli, TEDxSapienzaU Delegate",
+      text: "Prof. Massimo Ralli, Delegato per il TEDxSapienzaU",
     },
     {
       time: "10:15",
@@ -115,7 +115,7 @@ const Schedule = () => {
     {
       time: "15:15",
       titolo: "institutional Interventions",
-      text: "Antonella Polimeni, Rector of Sapienza University of Rome ",
+      text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma ",
     },
     {
       time: "15:30",
@@ -153,12 +153,14 @@ const Schedule = () => {
   );
 
   return (
+    <ScrollView>
       <FlatList
         data={schedule}
         renderItem={renderItem}
         keyExtractor={(item, index) => `${item.time}-${index}`}
         style={styles.page}
       />
+    </ScrollView>
   );
 };
 
