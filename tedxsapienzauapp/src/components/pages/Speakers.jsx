@@ -71,21 +71,6 @@ const speakersBioEng = {
     "A native of Cameroon, Nakita started her Ph.D. Economics at 20 years old at Sapienza University of Rome. She also joined the prestigious M.I.T/Harvard Economics Mentoring Program in 2020. She now works for the FAO. Coming from a humble background, her speech will be centered around how she made it to top institutions at a young age despite the difficulties of traveling alone to Europe.",
 };
 
-const speakersImages = {
-  "Damiano Tullio": require("../images/speakers23/tullio.webp"),
-  "Ilaria Lucrezia Rossi": require("../images/speakers23/rossi.webp"),
-  "Edward von Freymann": require("../images/speakers23/von_freymann.webp"),
-  "Riccardo Basilone": require("../images/speakers23/basilone.webp"),
-  "Gloria Schito": require("../images/speakers23/schito.webp"),
-  "Matteo Cervellini": require("../images/speakers23/cervellini.webp"),
-  "Ana Estrela": require("../images/speakers23/estrela.webp"),
-  "Nina Lambarelli": require("../images/speakers23/lambarelli.webp"),
-  "Marcello Ienca": require("../images/speakers23/tullio.webp"),
-  "Rose Villain": require("../images/speakers23/villain.webp"),
-  "Silvano Onofri": require("../images/speakers23/tullio.webp"),
-  "Nakita Aboya": require("../images/speakers23/aboya.webp"),
-};
-
 const Speaker = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentDescription, setCurrentDescription] = useState(
@@ -166,7 +151,6 @@ const Speaker = () => {
   };
 
   const SpeakerCard = ({ name, image, description, time, circlePosition }) => {
-    console.log(image);
     return (
       <View
         style={{
@@ -178,7 +162,7 @@ const Speaker = () => {
         }}
       >
         <Image
-          source={speakersImages[name]}
+          source={image}
           style={{
             position: "absolute",
             maxHeight: 250,
