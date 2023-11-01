@@ -168,27 +168,7 @@ const Speaker = () => {
         data={speaker}
         numColumns={1}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View
-            style={{
-              width: "100%",
-              height: 250,
-              backgroundColor: "#000",
-              position: "relative",
-              marginBottom: 20,
-            }}
-          >
-            <Image
-              source={item.image}
-              style={{
-                position: "absolute",
-                maxHeight: 250,
-                width: "100%",
-                borderRadius: 10,
-              }}
-            />
-          </View>
-        )}
+        renderItem={({ item }) => <Image source={item.image} />}
       />
     </SafeAreaView>
   );
