@@ -162,7 +162,7 @@ const Speaker = () => {
         }}
       >
         <Image
-          source={image}
+          source={require("../images/partners23/Eni.webp")}
           style={{
             position: "absolute",
             maxHeight: 250,
@@ -180,7 +180,7 @@ const Speaker = () => {
             onPress={() => {
               setModalVisible(true);
               setCurrentDescription(
-                language == "ita" ? speakersBio[name] : speakersBioEng[name]
+                language === "ita" ? speakersBio[name] : speakersBioEng[name]
               );
               setCurrentSpeakerImage(image);
               setCurrentSpeaker(name);
