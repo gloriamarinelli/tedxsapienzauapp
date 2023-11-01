@@ -10,8 +10,6 @@ import {
   ImageBackground,
   Pressable,
   Modal,
-  SafeAreaView,
-  FlatList,
 } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
@@ -21,16 +19,6 @@ import global from "../../resources/global.json";
 const windowWidth = Dimensions.get("window").width;
 const PlaceholderImage = require("../images/Red-Circle.png");
 
-const speaker = [
-  {
-    name: "1",
-    image: require("../images/speakers23/tullio.webp"),
-    time: "10:00",
-    description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    circlePosition: "left",
-  },
-];
 const speakersBio = {
   "Damiano Tullio":
     "Damiano Tullio è un antropologo, divulgatore, naturalista, Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi. ",
@@ -162,15 +150,153 @@ const Speaker = () => {
     );
   };
 
+  const SpeakerCard = ({ name, image, description, time, circlePosition }) => {
+    return (
+      <View
+        style={{
+          width: "100%",
+          height: 250,
+          backgroundColor: "#000",
+          position: "relative",
+          marginBottom: 20,
+        }}
+      >
+        <Image
+          source={PlaceholderImage}
+          style={{
+            position: "absolute",
+            maxHeight: 250,
+            width: "100%",
+            borderRadius: 10,
+          }}
+        />
+        <LinearGradient
+          style={{ width: "100%", height: "100%", position: "absolute" }}
+          colors={["transparent", "rgba(0, 0, 0, 0.65)"]}
+          locations={[0, 0.8]}
+        >
+          <Pressable
+            style={{ position: "absolute", bottom: 0, left: 0 }}
+            onPress={() => {
+              setModalVisible(true);
+              setCurrentDescription(
+                language === "ita" ? speakersBio[name] : speakersBioEng[name]
+              );
+              setCurrentSpeakerImage(image);
+              setCurrentSpeaker(name);
+            }}
+          >
+            <Text style={styles.nameText}>
+              {name}
+              {"  "} <Feather name="info" size={24} color="white" />
+            </Text>
+          </Pressable>
+          <ImageBackground
+            source={PlaceholderImage}
+            style={{
+              position: "absolute",
+              right: circlePosition === "left" ? null : 5,
+              left: circlePosition === "left" ? 5 : null,
+              top: 5,
+              width: 80,
+              aspectRatio: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
+              {time}
+            </Text>
+          </ImageBackground>
+        </LinearGradient>
+      </View>
+    );
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={speaker}
-        numColumns={1}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Image source={item.image} />}
-      />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <DescriptionModal description={currentDescription} />
+      <ScrollView>
+        {/**
+         * FIRTS BLOCK
+         */}
+        <SpeakerCard
+          name={"Damiano Tullio"}
+          image={require("../images/speakers23/tullio.webp")}
+          time={"16:00"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Ilaria Lucrezia Rossi"}
+          image={require("../images/speakers23/rossi.webp")}
+          time={"10:30"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Edward von Freymann"}
+          image={require("../images/speakers23/von_freymann.webp")}
+          time={"11:00"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Riccardo Basilone"}
+          image={require("../images/speakers23/basilone.webp")}
+          time={"11:15"}
+          circlePosition={"left"}
+        />
+        {/**
+         * SECOND BLOCK
+         */}
+        <SpeakerCard
+          name={"Gloria Schito"}
+          image={require("../images/speakers23/schito.webp")}
+          time={"12:00"}
+        />
+        <SpeakerCard
+          name={"Matteo Cervellini"}
+          image={require("../images/speakers23/cervellini.webp")}
+          time={"12:15"}
+        />
+        <SpeakerCard
+          name={"Ana Estrela"}
+          image={require("../images/speakers23/estrela.webp")}
+          time={"12:30"}
+        />
+        <SpeakerCard
+          name={"Nina Lambarelli"}
+          image={require("../images/speakers23/lambarelli.webp")}
+          time={"12:45"}
+        />
+        {/**
+         * THIRD BLOCK
+         */}
+        <SpeakerCard
+          name={"Marcello Ienca"}
+          image={require("../images/speakers23/tullio.webp")}
+          time={"15:30"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Rose Villain"}
+          image={require("../images/speakers23/villain.webp")}
+          time={"15:45"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Silvano Onofri"}
+          image={require("../images/speakers23/tullio.webp")}
+          time={"16:00"}
+          circlePosition={"left"}
+        />
+        <SpeakerCard
+          name={"Nakita Aboya"}
+          image={require("../images/speakers23/aboya.webp")}
+          time={"16:15"}
+          circlePosition={"left"}
+        />
+      </ScrollView>
+    </View>
   );
 };
 
