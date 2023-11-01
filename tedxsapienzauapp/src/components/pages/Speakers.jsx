@@ -341,10 +341,16 @@ const styles = StyleSheet.create({
     bottom: 5,
     left: 10,
   },
+  card: {
+    backgroundColor: "#0b0c0e",
+    borderColor: "#0b0c0e",
+    height: 250,
+  },
   image: {
-    width: windowWidth,
+    width: "100%",
     height: 200,
-    resizeMode: "contain",
+    resizeMode: "cover",
+    transform: [{ scale: 1.2 }],
   },
 });
 
