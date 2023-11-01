@@ -8,6 +8,8 @@ import {
   Dimensions,
   ScrollView,
   ImageBackground,
+  FlatList,
+  SafeAreaView,
   Pressable,
   Modal,
 } from "react-native";
@@ -15,9 +17,97 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
 import global from "../../resources/global.json";
+import { Card } from "react-native-elements";
 
 const windowWidth = Dimensions.get("window").width;
 const PlaceholderImage = require("../images/Red-Circle.png");
+
+const speaker23 = [
+  {
+    id: "1",
+    name: "Damiano Tullio",
+    image: require("../images/speakers23/tullio.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "2",
+    name: "Ilaria Lucrezia Rossi",
+    image: require("../images/speakers23/rossi.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "3",
+    name: "Edward von Freymann",
+    image: require("../images/speakers23/von_freymann.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "4",
+    name: "Riccardo Basilone",
+    image: require("../images/speakers23/basilone.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "5",
+    name: "Gloria Schito",
+    image: require("../images/speakers23/schito.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "6",
+    name: "Matteo Cervellini",
+    image: require("../images/speakers23/cervellini.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "7",
+    name: "Ana Estrela",
+    image: require("../images/speakers23/estrela.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "8",
+    name: "Nina Lambarelli",
+    image: require("../images/speakers23/lambarelli.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "9",
+    name: "Marcello Ienca",
+    image: require("../images/speakers23/tullio.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "10",
+    name: "Rose Villain",
+    image: require("../images/speakers23/villain.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "11",
+    name: "Silvano Onofri",
+    image: require("../images/speakers23/tullio.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+  {
+    id: "12",
+    name: "Nakita Aboya",
+    image: require("../images/speakers23/aboya.webp"),
+    time: "16:00",
+    circlePosition: "left",
+  },
+];
 
 const speakersBio = {
   "Damiano Tullio":
@@ -162,7 +252,7 @@ const Speaker = () => {
         }}
       >
         <Image
-          source={PlaceholderImage}
+          source={Tullio}
           style={{
             position: "absolute",
             maxHeight: 250,
@@ -215,88 +305,24 @@ const Speaker = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <DescriptionModal description={currentDescription} />
-      <ScrollView>
-        {/**
-         * FIRTS BLOCK
-         */}
-        <SpeakerCard
-          name={"Damiano Tullio"}
-          image={require("../images/speakers23/tullio.webp")}
-          time={"16:00"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Ilaria Lucrezia Rossi"}
-          image={require("../images/speakers23/rossi.webp")}
-          time={"10:30"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Edward von Freymann"}
-          image={require("../images/speakers23/von_freymann.webp")}
-          time={"11:00"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Riccardo Basilone"}
-          image={require("../images/speakers23/basilone.webp")}
-          time={"11:15"}
-          circlePosition={"left"}
-        />
-        {/**
-         * SECOND BLOCK
-         */}
-        <SpeakerCard
-          name={"Gloria Schito"}
-          image={require("../images/speakers23/schito.webp")}
-          time={"12:00"}
-        />
-        <SpeakerCard
-          name={"Matteo Cervellini"}
-          image={require("../images/speakers23/cervellini.webp")}
-          time={"12:15"}
-        />
-        <SpeakerCard
-          name={"Ana Estrela"}
-          image={require("../images/speakers23/estrela.webp")}
-          time={"12:30"}
-        />
-        <SpeakerCard
-          name={"Nina Lambarelli"}
-          image={require("../images/speakers23/lambarelli.webp")}
-          time={"12:45"}
-        />
-        {/**
-         * THIRD BLOCK
-         */}
-        <SpeakerCard
-          name={"Marcello Ienca"}
-          image={require("../images/speakers23/tullio.webp")}
-          time={"15:30"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Rose Villain"}
-          image={require("../images/speakers23/villain.webp")}
-          time={"15:45"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Silvano Onofri"}
-          image={require("../images/speakers23/tullio.webp")}
-          time={"16:00"}
-          circlePosition={"left"}
-        />
-        <SpeakerCard
-          name={"Nakita Aboya"}
-          image={require("../images/speakers23/aboya.webp")}
-          time={"16:15"}
-          circlePosition={"left"}
-        />
-      </ScrollView>
-    </View>
+
+      <FlatList
+        data={speaker23}
+        numColumns={1}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Card containerStyle={styles.card}>
+            <Image source={item.image} style={styles.image} />
+            <Text style={styles.nameText}>
+              {item.name}
+              {"  "} <Feather name="info" size={24} color="white" />
+            </Text>
+          </Card>
+        )}
+      />
+    </SafeAreaView>
   );
 };
 
