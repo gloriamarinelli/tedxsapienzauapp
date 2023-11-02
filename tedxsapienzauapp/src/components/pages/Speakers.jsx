@@ -305,7 +305,7 @@ const Speaker = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <DescriptionModal description={currentDescription} />
       <FlatList
         data={speaker23}
@@ -338,7 +338,7 @@ const Speaker = () => {
           </Card>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
