@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
     margin: 0,
     // borderRadius: 15,
     marginTop: 20,
-    // overflow: "hidden",
+    overflow: "hidden",
   },
   image: {
     width: "100%",
