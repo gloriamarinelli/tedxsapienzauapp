@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     height: 250,
     padding: 0,
     margin: 0,
-    // borderRadius: 15,
+    borderRadius: 15,
     marginTop: 20,
     overflow: "hidden",
   },
