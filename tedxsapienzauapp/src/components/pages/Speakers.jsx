@@ -312,7 +312,7 @@ const Speaker = () => {
         numColumns={1}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <Card containerStyle={styles.card}>
+          <Card id="CARD" containerStyle={styles.card}>
             <Image source={item.image} style={styles.image} />
             {/* <View
               style={{
@@ -361,8 +361,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#0b0c0e",
     borderColor: "#0b0c0e",
     height: 250,
-    padding: 0,
-    margin: 0,
+    // padding: 0,
+    // margin: 0,
     // borderRadius: 15,
     marginTop: 20,
     overflow: "hidden",
