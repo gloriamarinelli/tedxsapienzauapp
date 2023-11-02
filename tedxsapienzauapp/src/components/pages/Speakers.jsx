@@ -305,7 +305,7 @@ const Speaker = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <DescriptionModal description={currentDescription} />
       <FlatList
         data={speaker23}
@@ -338,7 +338,7 @@ const Speaker = () => {
           </Card>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -364,10 +364,15 @@ const styles = StyleSheet.create({
     // padding: 0,
     // margin: 0,
     // borderRadius: 15,
-    marginTop: 20,
-    overflow: "hidden",
+    // marginTop: 20,
+    // overflow: "hidden",
   },
-  image: {},
+  image: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
+    transform: [{ scale: 1.2 }],
+  },
 });
 
 export default Speaker;
