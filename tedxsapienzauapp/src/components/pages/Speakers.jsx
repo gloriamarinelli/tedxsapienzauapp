@@ -349,7 +349,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   nameText: {
-    fontSize: RFValue(20),
+    fontSize: RFValue(22),
     color: "white",
     textAlign: "center",
     fontWeight: "bold",
