@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import global from "../../resources/global.json";
 
-const PlaceholderImage = require("../images/sapienza1Xv2.webp");
+const PlaceholderImage = require("../images/sfondo3.webp");
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 const itaFlag = require("../images/itaFlag.png");
