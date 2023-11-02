@@ -314,7 +314,7 @@ const Speaker = () => {
         renderItem={({ item }) => (
           <Card containerStyle={styles.card}>
             <Image source={item.image} style={styles.image} />
-            <View
+            {/* <View
               style={{
                 width: "100%",
                 height: "100%",
@@ -334,7 +334,7 @@ const Speaker = () => {
                   {item.name} <Feather name="info" size={24} color="white" />
                 </Text>
               </Pressable>
-            </View>
+            </View> */}
           </Card>
         )}
       />
@@ -363,11 +363,11 @@ const styles = StyleSheet.create({
     height: 250,
     padding: 0,
     margin: 0,
-    borderRadius: 15,
+    // borderRadius: 15,
     marginTop: 20,
     overflow: "hidden",
   },
-  image: { maxHeight: "100%", maxWidth: "100%", borderRadius: 15, zIndex: 0 },
+  image: {},
 });
 
 export default Speaker;
