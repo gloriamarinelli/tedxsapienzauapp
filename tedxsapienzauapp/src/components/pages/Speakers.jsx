@@ -305,9 +305,8 @@ const Speaker = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <DescriptionModal description={currentDescription} />
-
       <FlatList
         data={speaker23}
         numColumns={1}
@@ -315,14 +314,31 @@ const Speaker = () => {
         renderItem={({ item }) => (
           <Card containerStyle={styles.card}>
             <Image source={item.image} style={styles.image} />
-            <Text style={styles.nameText}>
-              {item.name}
-              {"  "} <Feather name="info" size={24} color="white" />
-            </Text>
+            <View
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                zIndex: 2,
+              }}
+            >
+              <Pressable
+                onPress={() => {
+                  setModalVisible(true);
+                  setCurrentDescription(speakersBio[item.name]);
+                  setCurrentSpeakerImage(item.image);
+                  setCurrentSpeaker(item.name);
+                }}
+              >
+                <Text style={styles.nameText}>
+                  {item.name} <Feather name="info" size={24} color="white" />
+                </Text>
+              </Pressable>
+            </View>
           </Card>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -338,20 +354,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     position: "absolute",
-    bottom: 5,
+    top: 210,
     left: 10,
   },
   card: {
     backgroundColor: "#0b0c0e",
     borderColor: "#0b0c0e",
     height: 250,
+    padding: 0,
+    margin: 0,
+    borderRadius: 15,
+    marginTop: 20,
+    overflow: "hidden",
   },
-  image: {
-    width: "100%",
-    height: 200,
-    resizeMode: "cover",
-    transform: [{ scale: 1.2 }],
-  },
+  image: { maxHeight: "100%", maxWidth: "100%", borderRadius: 15, zIndex: 0 },
 });
 
 export default Speaker;
