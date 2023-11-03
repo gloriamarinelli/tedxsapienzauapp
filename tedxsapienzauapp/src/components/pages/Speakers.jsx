@@ -185,7 +185,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-
+              height: "80%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -347,7 +347,8 @@ const Speaker = () => {
                   source={PlaceholderImage}
                   style={{
                     position: "absolute",
-
+                    right: item.circlePosition === "left" ? null : 5,
+                    left: item.circlePosition === "left" ? 5 : null,
                     top: 5,
                     width: 80,
                     aspectRatio: 1,

@@ -27,7 +27,7 @@ const Schedule = () => {
     },
     {
       time: "10:00",
-      titolo: "Saluti istituzionali",
+      titolo: "Saluti Istituzionali",
       text: "Prof. Massimo Ralli, Delegato per il TEDxSapienzaU",
     },
     {
@@ -54,7 +54,7 @@ const Schedule = () => {
     },
     {
       time: "15:15",
-      titolo: "Interventi istituzionali",
+      titolo: "Interventi Istituzionali",
       text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma ",
     },
     {
@@ -87,7 +87,7 @@ const Schedule = () => {
     },
     {
       time: "10:00",
-      titolo: "Institutional greetings",
+      titolo: "Institutional Greetings",
       text: "Prof. Massimo Ralli, TEDxSapienzaU Delegate",
     },
     {
@@ -106,7 +106,7 @@ const Schedule = () => {
     },
     {
       time: "13:00",
-      titolo: "Lunch break at the Village TEDxSapienzaU",
+      titolo: "Lunch break at TEDxSapienzaU's Village ",
     },
     {
       time: "15:00",
@@ -114,7 +114,7 @@ const Schedule = () => {
     },
     {
       time: "15:15",
-      titolo: "institutional Interventions",
+      titolo: "Speech from Institutional Topics",
       text: "Antonella Polimeni, Rector of Sapienza University of Rome ",
     },
     {
@@ -124,7 +124,7 @@ const Schedule = () => {
     },
     {
       time: "16:30",
-      titolo: "Thanks from the volunteers and TEDxSapienzaU team",
+      titolo: "Greetings from TEDxSapienzaU team and volunteer",
     },
     {
       time: "16:45",
@@ -132,7 +132,7 @@ const Schedule = () => {
     },
     {
       time: "17:00",
-      titolo: "Final greetings",
+      titolo: "Final Greetings",
     },
   ];
 
