@@ -185,7 +185,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "80%",
+              height: "50%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -198,7 +198,7 @@ const Speaker = () => {
             >
               {currentSpeaker}
             </Text>
-            <View style={{ height: "80%" }}>
+            <View style={{ height: "75%" }}>
               <ScrollView>
                 <Text
                   style={{
