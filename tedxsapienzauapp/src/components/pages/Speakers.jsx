@@ -82,7 +82,7 @@ const speaker23 = [
   {
     id: "9",
     name: "Marcello Ienca",
-    image: require("../images/speakers23/tullio.webp"),
+    image: require("../images/speakers23/ienca.webp"),
     time: "16:00",
     circlePosition: "left",
   },
@@ -96,7 +96,7 @@ const speaker23 = [
   {
     id: "11",
     name: "Silvano Onofri",
-    image: require("../images/speakers23/tullio.webp"),
+    image: require("../images/speakers23/onofri.webp"),
     time: "16:00",
     circlePosition: "left",
   },
@@ -130,7 +130,8 @@ const speakersBio = {
     "Marcello Ienca, nato nel 1988, ha alle spalle una lunga carriera nel campo delle neurotecnologie: è stato studente di filosofia e scienze cognitive presso varie università sparse in giro per il mondo, tra cui la Sapienza (Roma), Humboldt (Berlino) e la New York University. Nel 2018 ha conseguito il dottorato in etica biomedica presso l'Università di Basilea, per poi lavorare come ricercatore presso l'ETH di Zurigo. In tempi più recenti ha fondato l'Intelligent Systems Ethics Group presso l'EPFL ed è stato visiting scholar all'Università di Oxford. Dal 2023 è titolare della cattedra di Etica delle IA e delle Neuroscienze presso il Politecnico di Monaco (TUM) in Germania. Utilizza metodi teorici ed empirici per indagare le implicazioni etiche, sociali e politiche di tecnologie come le BCI ('Brain Computer Interface') e gli algoritmi di elaborazione dei Big Data, concentrandosi su argomenti come la relazione tra intelligenza artificiale e cognizione umana. È noto per il suo lavoro pionieristico sui cosiddetti 'neurodiritti' (neurorights), tema portante del TED Talk che porterà sul palco della Sapienza: un ritorno alle origini non solo nell'edizione (Back To Zero), ma anche dal punto di vista professionale.  ",
   "Rose Villain":
     "Nata a Milano e poi trasferitasi a New York, la cantante e autrice ha all'attivo milioni di stream. Rose Villain ha tutte le carte in regola per ribaltare l'attuale scena musicale, curando lei stessa in prima persona la creatività di ogni progetto artistico che la riguarda.  A gennaio 2023 esce il suo primo lavoro discografico, 'Radio Gotham': un album esplosivo, inaspettato e ricco di tematiche personali, che ha entusiasmato pubblico e critica.",
-  "Silvano Onofri": "Descrizione di Silvano Onofri ",
+  "Silvano Onofri":
+    "Silvano Onofri è Presidente della Commissione Scientifica Nazionale per l’Antartide, che coordina il Programma Nazionale di Ricerche in Antartide. Ha partecipato a 6 spedizioni scientifiche in Antartide e una in Artico. Ha diretto esperimenti biologici sulla Stazione Spaziale Internazionale, che aprono nuove strade per la ricerca della vita, passata o presente, su altri pianeti. Ha pubblicato numerosi generi e specie nuove di microfunghi da ambienti estremi. E’ consulente ESA e NASA per la biologia spaziale, e ha diretto il Programma Nazionale di Astrobiologia dell’Agenzia Spaziale Italiana. Insignito della Medaglia d’onore dalla European Mycological Association. Le nuove specie fungine Naganishia onofrii, Antarctolichenia onofrii e Cystobasidium onofrii prendono il nome da lui. ",
   "Nakita Aboya":
     "Originaria del Camerun, Nakita ha iniziato il suo dottorato di ricerca in Economia a 20 anni presso Sapienza Università di Roma. Nel 2020 è anche entrata a far parte del prestigioso M.I.T/Harvard Economics Mentoring Program. Ora lavora per la FAO. Provenendo da un ambiente umile, il suo discorso sarà incentrato su come sia riuscita a raggiungere le maggiori istituzioni in giovane età, nonostante le difficoltà di viaggiare da sola verso l'Europa.",
 };
@@ -156,16 +157,15 @@ const speakersBioEng = {
     "Marcello Ienca is a Professor of Ethics of AI and Neuroscience at the Technical University of Munich and a Senior Scientist at the Swiss Federal Institute of Technology, in Lausanne. His research focuses on the ethics of human-machine interaction, with a particular interest in the responsible development and human rights implications of neurotechnologies, artificial intelligence, big data, robotics and virtual environments. Marcello Ienca will address these topics on the TEDx stage, with a specific emphasis on the concept of 'neurorights.'",
   "Rose Villain":
     "Born in Milan and later settled in New York, the singer and songwriter has millions of streams to her credit. Rose Villain has all the credentials to turn the current music scene upside down, curating the creativity of each of her artistic projects herself. In January 2023, she released her first record, 'Radio Gotham': an explosive, unexpected and thematically personal album, which delighted audiences and critics alike.",
-  "Silvano Onofri": "Descrizione di Silvano Onofri ",
+  "Silvano Onofri":
+    "Silvano Onofri is President of the National Scientific Commission for Antarctica, which coordinates the National Antarctic Research Program. He has participated in six scientific expeditions to Antarctica and one to the Arctic. He has directed biological experiments on the International Space Station that open new avenues for the search for life, past or present, on other planets. He has published numerous genera and new species of micro fungi from extreme environments. He is an ESA and NASA consultant for space biology, and has directed the Italian Space Agency's National Astrobiology Program. Awarded the Medal of Honor by the European Mycological Association. The new fungal species Naganishia onofrii, Antarctolichenia onofrii and Cystobasidium onofrii are named after him.  ",
   "Nakita Aboya":
     "A native of Cameroon, Nakita started her Ph.D. Economics at 20 years old at Sapienza University of Rome. She also joined the prestigious M.I.T/Harvard Economics Mentoring Program in 2020. She now works for the FAO. Coming from a humble background, her speech will be centered around how she made it to top institutions at a young age despite the difficulties of traveling alone to Europe.",
 };
 
 const Speaker = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [currentDescription, setCurrentDescription] = useState(
-    "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-  );
+  const [currentDescription, setCurrentDescription] = useState("");
   const [currentSpeakerImage, setCurrentSpeakerImage] = useState("");
   const [currentSpeaker, setCurrentSpeaker] = useState("");
 
@@ -185,7 +185,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "60%",
+
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -325,7 +325,11 @@ const Speaker = () => {
               <Pressable
                 onPress={() => {
                   setModalVisible(true);
-                  setCurrentDescription(speakersBio[item.name]);
+                  setCurrentDescription(
+                    language === "ita"
+                      ? speakersBio[item.name]
+                      : speakersBioEng[item.name]
+                  );
                   setCurrentSpeakerImage(item.image);
                   setCurrentSpeaker(item.name);
                 }}
@@ -334,6 +338,25 @@ const Speaker = () => {
                   {item.name} <Feather name="info" size={24} color="white" />
                 </Text>
               </Pressable>
+              <ImageBackground
+                source={PlaceholderImage}
+                style={{
+                  position: "absolute",
+
+                  top: 5,
+                  width: 80,
+                  aspectRatio: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Text
+                  style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}
+                >
+                  {item.time}
+                </Text>
+              </ImageBackground>
             </View>
           </Card>
         )}
@@ -371,7 +394,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 250,
     resizeMode: "cover",
-    transform: [{ scale: 1.2 }],
+    transform: [{ scale: 1 }],
   },
 });
 

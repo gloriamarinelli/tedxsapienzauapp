@@ -1,4 +1,4 @@
-import React, { useContext,useCallback } from "react";
+import React, { useContext, useCallback } from "react";
 import { LanguageContext } from "../../App.js";
 import {
   TouchableOpacity,
@@ -13,22 +13,22 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
-import { SocialIcon } from 'react-native-elements';
+import { SocialIcon } from "react-native-elements";
 const windowWidth = Dimensions.get("window").width;
-const SocialWidth = (windowWidth/6)-8;
-const linkInstagram = 'https://www.instagram.com/tedxsapienzau/';
-  const linkTiktok = 'https://www.tiktok.com/@tedxsapienzau?_t=8zonnmkhzjc&_r=1';
-  const linkLinkedin = 'https://www.linkedin.com/company/tedxsapienzau/';
-  const linkFacebook = 'https://www.facebook.com/tedxsapienzau/';
-  const linkWebsite = 'https://www.tedxsapienzau.com/';
-  const linkYoutube = 'https://www.youtube.com/playlist?list=PL4-t_gJBexTAtUGEpHCVgcV0Zwt8RyYG6';
-  const logoWeb = require('../images/icons/web.png');
-  const logoYoutube = require('../images/icons/yt.png');
-  const logoFacebook = require('../images/icons/fb.png');
-  const logoInsta= require('../images/icons/ig.png');
-  const logoLinkedin = require('../images/icons/li.png');
-  const logoTiktok = require('../images/icons/tik.png');
-
+const SocialWidth = windowWidth / 6 - 8;
+const linkInstagram = "https://www.instagram.com/tedxsapienzau/";
+const linkTiktok = "https://www.tiktok.com/@tedxsapienzau?_t=8zonnmkhzjc&_r=1";
+const linkLinkedin = "https://www.linkedin.com/company/tedxsapienzau/";
+const linkFacebook = "https://www.facebook.com/tedxsapienzau/";
+const linkWebsite = "https://www.tedxsapienzau.com/";
+const linkYoutube =
+  "https://www.youtube.com/playlist?list=PL4-t_gJBexTAtUGEpHCVgcV0Zwt8RyYG6";
+const logoWeb = require("../images/icons/web.png");
+const logoYoutube = require("../images/icons/yt.png");
+const logoFacebook = require("../images/icons/fb.png");
+const logoInsta = require("../images/icons/ig.png");
+const logoLinkedin = require("../images/icons/li.png");
+const logoTiktok = require("../images/icons/tik.png");
 
 const Vision = () => {
   const { language } = useContext(LanguageContext);
@@ -51,7 +51,7 @@ const Vision = () => {
 
   const vision = language === "ita" ? visionita : visioneng;
 
-  const OpenURLButton = ({url, children,boh}) => {
+  const OpenURLButton = ({ url, children, boh }) => {
     const handlePress = useCallback(async () => {
       const supported = await Linking.canOpenURL(url);
       if (supported) {
@@ -60,23 +60,26 @@ const Vision = () => {
         Alert.alert(`Don't know how to open this URL: ${url}`);
       }
     }, [url]);
-    return <TouchableOpacity style={styles.roundButton1} onPress={handlePress}>
-      <Image source={boh} style={styles.socialLogo}/>
-
-    </TouchableOpacity>;
+    return (
+      <TouchableOpacity style={styles.roundButton1} onPress={handlePress}>
+        <Image source={boh} style={styles.socialLogo} />
+      </TouchableOpacity>
+    );
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <View style={styles.social}>
-      <OpenURLButton url={linkWebsite} boh ={logoWeb}></OpenURLButton>
-      <OpenURLButton url={linkInstagram} boh={logoInsta}> </OpenURLButton>
-      <OpenURLButton url={linkTiktok} boh={logoTiktok}></OpenURLButton>
-      <OpenURLButton url={linkFacebook} boh ={logoFacebook}></OpenURLButton>
-      <OpenURLButton url={linkLinkedin} boh={logoLinkedin}></OpenURLButton>
-      <OpenURLButton url={linkYoutube} boh ={logoYoutube}></OpenURLButton>
-      </View>
+        <View style={styles.social}>
+          <OpenURLButton url={linkWebsite} boh={logoWeb}></OpenURLButton>
+          <OpenURLButton url={linkInstagram} boh={logoInsta}>
+            {" "}
+          </OpenURLButton>
+          <OpenURLButton url={linkTiktok} boh={logoTiktok}></OpenURLButton>
+          <OpenURLButton url={linkFacebook} boh={logoFacebook}></OpenURLButton>
+          <OpenURLButton url={linkLinkedin} boh={logoLinkedin}></OpenURLButton>
+          <OpenURLButton url={linkYoutube} boh={logoYoutube}></OpenURLButton>
+        </View>
         <Image
           source={require("../images/logo_Bto0_bianco.png")}
           style={styles.image}
@@ -119,22 +122,23 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     alignSelf: "center",
   },
-  social:{
-    flexDirection: 'row',
-    justifyContent: 'center',
+  social: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: "25px",
+    marginTop: "25px"
   },
   roundButton1: {
     width: SocialWidth,
     height: SocialWidth,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 30,
     borderRadius: 100,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     margin: 1,
-    
   },
-  socialLogo:{
+  socialLogo: {
     width: 40,
     height: 40,
   },
