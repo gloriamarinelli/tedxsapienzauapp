@@ -27,70 +27,70 @@ const speaker23 = [
     id: "1",
     name: "Damiano Tullio",
     image: require("../images/speakers23/tullio.webp"),
-    time: "16:00",
+    time: "10:00",
     circlePosition: "left",
   },
   {
     id: "2",
     name: "Ilaria Lucrezia Rossi",
     image: require("../images/speakers23/rossi.webp"),
-    time: "16:00",
+    time: "10:30",
     circlePosition: "left",
   },
   {
     id: "3",
     name: "Edward von Freymann",
     image: require("../images/speakers23/von_freymann.webp"),
-    time: "16:00",
+    time: "11:00",
     circlePosition: "left",
   },
   {
     id: "4",
     name: "Riccardo Basilone",
     image: require("../images/speakers23/basilone.webp"),
-    time: "16:00",
+    time: "11:15",
     circlePosition: "left",
   },
   {
     id: "5",
     name: "Gloria Schito",
     image: require("../images/speakers23/schito.webp"),
-    time: "16:00",
+    time: "12:00",
     circlePosition: "left",
   },
   {
     id: "6",
     name: "Matteo Cervellini",
     image: require("../images/speakers23/cervellini.webp"),
-    time: "16:00",
+    time: "12:15",
     circlePosition: "left",
   },
   {
     id: "7",
     name: "Ana Estrela",
     image: require("../images/speakers23/estrela.webp"),
-    time: "16:00",
+    time: "12:30",
     circlePosition: "left",
   },
   {
     id: "8",
     name: "Nina Lambarelli",
     image: require("../images/speakers23/lambarelli.webp"),
-    time: "16:00",
+    time: "12:45",
     circlePosition: "left",
   },
   {
     id: "9",
     name: "Marcello Ienca",
     image: require("../images/speakers23/ienca.webp"),
-    time: "16:00",
+    time: "15:30",
     circlePosition: "left",
   },
   {
     id: "10",
     name: "Rose Villain",
     image: require("../images/speakers23/villain.webp"),
-    time: "16:00",
+    time: "15:45",
     circlePosition: "left",
   },
   {
@@ -104,7 +104,7 @@ const speaker23 = [
     id: "12",
     name: "Nakita Aboya",
     image: require("../images/speakers23/aboya.webp"),
-    time: "16:00",
+    time: "16:15",
     circlePosition: "left",
   },
 ];
@@ -314,50 +314,56 @@ const Speaker = () => {
         renderItem={({ item }) => (
           <Card id="CARD" containerStyle={styles.card}>
             <Image source={item.image} style={styles.image} />
-            <View
-              style={{
-                width: "100%",
-                height: "100%",
-                position: "absolute",
-                zIndex: 2,
-              }}
+            <LinearGradient
+              style={{ width: "100%", height: "100%", position: "absolute" }}
+              colors={["transparent", "rgba(0, 0, 0, 0.65)"]}
+              locations={[0, 0.8]}
             >
-              <Pressable
-                onPress={() => {
-                  setModalVisible(true);
-                  setCurrentDescription(
-                    language === "ita"
-                      ? speakersBio[item.name]
-                      : speakersBioEng[item.name]
-                  );
-                  setCurrentSpeakerImage(item.image);
-                  setCurrentSpeaker(item.name);
-                }}
-              >
-                <Text style={styles.nameText}>
-                  {item.name} <Feather name="info" size={24} color="white" />
-                </Text>
-              </Pressable>
-              <ImageBackground
-                source={PlaceholderImage}
+              <View
                 style={{
+                  width: "100%",
+                  height: "100%",
                   position: "absolute",
-
-                  top: 5,
-                  width: 80,
-                  aspectRatio: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  zIndex: 2,
                 }}
               >
-                <Text
-                  style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}
+                <Pressable
+                  onPress={() => {
+                    setModalVisible(true);
+                    setCurrentDescription(
+                      language === "ita"
+                        ? speakersBio[item.name]
+                        : speakersBioEng[item.name]
+                    );
+                    setCurrentSpeakerImage(item.image);
+                    setCurrentSpeaker(item.name);
+                  }}
                 >
-                  {item.time}
-                </Text>
-              </ImageBackground>
-            </View>
+                  <Text style={styles.nameText}>
+                    {item.name} <Feather name="info" size={24} color="white" />
+                  </Text>
+                </Pressable>
+                <ImageBackground
+                  source={PlaceholderImage}
+                  style={{
+                    position: "absolute",
+
+                    top: 5,
+                    width: 80,
+                    aspectRatio: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Text
+                    style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}
+                  >
+                    {item.time}
+                  </Text>
+                </ImageBackground>
+              </View>
+            </LinearGradient>
           </Card>
         )}
       />
