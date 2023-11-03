@@ -27,7 +27,7 @@ const speaker23 = [
     id: "1",
     name: "Damiano Tullio",
     image: require("../images/speakers23/tullio.webp"),
-    time: "10:00",
+    time: "10:15",
     circlePosition: "left",
   },
   {
