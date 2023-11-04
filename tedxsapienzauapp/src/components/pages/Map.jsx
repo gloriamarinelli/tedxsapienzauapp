@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
+import { Card } from "react-native-elements";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -54,7 +55,7 @@ const Map = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+              ></iframe>
             </View>
             <Text style={styles.text}>{item.text2}</Text>
             <Text style={styles.text1}>
@@ -62,10 +63,12 @@ const Map = () => {
               Palazzo del Rettorato, lato portico{"\n"}
               Piazzale Aldo Moro, 5, 00185 Roma RM{" "}
             </Text>
-            <Image
-              source={require("../images/village.png")}
-              style={styles.image}
-            />
+            <Card containerStyle={styles.card}>
+              <Image
+                source={require("../images/village.png")}
+                style={styles.image}
+              />
+            </Card>
           </ScrollView>
         ))}
       </SafeAreaView>
@@ -80,10 +83,9 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   text: {
-    fontSize: RFValue(20),
+    fontSize: RFValue(23),
     color: "#EB0028",
     textAlign: "justify",
-    marginTop: 15,
     fontWeight: "bold",
   },
   text1: {
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "justify",
     marginTop: 15,
+    marginBottom: 15,
   },
   mapContainer: {
     height: 300,
@@ -104,7 +107,6 @@ const styles = StyleSheet.create({
     width: 400,
   },
   image: {
-    marginTop: 20,
     height: 500,
     resizeMode: "contain",
     alignSelf: "center",
