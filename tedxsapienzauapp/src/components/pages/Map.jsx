@@ -1,32 +1,75 @@
-import React from "react";
-import { View, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
+import React, { useContext } from "react";
+import { LanguageContext } from "../../App.js";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Image,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 
 const windowWidth = Dimensions.get("window").width;
 
 const Map = () => {
+  const { language } = useContext(LanguageContext);
+
+  const mapITA = [
+    {
+      text: "Conferenza TEDxSapienzaU",
+      text2: "Village",
+    },
+  ];
+
+  const mapENG = [
+    {
+      text: "TEDxSapienzaU Conference",
+      text2: "Village",
+    },
+  ];
+
+  const map = language === "ita" ? mapITA : mapENG;
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.4928590518475!2d12.511863475793051!3d41.90376257123888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258f5b0fe7d911%3A0xed5342b156dcfd2b!2sSapienza%20University%20of%20Rome!5e0!3m2!1sen!2snl!4v1699102404041!5m2!1sen!2snl"
-            width={windowWidth - 100}
-            height={300}
-            style={styles.map}
-            allowFullScreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </View>
-        <Text style={styles.text}>
-          Aula Magna,{"\n"}
-          Palazzo del Rettorato{"\n"}
-          Sapienza Università di Roma{"\n"}
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={styles.container}>
+        {map.map((item, index) => (
+          <ScrollView key={index}>
+            <Text style={styles.text}>{item.text}</Text>
+
+            <Text style={styles.text1}>
+              Aula Magna CU001,{"\n"}
+              Palazzo del Rettorato{"\n"}
+              Sapienza Università di Roma{"\n"}
+              Piazzale Aldo Moro, 5, 00185 Roma RM{" "}
+            </Text>
+            <View style={styles.mapContainer}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.4928590518475!2d12.511863475793051!3d41.90376257123888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258f5b0fe7d911%3A0xed5342b156dcfd2b!2sSapienza%20University%20of%20Rome!5e0!3m2!1sen!2snl!4v1699102404041!5m2!1sen!2snl"
+                title="Google Maps"
+                width={windowWidth - 100}
+                height={200}
+                style={styles.map}
+                allowFullScreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+            </View>
+            <Text style={styles.text}>{item.text2}</Text>
+            <Text style={styles.text1}>
+              Città universitaria{"\n"}
+              Palazzo del Rettorato, lato portico{"\n"}
+              Piazzale Aldo Moro, 5, 00185 Roma RM{" "}
+            </Text>
+            <Image
+              source={require("../images/village.png")}
+              style={styles.image}
+            />
+          </ScrollView>
+        ))}
+      </SafeAreaView>
+    </>
   );
 };
 
@@ -37,6 +80,13 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   text: {
+    fontSize: RFValue(20),
+    color: "#EB0028",
+    textAlign: "justify",
+    marginTop: 15,
+    fontWeight: "bold",
+  },
+  text1: {
     fontSize: RFValue(18),
     color: "white",
     textAlign: "justify",
@@ -50,8 +100,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   map: {
-    height: 400,
-    width: 500,
+    height: 300,
+    width: 400,
+  },
+  image: {
+    marginTop: 20,
+    height: 500,
+    resizeMode: "contain",
+    alignSelf: "center",
   },
 });
 
