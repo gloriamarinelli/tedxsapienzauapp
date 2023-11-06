@@ -1,28 +1,122 @@
-import React, { useRef } from "react";
-import { ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Sound from "react-native-sound";
+import React, { useRef, useState, useEffect } from "react";
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import { Audio } from "expo-av";
+
+const buttonColor = ["#ff0000", "#00ff00", "#0000ff"];
+
+const speech = [
+  require("../../../speech/prova.wav"),
+  require("../../../speech/prova2.wav"),
+  require("../../../speech/prova3.wav"),
+];
 
 const Speech = () => {
-  const soundRef = useRef();
+  const [soundObject, setSoundObject] = useState(new Audio.Sound());
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(null);
+  const [position, setPosition] = useState(null);
 
-  const speech = () => {
-    const audioPath = require("../speech/prova.mp3");
-
-    soundRef.current = new Sound(audioPath, "", (error) => {
-      if (error) {
-        console.error("Error loading audio file:", error);
-      } else {
-        soundRef.current.play();
-      }
-    });
+  const handlePlaySpeech = async (uri) => {
+    try {
+      await soundObject.unloadAsync(); // Unload previous sound if any
+      await soundObject.loadAsync(uri, {}, false);
+      const { durationMillis } = await soundObject.getStatusAsync();
+      setDuration(durationMillis);
+      await soundObject.playAsync();
+      setIsPlaying(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  const handlePause = async () => {
+    try {
+      await soundObject.pauseAsync();
+      setIsPlaying(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleStop = async () => {
+    try {
+      await soundObject.stopAsync();
+      setIsPlaying(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleResume = async () => {
+    try {
+      await soundObject.playAsync();
+      setIsPlaying(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleDurationUpdate = async () => {
+    const { durationMillis, positionMillis } = await soundObject.getStatusAsync();
+    setDuration(durationMillis);
+    setPosition(positionMillis);
+  };
+
+  useEffect(() => {
+    soundObject.setOnPlaybackStatusUpdate(handleDurationUpdate);
+
+    return () => {
+      soundObject.unloadAsync(); // Unload the sound when the component is unmounted
+    };
+  }, []);
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={{ color: "white" }}>Speech in English</Text>
-      <TouchableOpacity onPress={speech}>
-        <Text style={{ color: "blue", marginTop: 10 }}>Play Audio</Text>
-      </TouchableOpacity>
+      {buttonColor &&
+        buttonColor.map((item, index) => (
+          <View key={index}>
+            <TouchableOpacity
+              style={[styles.button, { backgroundColor: item }]}
+              onPress={() => handlePlaySpeech(speech[index])}
+            >
+              <Text>{`Speech ${index + 1}`}</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+
+      <View style={styles.controls}>
+        {isPlaying ? (
+          <TouchableOpacity onPress={handlePause}>
+            <Text style={styles.controlText}>Pause</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={() => handlePlaySpeech(speech[0])}>
+            <Text style={styles.controlText}>Play</Text>
+          </TouchableOpacity>
+        )}
+
+        <TouchableOpacity onPress={handleStop}>
+          <Text style={styles.controlText}>Stop</Text>
+        </TouchableOpacity>
+
+        {isPlaying && (
+          <TouchableOpacity onPress={handleResume}>
+            <Text style={styles.controlText}>Resume</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+
+      <Text style={styles.faqText}>
+        {`Duration: ${duration !== null ? duration : "N/A"} ms\n`}
+        {`Position: ${position !== null ? position : "N/A"} ms\n`}
+        {`Status: ${isPlaying ? "Playing" : "Paused"}`}
+      </Text>
     </ScrollView>
   );
 };
@@ -32,6 +126,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0b0c0e",
     padding: 15,
+  },
+  button: {
+    padding: 10,
+    marginVertical: 10,
+    alignItems: "center",
+    borderRadius: 5,
+  },
+  controls: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  controlText: {
+    fontSize: 18,
+    color: "#ffffff",
+    marginVertical: 5,
+  },
+  faqText: {
+    marginTop: 10,
+    fontSize: 16,
+    color: "#ffffff",
   },
 });
 

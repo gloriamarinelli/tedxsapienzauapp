@@ -14,6 +14,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "expo": "^49.0.0",
+    "expo-av": "^13.6.0",
     "expo-linear-gradient": "~12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -26,8 +27,9 @@
     "react-native-screens": "~3.22.0",
     "react-native-shadow": "^1.2.2",
     "react-native-sound": "^0.11.2",
+    "react-native-sound-player": "^0.13.2",
     "react-native-svg": "13.9.0",
-    "react-native-vector-icons": "^10.0.0",
+    "react-native-vector-icons": "^10.0.1",
     "react-native-web": "~0.19.6",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"

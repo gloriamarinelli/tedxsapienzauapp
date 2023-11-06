@@ -208,7 +208,7 @@ const App = () => {
                 },
               })}
             />
-              <AppStack.Screen
+            <AppStack.Screen
               name="Speech"
               component={Speech}
               options={({ navigation, route }) => ({
