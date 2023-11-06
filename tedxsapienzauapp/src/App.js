@@ -13,6 +13,7 @@ import Bacheca from "./components/pages/Bacheca.jsx";
 import { ScrollView } from "react-native";
 import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
+import Speech from "./components/pages/Speech.jsx";
 import { FontAwesome5 } from "@expo/vector-icons";
 import global from "./resources/global.json";
 
@@ -29,6 +30,7 @@ const routes = [
   "Partners",
   "Map",
   "Bacheca",
+  "Speech",
 ];
 
 const AppStack = createStackNavigator();
@@ -102,6 +104,18 @@ const App = () => {
               }
             >
               Speakers
+            </Text>
+          </Pressable>
+
+          <Pressable onPress={() => navigation.navigate("Speech")}>
+            <Text
+              style={
+                selectedButton === "Speech"
+                  ? [styles.headerButton, styles.selectedButton]
+                  : styles.headerButton
+              }
+            >
+              Speech
             </Text>
           </Pressable>
 
@@ -183,6 +197,20 @@ const App = () => {
             <AppStack.Screen
               name="Speakers"
               component={Speakers}
+              options={({ navigation, route }) => ({
+                headerShown: true,
+                headerTitle: () => <CustomHeader navigation={navigation} />,
+                headerBackTitleVisible: false,
+                headerLeft: () => null,
+                headerStyle: {
+                  backgroundColor: "#0b0c0e",
+                  height: 150,
+                },
+              })}
+            />
+              <AppStack.Screen
+              name="Speech"
+              component={Speech}
               options={({ navigation, route }) => ({
                 headerShown: true,
                 headerTitle: () => <CustomHeader navigation={navigation} />,

@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginBottom: "25px",
-    marginTop: "25px"
+    marginTop: "25px",
   },
   roundButton1: {
     width: SocialWidth,
