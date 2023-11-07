@@ -35,10 +35,13 @@ const Speech = () => {
     }
   };
 
+
   const handlePause = async () => {
     try {
+      const { positionMillis } = await soundObject.getStatusAsync();
       await soundObject.pauseAsync();
       setIsPlaying(false);
+      setPosition(positionMillis);
     } catch (error) {
       console.log(error);
     }
@@ -55,7 +58,7 @@ const Speech = () => {
 
   const handleResume = async () => {
     try {
-      await soundObject.playAsync();
+      await soundObject.playFromPositionAsync(position);
       setIsPlaying(true);
     } catch (error) {
       console.log(error);
@@ -64,8 +67,8 @@ const Speech = () => {
 
   const handleDurationUpdate = async () => {
     const { durationMillis, positionMillis } = await soundObject.getStatusAsync();
-    setDuration(durationMillis);
-    setPosition(positionMillis);
+    setDuration(durationMillis/1000);
+    setPosition(positionMillis/1000);
   };
 
   useEffect(() => {
@@ -91,30 +94,30 @@ const Speech = () => {
         ))}
 
       <View style={styles.controls}>
-        {isPlaying ? (
-          <TouchableOpacity onPress={handlePause}>
-            <Text style={styles.controlText}>Pause</Text>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={() => handlePlaySpeech(speech[0])}>
-            <Text style={styles.controlText}>Play</Text>
-          </TouchableOpacity>
-        )}
+      {isPlaying ? (
+        <TouchableOpacity onPress={handlePause}>
+          <Text style={styles.controlText}>Pause</Text>
+        </TouchableOpacity>
+      ) : position === 0 ? ( 
+        <TouchableOpacity onPress={() => handlePlaySpeech(speech[0])}>
+          <Text style={styles.controlText}>Play</Text>
+        </TouchableOpacity>
+      ) : null}
 
         <TouchableOpacity onPress={handleStop}>
           <Text style={styles.controlText}>Stop</Text>
         </TouchableOpacity>
 
-        {isPlaying && (
+        {!isPlaying && position !== 0 ? (
           <TouchableOpacity onPress={handleResume}>
             <Text style={styles.controlText}>Resume</Text>
           </TouchableOpacity>
-        )}
+        ): null}
       </View>
 
       <Text style={styles.faqText}>
-        {`Duration: ${duration !== null ? duration : "N/A"} ms\n`}
-        {`Position: ${position !== null ? position : "N/A"} ms\n`}
+        {`Duration: ${duration !== null ? duration : "N/A"} s\n`}
+        {`Position: ${position !== null ? position : "N/A"} s\n`}
         {`Status: ${isPlaying ? "Playing" : "Paused"}`}
       </Text>
     </ScrollView>
