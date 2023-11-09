@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import { Audio } from "expo-av";
+//import { Audio } from "expo-av";
 
 const buttonColor = ["#ff0000", "#00ff00", "#0000ff"];
 
