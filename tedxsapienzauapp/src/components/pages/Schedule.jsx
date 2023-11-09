@@ -37,7 +37,7 @@ const Schedule = () => {
     },
     {
       time: "11:30",
-      titolo: "I break",
+      titolo: "I Break",
     },
     {
       time: "12:00",
@@ -46,7 +46,7 @@ const Schedule = () => {
     },
     {
       time: "13:00",
-      titolo: "Lunch break presso il Village TEDxSapienzaU",
+      titolo: "Lunch Break presso il Village TEDxSapienzaU",
     },
     {
       time: "15:00",
@@ -54,8 +54,8 @@ const Schedule = () => {
     },
     {
       time: "15:15",
-      titolo: "Interventi Istituzionali",
-      text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma ",
+      titolo: "Saluti Istituzionali",
+      text: "Antonella Polimeni, Magnifica Rettrice della Sapienza Università di Roma",
     },
     {
       time: "15:30",
@@ -64,22 +64,22 @@ const Schedule = () => {
     },
     {
       time: "16:30",
-      titolo: "Ringraziamenti da parte dei volontari e del team TEDxSapienzaU",
+      titolo: "Ringraziamenti da parte dei Volontari e del Team TEDxSapienzaU",
     },
     {
       time: "16:45",
-      titolo: "Intrattenimento Musicale - MUSA Sapienza",
+      titolo: "Esibizione Coro MuSa Blues - Diretto da Giorgio Monari",
     },
     {
       time: "17:00",
-      titolo: "Saluti finali",
+      titolo: "Saluti Finali",
     },
   ];
 
   const scheduleEng = [
     {
       time: "08:45",
-      titolo: "Credits",
+      titolo: "Accreditments",
     },
     {
       time: "09:45",
@@ -97,7 +97,7 @@ const Schedule = () => {
     },
     {
       time: "11:30",
-      titolo: "I break",
+      titolo: "I Break",
     },
     {
       time: "12:00",
@@ -106,7 +106,7 @@ const Schedule = () => {
     },
     {
       time: "13:00",
-      titolo: "Lunch break at TEDxSapienzaU's Village ",
+      titolo: "Lunch Break at TEDxSapienzaU's Village ",
     },
     {
       time: "15:00",
@@ -115,7 +115,7 @@ const Schedule = () => {
     {
       time: "15:15",
       titolo: "Speech from Institutional Topics",
-      text: "Antonella Polimeni, Rector of Sapienza University of Rome ",
+      text: "Antonella Polimeni, Dean of Sapienza University of Rome ",
     },
     {
       time: "15:30",
@@ -124,11 +124,11 @@ const Schedule = () => {
     },
     {
       time: "16:30",
-      titolo: "Greetings from TEDxSapienzaU team and volunteer",
+      titolo: "Thanks from TEDxSapienzaU Team and Volunteer",
     },
     {
       time: "16:45",
-      titolo: "Musical Entertainment - MUSA Sapienza",
+      titolo: "MuSa Blues Choir Performance - Conducted by Giorgio Monari ",
     },
     {
       time: "17:00",
