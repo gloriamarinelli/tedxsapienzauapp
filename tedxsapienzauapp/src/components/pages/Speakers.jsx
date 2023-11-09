@@ -29,6 +29,8 @@ const speaker23 = [
     image: require("../images/speakers23/tullio.webp"),
     time: "10:15",
     circlePosition: "left",
+    speechTitle:
+      " Esplorare Antartide e spazio per conoscere i limiti della vita",
   },
   {
     id: "2",
@@ -36,6 +38,7 @@ const speaker23 = [
     image: require("../images/speakers23/rossi.webp"),
     time: "10:30",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "3",
@@ -43,6 +46,7 @@ const speaker23 = [
     image: require("../images/speakers23/von_freymann.webp"),
     time: "11:00",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "4",
@@ -50,6 +54,7 @@ const speaker23 = [
     image: require("../images/speakers23/basilone.webp"),
     time: "11:15",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "5",
@@ -57,6 +62,7 @@ const speaker23 = [
     image: require("../images/speakers23/schito.webp"),
     time: "12:00",
     circlePosition: "left",
+    speechTitle: "A far la moda comincia tu",
   },
   {
     id: "6",
@@ -64,6 +70,7 @@ const speaker23 = [
     image: require("../images/speakers23/cervellini.webp"),
     time: "12:15",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "7",
@@ -71,6 +78,7 @@ const speaker23 = [
     image: require("../images/speakers23/estrela.webp"),
     time: "12:30",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "8",
@@ -78,6 +86,7 @@ const speaker23 = [
     image: require("../images/speakers23/lambarelli.webp"),
     time: "12:45",
     circlePosition: "left",
+    speechTitle: "A mille ce n'è. Storia di una bambina qualunque",
   },
   {
     id: "9",
@@ -85,6 +94,7 @@ const speaker23 = [
     image: require("../images/speakers23/ienca.webp"),
     time: "15:30",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "10",
@@ -92,6 +102,7 @@ const speaker23 = [
     image: require("../images/speakers23/villain.webp"),
     time: "15:45",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "11",
@@ -99,6 +110,7 @@ const speaker23 = [
     image: require("../images/speakers23/onofri.webp"),
     time: "16:00",
     circlePosition: "left",
+    speechTitle: "",
   },
   {
     id: "12",
@@ -106,6 +118,7 @@ const speaker23 = [
     image: require("../images/speakers23/aboya.webp"),
     time: "16:15",
     circlePosition: "left",
+    speechTitle: "",
   },
 ];
 
@@ -168,6 +181,7 @@ const Speaker = () => {
   const [currentDescription, setCurrentDescription] = useState("");
   const [currentSpeakerImage, setCurrentSpeakerImage] = useState("");
   const [currentSpeaker, setCurrentSpeaker] = useState("");
+  const [currentSpeechTitle, setCurrentSpeechTitle] = useState("");
 
   const { language } = useContext(LanguageContext);
 
@@ -198,7 +212,12 @@ const Speaker = () => {
             >
               {currentSpeaker}
             </Text>
-            <View style={{ height: "75%" }}>
+            <Text
+              style={{ fontSize: 18, marginBottom: 10, fontStyle: "italic" }}
+            >
+              "{currentSpeechTitle}"
+            </Text>
+            <View style={{ height: "65%" }}>
               <ScrollView>
                 <Text
                   style={{
@@ -337,6 +356,7 @@ const Speaker = () => {
                     );
                     setCurrentSpeakerImage(item.image);
                     setCurrentSpeaker(item.name);
+                    setCurrentSpeechTitle(item.speechTitle);
                   }}
                 >
                   <Text style={styles.nameText}>
