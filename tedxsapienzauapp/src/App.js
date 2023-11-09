@@ -1,6 +1,15 @@
 import React, { useState, useEffect, createContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import {
+  ScrollView,
+  Image,
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+} from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
@@ -10,28 +19,11 @@ import FAQ from "./components/pages/FAQ.jsx";
 import Speakers from "./components/pages/Speakers.jsx";
 import Map from "./components/pages/Map.jsx";
 import Bacheca from "./components/pages/Bacheca.jsx";
-import { ScrollView } from "react-native";
-import { Image, View, Text, StyleSheet, Pressable } from "react-native";
 import Schedule from "./components/pages/Schedule.jsx";
 import Speech from "./components/pages/Speech.jsx";
-import { FontAwesome5 } from "@expo/vector-icons";
 import global from "./resources/global.json";
 
 export const LanguageContext = createContext();
-
-const routes = [
-  "LoadingScreen",
-  "LoadingTransition",
-  "GetStarted",
-  "Vision",
-  "Schedule",
-  "Speakers",
-  "FAQ",
-  "Partners",
-  "Map",
-  "Bacheca",
-  "Speech",
-];
 
 const AppStack = createStackNavigator();
 
@@ -40,13 +32,26 @@ const App = () => {
 
   const CustomHeader = ({ navigation }) => {
     const [selectedButton, setSelectedButton] = useState("Vision");
+    const [hasNewNotification, setHasNewNotification] = useState(false);
 
     useEffect(() => {
       let currentPage =
         navigation.getState().routes[navigation.getState().routes.length - 1]
           .name;
       setSelectedButton(currentPage);
-    });
+    }, [navigation]);
+
+    useEffect(() => {
+      setHasNewNotification(
+        selectedButton === "Vision" ||
+          selectedButton === "Schedule" ||
+          selectedButton === "Speech" ||
+          selectedButton === "Partners" ||
+          selectedButton === "Map" ||
+          selectedButton === "Speakers" ||
+          selectedButton === "FAQ"
+      );
+    }, [selectedButton]);
 
     return (
       <View style={styles.headerStyle}>
@@ -59,7 +64,12 @@ const App = () => {
           }}
         >
           <Pressable onPress={() => navigation.navigate("Bacheca")}>
-            <FontAwesome5 name="bell" size={25} color="white" />
+            <View style={{ position: "relative" }}>
+              {hasNewNotification && (
+                <View style={styles.newNotificationIndicator} />
+              )}
+              <FontAwesome5 name="bell" size={25} color="white" />
+            </View>
           </Pressable>
           <Pressable onPress={() => navigation.navigate("GetStarted")}>
             <Image
@@ -285,8 +295,6 @@ const App = () => {
   );
 };
 
-export default App;
-
 const styles = StyleSheet.create({
   headerStyle: {
     width: "100%",
@@ -309,6 +317,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     transform: [{ scale: 1.1 }],
   },
+  newNotificationIndicator: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "red",
+  },
 });
 
-//global.COLORS.RED
+export default App;

@@ -27,7 +27,7 @@ const Schedule = () => {
     },
     {
       time: "10:00",
-      titolo: "Saluti Istituzionali",
+      titolo: "Interventi Istituzionali",
       text: "Prof. Massimo Ralli, Delegato per il TEDxSapienzaU",
     },
     {
@@ -87,7 +87,7 @@ const Schedule = () => {
     },
     {
       time: "10:00",
-      titolo: "Institutional Greetings",
+      titolo: "Speech from Institutional Topics",
       text: "Prof. Massimo Ralli, TEDxSapienzaU Delegate",
     },
     {
@@ -114,7 +114,7 @@ const Schedule = () => {
     },
     {
       time: "15:15",
-      titolo: "Speech from Institutional Topics",
+      titolo: "Institutional Greetings",
       text: "Antonella Polimeni, Dean of Sapienza University of Rome ",
     },
     {

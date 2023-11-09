@@ -199,7 +199,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "50%",
+              height: "70%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -256,70 +256,6 @@ const Speaker = () => {
           </View>
         </View>
       </Modal>
-    );
-  };
-
-  const SpeakerCard = ({ name, image, description, time, circlePosition }) => {
-    return (
-      <View
-        style={{
-          width: "100%",
-          height: 250,
-          backgroundColor: "#000",
-          position: "relative",
-          marginBottom: 20,
-        }}
-      >
-        <Image
-          source={Tullio}
-          style={{
-            position: "absolute",
-            maxHeight: 250,
-            width: "100%",
-            borderRadius: 10,
-          }}
-        />
-        <LinearGradient
-          style={{ width: "100%", height: "100%", position: "absolute" }}
-          colors={["transparent", "rgba(0, 0, 0, 0.65)"]}
-          locations={[0, 0.8]}
-        >
-          <Pressable
-            style={{ position: "absolute", bottom: 0, left: 0 }}
-            onPress={() => {
-              setModalVisible(true);
-              setCurrentDescription(
-                language === "ita" ? speakersBio[name] : speakersBioEng[name]
-              );
-              setCurrentSpeakerImage(image);
-              setCurrentSpeaker(name);
-            }}
-          >
-            <Text style={styles.nameText}>
-              {name}
-              {"  "} <Feather name="info" size={24} color="white" />
-            </Text>
-          </Pressable>
-          <ImageBackground
-            source={PlaceholderImage}
-            style={{
-              position: "absolute",
-              right: circlePosition === "left" ? null : 5,
-              left: circlePosition === "left" ? 5 : null,
-              top: 5,
-              width: 80,
-              aspectRatio: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
-              {time}
-            </Text>
-          </ImageBackground>
-        </LinearGradient>
-      </View>
     );
   };
 

@@ -62,12 +62,8 @@ const Map = () => {
             <Text style={styles.text2}>{item.text2}</Text>
             <Text style={styles.text1}>
               Città universitaria{"\n"}
-              Palazzo del Rettorato, lato portico{"\n"}
-              Piazzale Aldo Moro, 5, 00185 Roma RM{" "}
+              Viale Piero Gobetti, 00185 Roma RM
             </Text>
-            <View style={styles.container}>
-              <Image source={item.foto} style={styles.image} />
-            </View>
           </ScrollView>
         ))}
       </SafeAreaView>
