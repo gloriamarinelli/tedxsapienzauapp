@@ -49,8 +49,7 @@ const Map = () => {
             </Text>
             <View style={styles.mapContainer}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.4928590518475!2d12.511863475793051!3d41.90376257123888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258f5b0fe7d911%3A0xed5342b156dcfd2b!2sSapienza%20University%20of%20Rome!5e0!3m2!1sen!2snl!4v1699102404041!5m2!1sen!2snl"
-                title="Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d882.543031662757!2d12.515135702684388!3d41.90316879119429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f619da4adeb5d%3A0x8558a2dbf6f699eb!2sPalazzo%20del%20Rettorato!5e1!3m2!1sit!2sit!4v1699649016379!5m2!1sit!2sit"
                 width={windowWidth - 100}
                 height={200}
                 style={styles.map}
