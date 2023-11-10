@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
     margin: 1,
   },
   socialLogo: {
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
   },
 });
 

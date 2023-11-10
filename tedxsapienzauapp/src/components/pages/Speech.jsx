@@ -151,6 +151,8 @@ const styles = StyleSheet.create({
   controls: {
     marginTop: 20,
     alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
   },
   controlText: {
     fontSize: 18,

@@ -68,8 +68,8 @@ const GetStarted = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    backgroundColor: "#00000",
+    flex: 1,
+    backgroundColor: "#000000",
   },
   title: {
     fontSize: 24,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    display: "flex",
+    flex: 1,
     alignItems: "center",
   },
   image: {
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     height: windowHeight,
     borderRadius: 1,
     alignItems: "center",
+    resizeMode: "contain",
   },
   buttonContainer: {
     display: "flex",
