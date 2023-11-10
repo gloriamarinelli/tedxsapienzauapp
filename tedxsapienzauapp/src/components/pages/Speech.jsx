@@ -9,11 +9,10 @@ import {
 } from "react-native";
 import { Audio } from "expo-av";
 
-const buttonColor = ["#ff0000", "#00ff00", "#0000ff"];
+const buttonColor = ["#ffffff", "#ffffff", "#ffffff"];
 const logoPause = require("../images/player/pause.png");
 const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
-
 
 const speech = [
   require("../../../speech/sample3.aac"),
@@ -34,7 +33,7 @@ const Speech = () => {
         playsInSilentModeIOS: true,
         shouldDuckAndroid: true,
         staysActiveInBackground: false,
-        playThroughEarpieceAndroid: true
+        playThroughEarpieceAndroid: true,
       });
       await soundObject.unloadAsync(); // Unload previous sound if any
       await soundObject.loadAsync(uri, {}, false);
@@ -46,7 +45,6 @@ const Speech = () => {
       console.log(error);
     }
   };
-
 
   const handlePause = async () => {
     try {
@@ -79,8 +77,9 @@ const Speech = () => {
 
   useEffect(() => {
     soundObject.setOnPlaybackStatusUpdate();
-    {/*mettere l'argomento vuoto ed eliminare la funzione handledurationupdate*/}
-
+    {
+      /*mettere l'argomento vuoto ed eliminare la funzione handledurationupdate*/
+    }
 
     return () => {
       soundObject.unloadAsync(); // Unload the sound when the component is unmounted
@@ -102,15 +101,18 @@ const Speech = () => {
         ))}
 
       <View style={styles.controls}>
-      {isPlaying ? (
-        <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
-          <Image source={logoPause} style={styles.playerLogo} />
-        </TouchableOpacity>
-      ) : position === 0 ? ( 
-        <TouchableOpacity style={styles.roundButton1} onPress={() => handlePlaySpeech(speech[0])}>
-          <Image source={logoPlay} style={styles.playerLogo} />
-        </TouchableOpacity>
-      ) : null}
+        {isPlaying ? (
+          <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
+            <Image source={logoPause} style={styles.playerLogo} />
+          </TouchableOpacity>
+        ) : position === 0 ? (
+          <TouchableOpacity
+            style={styles.roundButton1}
+            onPress={() => handlePlaySpeech(speech[0])}
+          >
+            <Image source={logoPlay} style={styles.playerLogo} />
+          </TouchableOpacity>
+        ) : null}
 
         <TouchableOpacity style={styles.roundButton1} onPress={handleStop}>
           <Image source={logoStop} style={styles.playerLogo} />
@@ -120,7 +122,7 @@ const Speech = () => {
           <TouchableOpacity style={styles.roundButton1} onPress={handleResume}>
             <Image source={logoPlay} style={styles.playerLogo} />
           </TouchableOpacity>
-        ): null}
+        ) : null}
       </View>
 
       <Text style={styles.faqText}>
