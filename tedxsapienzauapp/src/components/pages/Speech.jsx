@@ -16,7 +16,7 @@ const logoPlay = require("../images/player/play.png");
 
 
 const speech = [
-  require("../../../speech/prova.wav"),
+  require("../../../speech/sample3.aac"),
   require("../../../speech/prova2.wav"),
   require("../../../speech/prova3.wav"),
 ];
@@ -81,10 +81,13 @@ const Speech = () => {
     const { durationMillis, positionMillis } = await soundObject.getStatusAsync();
     setDuration(durationMillis/1000);
     setPosition(positionMillis/1000);
+    {/*il problema è in questa funzione, fa ricorsione troppe volte e riempe lo stack*/}
   };
 
   useEffect(() => {
     soundObject.setOnPlaybackStatusUpdate(handleDurationUpdate);
+    {/*mettere l'argomento vuoto ed eliminare la funzione handledurationupdate*/}
+
 
     return () => {
       soundObject.unloadAsync(); // Unload the sound when the component is unmounted
