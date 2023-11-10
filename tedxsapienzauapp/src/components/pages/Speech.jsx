@@ -77,15 +77,8 @@ const Speech = () => {
     }
   };
 
-  const handleDurationUpdate = async () => {
-    const { durationMillis, positionMillis } = await soundObject.getStatusAsync();
-    setDuration(durationMillis/1000);
-    setPosition(positionMillis/1000);
-    {/*il problema è in questa funzione, fa ricorsione troppe volte e riempe lo stack*/}
-  };
-
   useEffect(() => {
-    soundObject.setOnPlaybackStatusUpdate(handleDurationUpdate);
+    soundObject.setOnPlaybackStatusUpdate();
     {/*mettere l'argomento vuoto ed eliminare la funzione handledurationupdate*/}
 
 
