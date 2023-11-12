@@ -22,7 +22,7 @@ const Partners = () => {
     { id: "16", logo: require("../images/partners23/Sanarti.webp") },
     { id: "17", logo: require("../images/partners23/Innocent.webp") },
     { id: "18", logo: require("../images/partners23/Redbull.webp") },
-    //{ id: "19", logo: require("../images/partners23/mancante.webp") },
+    { id: "19", logo: require("../images/partners23/Marziali.webp") },
     { id: "20", logo: require("../images/partners23/RadioSapienza.png") },
     { id: "21", logo: require("../images/partners23/eCo.webp") },
     { id: "22", logo: require("../images/partners23/RadioKaos.webp") },
