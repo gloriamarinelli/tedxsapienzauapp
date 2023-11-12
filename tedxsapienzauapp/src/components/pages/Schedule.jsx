@@ -28,7 +28,7 @@ const Schedule = () => {
     {
       time: "10:00",
       titolo: "Interventi Istituzionali",
-      text: "Prof. Massimo Ralli, Delegato per il TEDxSapienzaU",
+      text: "Prof. Massimo Ralli e Ass. Sabrina Alfonsi",
     },
     {
       time: "10:15",
@@ -88,7 +88,7 @@ const Schedule = () => {
     {
       time: "10:00",
       titolo: "Speech from Institutional Topics",
-      text: "Prof. Massimo Ralli, TEDxSapienzaU Delegate",
+      text: "Prof. Massimo Ralli e Ass. Sabrina Alfonsi",
     },
     {
       time: "10:15",
