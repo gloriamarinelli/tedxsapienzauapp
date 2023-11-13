@@ -4,7 +4,6 @@ import { Card } from "react-native-elements";
 
 const Partners = () => {
   const partnerLogos = [
-    { id: "1", logo: require("../images/partners23/Eni.webp") },
     { id: "2", logo: require("../images/partners23/Tim.webp") },
     { id: "3", logo: require("../images/partners23/Unicredit.webp") },
     { id: "4", logo: require("../images/partners23/Balduina1.webp") },
