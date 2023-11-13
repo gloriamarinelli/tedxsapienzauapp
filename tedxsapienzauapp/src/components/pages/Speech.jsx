@@ -31,25 +31,25 @@ const speech = [
 
 const informazioni = [
   {
-    titolo: "Ana Estrela",
+    titolo: "Ana Estrela                 ",
   },
   {
-    titolo: "Gloria Schito",
+    titolo: "Gloria Schito               ",
   },
   {
-    titolo: "Ilaria Rossi",
+    titolo: "Ilaria Rossi                   ",
   },
   {
-    titolo: "Matteo Cervellini",
+    titolo: "Matteo Cervellini        ",
   },
   {
-    titolo: "Nina Lambarelli",
+    titolo: "Nina Lambarelli           ",
   },
   {
-    titolo: "Riccardo Basilone",
+    titolo: "Riccardo Basilone       ",
   },
   {
-    titolo: "Rose Villain",
+    titolo: "Rose Villain                  ",
   },
   
 ]
@@ -57,6 +57,7 @@ const informazioni = [
 const Speech = () => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [duration, setDuration] = useState(null);
@@ -90,6 +91,7 @@ const Speech = () => {
       const { positionMillis } = await soundObject.getStatusAsync();
       await soundObject.pauseAsync();
       setIsPlaying(false);
+      setIsPaused(true);
       setPosition(positionMillis);
     } catch (error) {
       console.log(error);
@@ -103,6 +105,7 @@ const Speech = () => {
       setIsPlaying(false);
       setIsSelected(false);
       setActiveIndex(null);
+      setIsPaused(false);
     } catch (error) {
       console.log(error);
     }
@@ -112,6 +115,7 @@ const Speech = () => {
     try {
       await soundObject.playFromPositionAsync(position);
       setIsPlaying(true);
+      setIsPaused(false);
     } catch (error) {
       console.log(error);
     }
@@ -123,6 +127,7 @@ const Speech = () => {
         setIsPlaying(false);
         setPosition(0);
         setActiveIndex(null);
+        soundObject.unloadAsync();
       }
     };
 
@@ -134,43 +139,38 @@ const Speech = () => {
   }, [soundObject]);
 
   const renderItem = ({ item, index }) => {
+    const isCurrentlyActive = activeIndex === index;
     return (
       <Card containerStyle={styles.card} key={index}>
         <View style={styles.cardContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={[styles.button]}
-              onPress={() => handlePlaySpeech(speech[index], index)}
-            >
-              <Text style={styles.text}>{item.titolo}</Text>
-            </TouchableOpacity>
-  
-            {activeIndex === index && (
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+              <TouchableOpacity
+                style={[styles.buttonName]}
+                onPress={() => handlePlaySpeech(speech[index], index)}
+              >
+                <Text style={styles.text}>{item.titolo}</Text>
+              </TouchableOpacity>
               <View style={styles.controls}>
-                {isPlaying ? (
-                  <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
-                    <Image source={logoPause} style={styles.playerLogo} />
-                  </TouchableOpacity>
-                ) : position === 0 ? (
-                  <TouchableOpacity
-                    style={styles.roundButton1}
-                    onPress={() => handlePlaySpeech(speech[index], index)}
-                  >
+                {!isPaused ? (
+                  <TouchableOpacity style={styles.roundButton1} onPress={() => handlePlaySpeech(speech[index], index)}>
                     <Image source={logoPlay} style={styles.playerLogo} />
                   </TouchableOpacity>
-                ) : null}
+                ) : (
+                  <TouchableOpacity style={styles.roundButton1} onPress={() => handleResume()}>
+                    <Image source={logoPlay} style={styles.playerLogo} />
+                  </TouchableOpacity>
+                )}
   
-                <TouchableOpacity style={styles.roundButton1} onPress={handleStop}>
-                  <Image source={logoStop} style={styles.playerLogo} />
+                <TouchableOpacity style={styles.roundButton1} onPress={() => handlePause()}>
+                  <Image source={logoPause} style={styles.playerLogo} />
                 </TouchableOpacity>
   
-                {!isPlaying && position !== 0 ? (
-                  <TouchableOpacity style={styles.roundButton1} onPress={handleResume}>
-                    <Image source={logoPlay} style={styles.playerLogo} />
-                  </TouchableOpacity>
-                ) : null}
+                <TouchableOpacity style={styles.roundButton1} onPress={() => handleStop()}>
+                  <Image source={logoStop} style={styles.playerLogo} />
+                </TouchableOpacity>
               </View>
-            )}
+            </View>
           </View>
         </View>
       </Card>
@@ -211,6 +211,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
+    
   },
   controlText: {
     fontSize: 18,
@@ -218,39 +219,42 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   text: {
-    fontSize: RFValue(20),
+    fontSize: RFValue(15),
     color: "#eb0028",
   },
   roundButton1: {
-    width: 40,
-    height: 40,
+    width: 20,
+    height: 20,
     justifyContent: "center",
     alignItems: "center",
-    padding: 30,
-    borderRadius: 100,
+    padding: 20,
     backgroundColor: "white",
-    margin: 1,
+    
   },
   playerLogo: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
   },
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'center',
   },
   buttonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginTop: 10,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'flex-end', 
+  marginTop: 1,
   },
   card:{
-    width: windowWidth-60, // Adjust the percentage to suit your design
+    width: windowWidth-60,
     alignSelf: "stretch",
     borderRadius: 5,
     flexDirection: 'row',
-
+    height:60,
+  },
+  buttonName: {
+    marginVertical: 10,
+    alignItems: "center",
   },
 });
 
