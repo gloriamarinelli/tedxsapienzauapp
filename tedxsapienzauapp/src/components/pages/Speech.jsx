@@ -6,28 +6,66 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  FlatList,
 } from "react-native";
 import { Audio } from "expo-av";
+import { RFValue } from "react-native-responsive-fontsize";
+import { Card } from "react-native-elements";
+import { Dimensions } from 'react-native';
 
+const windowWidth = Dimensions.get("window").width;
 const buttonColor = ["#ffffff", "#ffffff", "#ffffff"];
 const logoPause = require("../images/player/pause.png");
 const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
 
 const speech = [
-  require("../../../speech/sample3.aac"),
-  require("../../../speech/prova2.wav"),
-  require("../../../speech/prova3.wav"),
+  require("../../../speech/ANA-ESTRELA.aac"),
+  require("../../../speech/GLORIA-SCHITO.aac"),
+  require("../../../speech/ILARIA-ROSSI.aac"),
+  require("../../../speech/MATTEO-CERVELLINI.aac"),
+  require("../../../speech/NINA-LAMBARELLI.aac"),
+  require("../../../speech/RICCARDO-BASILONE.aac"),
+  require("../../../speech/ROSE-VILLAIN.aac"),
 ];
+
+const informazioni = [
+  {
+    titolo: "Ana Estrela",
+  },
+  {
+    titolo: "Gloria Schito",
+  },
+  {
+    titolo: "Ilaria Rossi",
+  },
+  {
+    titolo: "Matteo Cervellini",
+  },
+  {
+    titolo: "Nina Lambarelli",
+  },
+  {
+    titolo: "Riccardo Basilone",
+  },
+  {
+    titolo: "Rose Villain",
+  },
+  
+]
 
 const Speech = () => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
   const [duration, setDuration] = useState(null);
   const [position, setPosition] = useState(null);
+  
 
-  const handlePlaySpeech = async (uri) => {
+  const handlePlaySpeech = async (uri, index) => {
     try {
+      setActiveIndex(index);
       await Audio.setAudioModeAsync({
         allowsRecordingIOS: false,
         playsInSilentModeIOS: true,
@@ -35,12 +73,13 @@ const Speech = () => {
         staysActiveInBackground: false,
         playThroughEarpieceAndroid: true,
       });
-      await soundObject.unloadAsync(); // Unload previous sound if any
+      await soundObject.unloadAsync();
       await soundObject.loadAsync(uri, {}, false);
       const { durationMillis } = await soundObject.getStatusAsync();
       setDuration(durationMillis);
       await soundObject.playAsync();
       setIsPlaying(true);
+      setIsSelected(true);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +99,10 @@ const Speech = () => {
   const handleStop = async () => {
     try {
       await soundObject.stopAsync();
+      await soundObject.unloadAsync();
       setIsPlaying(false);
+      setIsSelected(false);
+      setActiveIndex(null);
     } catch (error) {
       console.log(error);
     }
@@ -76,61 +118,72 @@ const Speech = () => {
   };
 
   useEffect(() => {
-    soundObject.setOnPlaybackStatusUpdate();
-    {
-      /*mettere l'argomento vuoto ed eliminare la funzione handledurationupdate*/
-    }
+    const onPlaybackStatusUpdate = (status) => {
+      if (status.didJustFinish) {
+        setIsPlaying(false);
+        setPosition(0);
+        setActiveIndex(null);
+      }
+    };
+
+    soundObject.setOnPlaybackStatusUpdate(onPlaybackStatusUpdate);
 
     return () => {
-      soundObject.unloadAsync(); // Unload the sound when the component is unmounted
+      soundObject.unloadAsync();
     };
-  }, []);
+  }, [soundObject]);
 
-  return (
-    <ScrollView style={styles.container}>
-      {buttonColor &&
-        buttonColor.map((item, index) => (
-          <View key={index}>
+  const renderItem = ({ item, index }) => {
+    return (
+      <Card containerStyle={styles.card} key={index}>
+        <View style={styles.cardContainer}>
+          <View style={styles.buttonContainer}>
             <TouchableOpacity
-              style={[styles.button, { backgroundColor: item }]}
-              onPress={() => handlePlaySpeech(speech[index])}
+              style={[styles.button]}
+              onPress={() => handlePlaySpeech(speech[index], index)}
             >
-              <Text>{`Speech ${index + 1}`}</Text>
+              <Text style={styles.text}>{item.titolo}</Text>
             </TouchableOpacity>
+  
+            {activeIndex === index && (
+              <View style={styles.controls}>
+                {isPlaying ? (
+                  <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
+                    <Image source={logoPause} style={styles.playerLogo} />
+                  </TouchableOpacity>
+                ) : position === 0 ? (
+                  <TouchableOpacity
+                    style={styles.roundButton1}
+                    onPress={() => handlePlaySpeech(speech[index], index)}
+                  >
+                    <Image source={logoPlay} style={styles.playerLogo} />
+                  </TouchableOpacity>
+                ) : null}
+  
+                <TouchableOpacity style={styles.roundButton1} onPress={handleStop}>
+                  <Image source={logoStop} style={styles.playerLogo} />
+                </TouchableOpacity>
+  
+                {!isPlaying && position !== 0 ? (
+                  <TouchableOpacity style={styles.roundButton1} onPress={handleResume}>
+                    <Image source={logoPlay} style={styles.playerLogo} />
+                  </TouchableOpacity>
+                ) : null}
+              </View>
+            )}
           </View>
-        ))}
+        </View>
+      </Card>
+    );
+  };
 
-      <View style={styles.controls}>
-        {isPlaying ? (
-          <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
-            <Image source={logoPause} style={styles.playerLogo} />
-          </TouchableOpacity>
-        ) : position === 0 ? (
-          <TouchableOpacity
-            style={styles.roundButton1}
-            onPress={() => handlePlaySpeech(speech[0])}
-          >
-            <Image source={logoPlay} style={styles.playerLogo} />
-          </TouchableOpacity>
-        ) : null}
-
-        <TouchableOpacity style={styles.roundButton1} onPress={handleStop}>
-          <Image source={logoStop} style={styles.playerLogo} />
-        </TouchableOpacity>
-
-        {!isPlaying && position !== 0 ? (
-          <TouchableOpacity style={styles.roundButton1} onPress={handleResume}>
-            <Image source={logoPlay} style={styles.playerLogo} />
-          </TouchableOpacity>
-        ) : null}
-      </View>
-
-      <Text style={styles.faqText}>
-        {`Duration: ${duration !== null ? duration : "N/A"} s\n`}
-        {`Position: ${position !== null ? position : "N/A"} s\n`}
-        {`Status: ${isPlaying ? "Playing" : "Paused"}`}
-      </Text>
-    </ScrollView>
+        return (
+          <FlatList
+            data={informazioni}
+            renderItem={renderItem}
+            keyExtractor={(item, index) => `${item.titolo}-${index}`}
+            style={styles.flatlist}
+    />
   );
 };
 
@@ -139,15 +192,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0b0c0e",
     padding: 15,
+    flexDirection: "row",
+  },
+  flatlist: {
+    flex: 1,
+    backgroundColor: "#0b0c0e",
+    padding: 15,
+
   },
   button: {
     padding: 10,
     marginVertical: 10,
     alignItems: "center",
-    borderRadius: 5,
+    borderRadius: 50,
+    
   },
   controls: {
-    marginTop: 20,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
@@ -157,10 +217,9 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     marginVertical: 5,
   },
-  faqText: {
-    marginTop: 10,
-    fontSize: 16,
-    color: "#ffffff",
+  text: {
+    fontSize: RFValue(20),
+    color: "#eb0028",
   },
   roundButton1: {
     width: 40,
@@ -175,6 +234,23 @@ const styles = StyleSheet.create({
   playerLogo: {
     width: 25,
     height: 25,
+  },
+  cardContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginTop: 10,
+  },
+  card:{
+    width: windowWidth-60, // Adjust the percentage to suit your design
+    alignSelf: "stretch",
+    borderRadius: 5,
+    flexDirection: 'row',
+
   },
 });
 
