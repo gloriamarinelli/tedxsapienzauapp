@@ -29,8 +29,7 @@ const speaker23 = [
     image: require("../images/speakers23/tullio.webp"),
     time: "10:15",
     circlePosition: "left",
-    speechTitle:
-      " Esplorare Antartide e spazio per conoscere i limiti della vita",
+    speechTitle: "Il binomio uomo-natura, secondo Damiano Tullio",
   },
   {
     id: "2",
@@ -38,7 +37,7 @@ const speaker23 = [
     image: require("../images/speakers23/rossi.webp"),
     time: "10:30",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "Fare scienza deve per forza essere così?",
   },
   {
     id: "3",
@@ -46,7 +45,7 @@ const speaker23 = [
     image: require("../images/speakers23/von_freymann.webp"),
     time: "11:00",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "La vita è Gaia",
   },
   {
     id: "4",
@@ -54,7 +53,7 @@ const speaker23 = [
     image: require("../images/speakers23/basilone.webp"),
     time: "11:15",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "A non capirci mai ci vogliam bene lo stesso",
   },
   {
     id: "5",
@@ -78,7 +77,7 @@ const speaker23 = [
     image: require("../images/speakers23/estrela.webp"),
     time: "12:30",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "Come essere felice anche se non sei un supereroe",
   },
   {
     id: "8",
@@ -94,7 +93,7 @@ const speaker23 = [
     image: require("../images/speakers23/ienca.webp"),
     time: "15:30",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "-",
   },
   {
     id: "10",
@@ -102,7 +101,7 @@ const speaker23 = [
     image: require("../images/speakers23/villain.webp"),
     time: "15:45",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "Musica e cura di sé: un cambio di prospettiva sul mondo",
   },
   {
     id: "11",
@@ -110,7 +109,8 @@ const speaker23 = [
     image: require("../images/speakers23/onofri.webp"),
     time: "16:00",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle:
+      "Esplorare Antartide e spazio per conoscere i limiti della vita",
   },
   {
     id: "12",
@@ -118,7 +118,7 @@ const speaker23 = [
     image: require("../images/speakers23/aboya.webp"),
     time: "16:15",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "-",
   },
 ];
 
@@ -199,7 +199,7 @@ const Speaker = () => {
           <View
             style={{
               width: "85%",
-              height: "70%",
+              height: "50%",
               backgroundColor: "#fff",
               borderRadius: 10,
               display: "flex",
@@ -333,6 +333,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0b0c0e",
     paddingTop: 20,
+    paddingBottom: 50,
   },
   nameText: {
     fontSize: RFValue(22),
