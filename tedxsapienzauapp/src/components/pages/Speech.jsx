@@ -11,7 +11,7 @@ import {
 import { Audio } from "expo-av";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Card } from "react-native-elements";
-import { Dimensions } from 'react-native';
+import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
 const buttonColor = ["#ffffff", "#ffffff", "#ffffff"];
@@ -32,28 +32,27 @@ const speech = [
 
 const informazioni = [
   {
-    titolo: "Ana Estrela                 ",
+    titolo: "Ana Estrela",
   },
   {
-    titolo: "Gloria Schito               ",
+    titolo: "Gloria Schito",
   },
   {
-    titolo: "Ilaria Rossi                   ",
+    titolo: "Ilaria Rossi",
   },
   {
-    titolo: "Matteo Cervellini        ",
+    titolo: "Matteo Cervellini",
   },
   {
-    titolo: "Nina Lambarelli           ",
+    titolo: "Nina Lambarelli",
   },
   {
-    titolo: "Riccardo Basilone       ",
+    titolo: "Riccardo Basilone",
   },
   {
-    titolo: "Rose Villain                  ",
+    titolo: "Rose Villain",
   },
-  
-]
+];
 
 const Speech = () => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
@@ -63,7 +62,6 @@ const Speech = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [duration, setDuration] = useState(null);
   const [position, setPosition] = useState(null);
-  
 
   const handlePlaySpeech = async (uri, index) => {
     try {
@@ -159,38 +157,61 @@ const Speech = () => {
     const isCurrentlyActive = activeIndex === index;
     return (
       <Card containerStyle={styles.card} key={index}>
-        <View style={styles.cardContainer}>
-          <View style={styles.buttonContainer}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-              <TouchableOpacity
-                style={[styles.buttonName]}
-                onPress={() => handlePlaySpeech(speech[index], index)}
-              >
-                <Text style={styles.text}>{item.titolo}</Text>
-              </TouchableOpacity>
-              <View style={styles.controls}>
-                {!isPaused ? (
-                  <TouchableOpacity style={styles.roundButton1} onPress={() => handlePlaySpeech(speech[index], index)}>
-                    <Image source={logoPlay} style={styles.playerLogo} />
-                  </TouchableOpacity>
-                ) : (
-                  <TouchableOpacity style={styles.roundButton1} onPress={() => handleResume()}>
-                    <Image source={logoPlay} style={styles.playerLogo} />
-                  </TouchableOpacity>
-                )}
-  
-                <TouchableOpacity style={styles.roundButton1} onPress={() => handlePause()}>
-                  <Image source={logoPause} style={styles.playerLogo} />
+        <View style={styles.buttonContainer}>
+          <View
+            style={{
+              flexDirection: "row",
+            }}
+          >
+            <TouchableOpacity
+              style={[styles.buttonName]}
+              onPress={() => handlePlaySpeech(speech[index], index)}
+            >
+              <Text style={styles.text}>{item.titolo}</Text>
+            </TouchableOpacity>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "flex-end",
+              }}
+            >
+              {!isPaused ? (
+                <TouchableOpacity
+                  style={styles.roundButton1}
+                  onPress={() => handlePlaySpeech(speech[index], index)}
+                >
+                  <Image source={logoPlay} style={styles.playerLogo} />
                 </TouchableOpacity>
-  
-                <TouchableOpacity style={styles.roundButton1} onPress={() => handleStop()}>
-                  <Image source={logoStop} style={styles.playerLogo} />
+              ) : (
+                <TouchableOpacity
+                  style={styles.roundButton1}
+                  onPress={() => handleResume()}
+                >
+                  <Image source={logoPlay} style={styles.playerLogo} />
                 </TouchableOpacity>
+              )}
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => handleTenSeconds()}>
-                  <Image source={logoBack} style={styles.playerLogo} />
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity
+                style={styles.roundButton1}
+                onPress={() => handlePause()}
+              >
+                <Image source={logoPause} style={styles.playerLogo} />
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.roundButton1}
+                onPress={() => handleStop()}
+              >
+                <Image source={logoStop} style={styles.playerLogo} />
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.roundButton1}
+                onPress={() => handleTenSeconds()}
+              >
+                <Image source={logoBack} style={styles.playerLogo} />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -198,12 +219,12 @@ const Speech = () => {
     );
   };
 
-        return (
-          <FlatList
-            data={informazioni}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => `${item.titolo}-${index}`}
-            style={styles.flatlist}
+  return (
+    <FlatList
+      data={informazioni}
+      renderItem={renderItem}
+      keyExtractor={(item, index) => `${item.titolo}-${index}`}
+      style={styles.flatlist}
     />
   );
 };
@@ -219,20 +240,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0b0c0e",
     padding: 15,
-
   },
   button: {
     padding: 10,
     marginVertical: 10,
     alignItems: "center",
     borderRadius: 50,
-    
   },
   controls: {
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
-    
   },
   controlText: {
     fontSize: 18,
@@ -240,8 +258,9 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   text: {
-    fontSize: RFValue(15),
+    fontSize: RFValue(13),
     color: "#eb0028",
+    fontWeight: "bold",
   },
   roundButton1: {
     width: 20,
@@ -250,28 +269,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "white",
-    
   },
   playerLogo: {
     width: 20,
     height: 20,
   },
-  cardContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
+
   buttonContainer: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-end', 
-  marginTop: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    marginTop: 1,
   },
-  card:{
-    width: windowWidth-60,
+  card: {
+    width: windowWidth - 60,
     alignSelf: "stretch",
     borderRadius: 5,
-    flexDirection: 'row',
-    height:60,
+    flexDirection: "row",
+    height: 60,
+    alignItems: "center",
   },
   buttonName: {
     marginVertical: 10,

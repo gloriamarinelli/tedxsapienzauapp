@@ -118,7 +118,7 @@ const speaker23 = [
     image: require("../images/speakers23/aboya.webp"),
     time: "16:15",
     circlePosition: "left",
-    speechTitle: "-",
+    speechTitle: "How to get into a Phd at 20 years old",
   },
 ];
 
