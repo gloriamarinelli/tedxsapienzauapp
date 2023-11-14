@@ -21,36 +21,44 @@ const logoPlay = require("../images/player/play.png");
 const logoBack = require("../images/player/back.png");
 
 const speech = [
-  require("../../../speech/ANA-ESTRELA.aac"),
-  require("../../../speech/GLORIA-SCHITO.aac"),
   require("../../../speech/ILARIA-ROSSI.aac"),
-  require("../../../speech/MATTEO-CERVELLINI.aac"),
-  require("../../../speech/NINA-LAMBARELLI.aac"),
+  require("../../../speech/VON_FREYMANN.aac"),
   require("../../../speech/RICCARDO-BASILONE.aac"),
+  require("../../../speech/GLORIA-SCHITO.aac"),
+  require("../../../speech/MATTEO-CERVELLINI.aac"), 
+  require("../../../speech/ANA-ESTRELA.aac"),
+  require("../../../speech/NINA-LAMBARELLI.aac"),
   require("../../../speech/ROSE-VILLAIN.aac"),
+  require("../../../speech/ONOFRI.aac"),
 ];
 
 const informazioni = [
   {
-    titolo: "Ana Estrela",
-  },
-  {
-    titolo: "Gloria Schito",
-  },
-  {
     titolo: "Ilaria Rossi",
   },
   {
-    titolo: "Matteo Cervellini",
-  },
-  {
-    titolo: "Nina Lambarelli",
+    titolo: "Edward von Freymann",
   },
   {
     titolo: "Riccardo Basilone",
   },
   {
+    titolo: "Gloria Schito",
+  },
+  {
+    titolo: "Matteo Cervellini",
+  },
+  {
+    titolo: "Ana Estrela",
+  },
+  {
+    titolo: "Nina Lambarelli",
+  },
+  {
     titolo: "Rose Villain",
+  },
+  {
+    titolo: "Silvano Onofri",
   },
 ];
 
@@ -125,11 +133,14 @@ const Speech = () => {
 
   const handleTenSeconds = async () => {
     try {
-      if (position >= 10000) {
-        handlePause();
-        const newPosition =(position - 10000);
-        await soundObject.playFromPositionAsync(newPosition);
+      const { positionMillis } = await soundObject.getStatusAsync();
+      if (positionMillis >= 10000) {
+        setIsPaused(true); // Pause the audio temporarily
+        const newPosition = (positionMillis - 10000);
+        await soundObject.setPositionAsync(newPosition);
+        await soundObject.playAsync(); // Start playing from the new position
         setPosition(newPosition);
+        setIsPaused(false); // Resume playback
       } else {
         await soundObject.replayAsync();
         setPosition(0);
