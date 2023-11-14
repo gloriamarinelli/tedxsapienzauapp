@@ -69,7 +69,7 @@ const speaker23 = [
     image: require("../images/speakers23/cervellini.webp"),
     time: "12:15",
     circlePosition: "left",
-    speechTitle: "",
+    speechTitle: "Come essere felice anche se non sei un supereroe",
   },
   {
     id: "7",
@@ -93,7 +93,7 @@ const speaker23 = [
     image: require("../images/speakers23/ienca.webp"),
     time: "15:30",
     circlePosition: "left",
-    speechTitle: "-",
+    speechTitle: "Human-Machine Symbiosis and the Quest for Neurorights",
   },
   {
     id: "10",
@@ -212,11 +212,15 @@ const Speaker = () => {
             >
               {currentSpeaker}
             </Text>
-            <Text
-              style={{ fontSize: 18, marginBottom: 10, fontStyle: "italic" }}
-            >
-              "{currentSpeechTitle}"
-            </Text>
+            {language === "ita" ? (
+              <Text
+                style={{ fontSize: 18, marginBottom: 10, fontStyle: "italic" }}
+              >
+                "{currentSpeechTitle}"
+              </Text>
+            ) : (
+              <></>
+            )}
             <View style={{ height: "65%" }}>
               <ScrollView>
                 <Text
