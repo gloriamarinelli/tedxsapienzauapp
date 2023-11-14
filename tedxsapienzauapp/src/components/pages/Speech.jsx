@@ -67,6 +67,7 @@ const Speech = () => {
   const handlePlaySpeech = async (uri, index) => {
     try {
       setActiveIndex(index);
+      setIsSelected(index);
       await Audio.setAudioModeAsync({
         allowsRecordingIOS: false,
         playsInSilentModeIOS: true,
@@ -80,7 +81,6 @@ const Speech = () => {
       setDuration(durationMillis);
       await soundObject.playAsync();
       setIsPlaying(true);
-      setIsSelected(true);
       setEverPlayed(true);
     } catch (error) {
       console.log(error);
@@ -179,28 +179,21 @@ const Speech = () => {
                 justifyContent: "flex-end",
               }}
             >
-              {!everPlayed ? (
-                <TouchableOpacity
-                  style={styles.roundButton1}
-                  onPress={() => handlePlaySpeech(speech[index], index)}
-                >
-                  <Image source={logoPlay} style={styles.playerLogo} />
-                </TouchableOpacity>
-              ) : isPaused? (
-                <TouchableOpacity
-                  style={styles.roundButton1}
-                  onPress={() => handleResume()}
-                >
-                  <Image source={logoPlay} style={styles.playerLogo} />
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity
-                style={styles.roundButton1}
-                onPress={() => handlePause()}
-              >
-                <Image source={logoPause} style={styles.playerLogo} />
-              </TouchableOpacity>
-              )}
+              {isSelected === index ? (
+  <TouchableOpacity
+    style={styles.roundButton1}
+    onPress={() => (isPaused ? handleResume() : handlePause())}
+  >
+    <Image source={isPaused ? logoPlay : logoPause} style={styles.playerLogo} />
+  </TouchableOpacity>
+) : (
+  <TouchableOpacity
+    style={styles.roundButton1}
+    onPress={() => handlePlaySpeech(speech[index], index)}
+  >
+    <Image source={logoPlay} style={styles.playerLogo} />
+  </TouchableOpacity>
+)}
               <TouchableOpacity
                 style={styles.roundButton1}
                 onPress={() => handleStop()}
