@@ -18,6 +18,7 @@ const buttonColor = ["#ffffff", "#ffffff", "#ffffff"];
 const logoPause = require("../images/player/pause.png");
 const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
+const logoBack = require("../images/player/back.png");
 
 const speech = [
   require("../../../speech/ANA-ESTRELA.aac"),
@@ -121,6 +122,17 @@ const Speech = () => {
     }
   };
 
+  const handleTenSeconds = async () => {
+    try {
+      handlePause();
+      const { positionMillis } = await soundObject.getStatusAsync();
+      setPosition(positionMillis-10000);
+      await soundObject.playFromPositionAsync(position);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     const onPlaybackStatusUpdate = (status) => {
       if (status.didJustFinish) {
@@ -168,6 +180,10 @@ const Speech = () => {
   
                 <TouchableOpacity style={styles.roundButton1} onPress={() => handleStop()}>
                   <Image source={logoStop} style={styles.playerLogo} />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.roundButton1} onPress={() => handleTenSeconds()}>
+                  <Image source={logoBack} style={styles.playerLogo} />
                 </TouchableOpacity>
               </View>
             </View>
