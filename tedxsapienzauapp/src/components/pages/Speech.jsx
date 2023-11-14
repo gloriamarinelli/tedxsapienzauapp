@@ -62,6 +62,7 @@ const Speech = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [duration, setDuration] = useState(null);
   const [position, setPosition] = useState(null);
+  const [everPlayed, setEverPlayed] = useState(false);
 
   const handlePlaySpeech = async (uri, index) => {
     try {
@@ -80,6 +81,7 @@ const Speech = () => {
       await soundObject.playAsync();
       setIsPlaying(true);
       setIsSelected(true);
+      setEverPlayed(true);
     } catch (error) {
       console.log(error);
     }
@@ -105,6 +107,7 @@ const Speech = () => {
       setIsSelected(false);
       setActiveIndex(null);
       setIsPaused(false);
+      setEverPlayed(false);
     } catch (error) {
       console.log(error);
     }
@@ -124,7 +127,7 @@ const Speech = () => {
     try {
       if (position >= 10000) {
         handlePause();
-        const newPosition = Math.max(0, position - 10000);
+        const newPosition =(position - 10000);
         await soundObject.playFromPositionAsync(newPosition);
         setPosition(newPosition);
       } else {
@@ -176,29 +179,28 @@ const Speech = () => {
                 justifyContent: "flex-end",
               }}
             >
-              {!isPaused ? (
+              {!everPlayed ? (
                 <TouchableOpacity
                   style={styles.roundButton1}
                   onPress={() => handlePlaySpeech(speech[index], index)}
                 >
                   <Image source={logoPlay} style={styles.playerLogo} />
                 </TouchableOpacity>
-              ) : (
+              ) : isPaused? (
                 <TouchableOpacity
                   style={styles.roundButton1}
                   onPress={() => handleResume()}
                 >
                   <Image source={logoPlay} style={styles.playerLogo} />
                 </TouchableOpacity>
-              )}
-
-              <TouchableOpacity
+              ) : (
+                <TouchableOpacity
                 style={styles.roundButton1}
                 onPress={() => handlePause()}
               >
                 <Image source={logoPause} style={styles.playerLogo} />
               </TouchableOpacity>
-
+              )}
               <TouchableOpacity
                 style={styles.roundButton1}
                 onPress={() => handleStop()}
