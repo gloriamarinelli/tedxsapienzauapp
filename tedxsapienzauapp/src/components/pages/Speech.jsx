@@ -124,14 +124,19 @@ const Speech = () => {
 
   const handleTenSeconds = async () => {
     try {
-      handlePause();
-      const { positionMillis } = await soundObject.getStatusAsync();
-      setPosition(positionMillis-10000);
-      await soundObject.playFromPositionAsync(position);
+      if (position >= 10000) {
+        handlePause();
+        const newPosition = Math.max(0, position - 10000);
+        await soundObject.playFromPositionAsync(newPosition);
+        setPosition(newPosition);
+      } else {
+        await soundObject.replayAsync();
+        setPosition(0);
+      }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     const onPlaybackStatusUpdate = (status) => {
