@@ -34,31 +34,31 @@ const speech = [
 
 const informazioni = [
   {
-    titolo: "Ilaria Rossi",
+    titolo: "Ilaria Rossi                         ",
   },
   {
-    titolo: "Edward von Freymann",
+    titolo: "Edward von Freymann      ",
   },
   {
-    titolo: "Riccardo Basilone",
+    titolo: "Riccardo Basilone             ",
   },
   {
-    titolo: "Gloria Schito",
+    titolo: "Gloria Schito                     ",
   },
   {
-    titolo: "Matteo Cervellini",
+    titolo: "Matteo Cervellini              ",
   },
   {
-    titolo: "Ana Estrela",
+    titolo: "Ana Estrela                         ",
   },
   {
-    titolo: "Nina Lambarelli",
+    titolo: "Nina Lambarelli                ",
   },
   {
-    titolo: "Rose Villain",
+    titolo: "Rose Villain                       ",
   },
   {
-    titolo: "Silvano Onofri",
+    titolo: "Silvano Onofri                  ",
   },
 ];
 
