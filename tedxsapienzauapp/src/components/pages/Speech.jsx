@@ -21,6 +21,7 @@ const logoPlay = require("../images/player/play.png");
 const logoBack = require("../images/player/back.png");
 
 const speech = [
+  require("../../../speech/TULLIO.aac"),
   require("../../../speech/ILARIA-ROSSI.aac"),
   require("../../../speech/VON_FREYMANN.aac"),
   require("../../../speech/RICCARDO-BASILONE.aac"),
@@ -33,6 +34,9 @@ const speech = [
 ];
 
 const informazioni = [
+  {
+    titolo: "Damiano Tullio                       ",
+  },
   {
     titolo: "Ilaria Rossi                         ",
   },
