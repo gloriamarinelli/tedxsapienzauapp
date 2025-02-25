@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   ScrollView,
   Image,
@@ -17,8 +18,6 @@ import Partners from "./components/pages/Partners.jsx";
 import Vision from "./components/pages/Vision.jsx";
 import FAQ from "./components/pages/FAQ.jsx";
 import Speakers from "./components/pages/Speakers.jsx";
-import Map from "./components/pages/Map.jsx";
-import Bacheca from "./components/pages/Bacheca.jsx";
 import Schedule from "./components/pages/Schedule.jsx";
 import Speech from "./components/pages/Speech.jsx";
 import global from "./resources/global.json";
@@ -26,13 +25,52 @@ import global from "./resources/global.json";
 export const LanguageContext = createContext();
 
 const AppStack = createStackNavigator();
+const Navbar = createBottomTabNavigator();
+
+const BottomTabNavigator = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Vision') {
+            iconName = 'eye';
+          } else if (route.name === 'Schedule') {
+            iconName = 'calendar-alt';
+          } else if (route.name === 'Speakers') {
+            iconName = 'microphone-alt';
+          } else if (route.name === 'Speech') {
+            iconName = 'bullhorn';
+          } else if (route.name === 'FAQ') {
+            iconName = 'question-circle';
+          } else if (route.name === 'Partners') {
+            iconName = 'handshake';
+          }
+
+          return <FontAwesome5 name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: global.COLORS.RED,
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Tab.Screen name="Vision" component={Vision} />
+      <Tab.Screen name="Schedule" component={Schedule} />
+      <Tab.Screen name="Speakers" component={Speakers} />
+      <Tab.Screen name="Speech" component={Speech} />
+      <Tab.Screen name="FAQ" component={FAQ} />
+      <Tab.Screen name="Partners" component={Partners} />
+    </Tab.Navigator>
+  );
+};
 
 const App = () => {
   const [language, setLanguage] = useState("ita");
 
   const CustomHeader = ({ navigation }) => {
     const [selectedButton, setSelectedButton] = useState("Vision");
-    const [hasNewNotification, setHasNewNotification] = useState(false);
 
     useEffect(() => {
       let currentPage =
@@ -41,17 +79,6 @@ const App = () => {
       setSelectedButton(currentPage);
     }, [navigation]);
 
-    useEffect(() => {
-      setHasNewNotification(
-        selectedButton === "Vision" ||
-          selectedButton === "Schedule" ||
-          selectedButton === "Speech" ||
-          selectedButton === "Partners" ||
-          selectedButton === "Map" ||
-          selectedButton === "Speakers" ||
-          selectedButton === "FAQ"
-      );
-    }, [selectedButton]);
 
     return (
       <View style={styles.headerStyle}>
@@ -63,22 +90,12 @@ const App = () => {
             justifyContent: "space-around",
           }}
         >
-          <Pressable onPress={() => navigation.navigate("Bacheca")}>
-            <View style={{ position: "relative" }}>
-              {hasNewNotification && (
-                <View style={styles.newNotificationIndicator} />
-              )}
-              <FontAwesome5 name="bell" size={25} color="white" />
-            </View>
-          </Pressable>
+          
           <Pressable onPress={() => navigation.navigate("GetStarted")}>
             <Image
               style={{ width: 200, height: 30 }}
               source={require("./components/images/logo-white.png")}
             />
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("Map")}>
-            <FontAwesome5 name="map-marked-alt" size={24} color="white" />
           </Pressable>
         </View>
 
@@ -260,34 +277,7 @@ const App = () => {
                 },
               })}
             />
-            <AppStack.Screen
-              name="Map"
-              component={Map}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="Bacheca"
-              component={Bacheca}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
+            
           </>
         </AppStack.Navigator>
       </NavigationContainer>
