@@ -55,7 +55,7 @@ const GetStarted = ({ navigation }) => {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate("Vision")}
+              onPress={() => navigation.navigate("Main")}
             >
               <Text style={styles.buttonLabel1}>{buttonText}</Text>
             </TouchableOpacity>

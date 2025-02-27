@@ -1,320 +1,214 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {
-  ScrollView,
-  Image,
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Image, View, StyleSheet, Pressable } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+
+// Import pages
 import LoadingScreen from "./components/pages/LoadingScreen.jsx";
 import LoadingTransition from "./components/pages/LoadingTransition.jsx";
 import GetStarted from "./components/pages/GetStarted.jsx";
 import Partners from "./components/pages/Partners.jsx";
-import Vision from "./components/pages/Vision.jsx";
+
 import FAQ from "./components/pages/FAQ.jsx";
 import Speakers from "./components/pages/Speakers.jsx";
 import Schedule from "./components/pages/Schedule.jsx";
 import Speech from "./components/pages/Speech.jsx";
 import global from "./resources/global.json";
+import Paradoxa from "./components/pages/Paradoxa.jsx";
 
+
+// Context for language settings
 export const LanguageContext = createContext();
 
-const AppStack = createStackNavigator();
-const Navbar = createBottomTabNavigator();
+// Create the Stack and Tab Navigators
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
+// Custom Header Component for Tab Screens
+const CustomHeader = () => {
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.headerStyle}>
+      <Pressable onPress={() => navigation.navigate("GetStarted")}>
+        <Image
+          style={{ width: 200, height: 30 }}
+          source={require("./components/images/logo-white.png")}
+        />
+      </Pressable>
+    </View>
+  );
+};
+
+// Bottom Tab Navigator
 const BottomTabNavigator = () => {
+  const navigation = useNavigation();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ color, size }) => {
           let iconName;
-
-          if (route.name === 'Vision') {
-            iconName = 'eye';
-          } else if (route.name === 'Schedule') {
-            iconName = 'calendar-alt';
-          } else if (route.name === 'Speakers') {
-            iconName = 'microphone-alt';
-          } else if (route.name === 'Speech') {
-            iconName = 'bullhorn';
-          } else if (route.name === 'FAQ') {
-            iconName = 'question-circle';
-          } else if (route.name === 'Partners') {
-            iconName = 'handshake';
-          }
+          
+          if (route.name === "Schedule") iconName = "calendar-alt";
+          else if (route.name === "Home") iconName = "home";
+          else if (route.name === "Speech") iconName = "bullhorn";
+          else if (route.name === "FAQ") iconName = "question-circle";
+          else if (route.name === "Partners") iconName = "handshake";
+          else if (route.name === "Paradoxa") iconName = "times";
 
           return <FontAwesome5 name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: global.COLORS.RED,
+        tabBarInactiveTintColor: "gray",
+        header: () => <CustomHeader />,
+        headerStyle: { backgroundColor: "#0b0c0e", height: 100 },
       })}
-      tabBarOptions={{
-        activeTintColor: global.COLORS.RED,
-        inactiveTintColor: 'gray',
-      }}
     >
-      <Tab.Screen name="Vision" component={Vision} />
-      <Tab.Screen name="Schedule" component={Schedule} />
-      <Tab.Screen name="Speakers" component={Speakers} />
-      <Tab.Screen name="Speech" component={Speech} />
-      <Tab.Screen name="FAQ" component={FAQ} />
-      <Tab.Screen name="Partners" component={Partners} />
+      <Tab.Screen
+        name="Home"
+        component={Speakers}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("Speakers");
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Paradoxa"
+        component={Paradoxa}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("Paradoxa");
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Partners"
+        component={Partners}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("Partners");
+          },
+        }}
+      />
+      <Tab.Screen
+        name="FAQ"
+        component={FAQ}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("FAQ");
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Schedule"
+        component={Schedule}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("Schedule");
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Speech"
+        component={Speech}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate("Speech");
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };
 
+// Main App Component
 const App = () => {
   const [language, setLanguage] = useState("ita");
-
-  const CustomHeader = ({ navigation }) => {
-    const [selectedButton, setSelectedButton] = useState("Vision");
-
-    useEffect(() => {
-      let currentPage =
-        navigation.getState().routes[navigation.getState().routes.length - 1]
-          .name;
-      setSelectedButton(currentPage);
-    }, [navigation]);
-
-
-    return (
-      <View style={styles.headerStyle}>
-        <View
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-          }}
-        >
-          
-          <Pressable onPress={() => navigation.navigate("GetStarted")}>
-            <Image
-              style={{ width: 200, height: 30 }}
-              source={require("./components/images/logo-white.png")}
-            />
-          </Pressable>
-        </View>
-
-        <ScrollView horizontal style={styles.headerButtonsContainer}>
-          <Pressable onPress={() => navigation.navigate("Vision")}>
-            <Text
-              style={
-                selectedButton === "Vision"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              Vision
-            </Text>
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("Schedule")}>
-            <Text
-              style={
-                selectedButton === "Schedule"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              Schedule
-            </Text>
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("Speakers")}>
-            <Text
-              style={
-                selectedButton === "Speakers"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              Speakers
-            </Text>
-          </Pressable>
-
-          <Pressable onPress={() => navigation.navigate("Speech")}>
-            <Text
-              style={
-                selectedButton === "Speech"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              Speech
-            </Text>
-          </Pressable>
-
-          <Pressable onPress={() => navigation.navigate("FAQ")}>
-            <Text
-              style={
-                selectedButton === "FAQ"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              FAQ
-            </Text>
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("Partners")}>
-            <Text
-              style={
-                selectedButton === "Partners"
-                  ? [styles.headerButton, styles.selectedButton]
-                  : styles.headerButton
-              }
-            >
-              Partners
-            </Text>
-          </Pressable>
-        </ScrollView>
-      </View>
-    );
-  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <NavigationContainer>
-        <AppStack.Navigator>
-          <>
-            <AppStack.Screen
-              name="LoadingScreen"
-              component={LoadingScreen}
-              options={{ headerShown: false }}
-            />
-            <AppStack.Screen
-              name="LoadingTransition"
-              component={LoadingTransition}
-              options={{ headerShown: false }}
-            />
-            <AppStack.Screen
-              name="GetStarted"
-              component={GetStarted}
-              options={{ headerShown: false }}
-            />
-            <AppStack.Screen
-              name="Vision"
-              component={Vision}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="Schedule"
-              component={Schedule}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="Speakers"
-              component={Speakers}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="Speech"
-              component={Speech}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="FAQ"
-              component={FAQ}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            <AppStack.Screen
-              name="Partners"
-              component={Partners}
-              options={({ navigation, route }) => ({
-                headerShown: true,
-                headerTitle: () => <CustomHeader navigation={navigation} />,
-                headerBackTitleVisible: false,
-                headerLeft: () => null,
-                headerStyle: {
-                  backgroundColor: "#0b0c0e",
-                  height: 150,
-                },
-              })}
-            />
-            
-          </>
-        </AppStack.Navigator>
+        <Stack.Navigator initialRouteName="LoadingScreen">
+          {/* Stack screens for loading, transition, and GetStarted */}
+          <Stack.Screen
+            name="LoadingScreen"
+            component={LoadingScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="LoadingTransition"
+            component={LoadingTransition}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="GetStarted"
+            component={GetStarted}
+            options={{ headerShown: false }}
+          />
+
+          {/* Directly include tab screens in the stack navigator */}
+          <Stack.Screen
+            name="Speakers"
+            component={Speakers}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Schedule"
+            component={Schedule}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Speech"
+            component={Speech}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FAQ"
+            component={FAQ}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Partners"
+            component={Partners}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Paradoxa"
+            component={Paradoxa}
+            options={{ headerShown: false }}
+          />
+
+          {/* Bottom Tab Navigator as the main navigation interface */}
+          <Stack.Screen
+            name="Main"
+            component={BottomTabNavigator}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
       </NavigationContainer>
     </LanguageContext.Provider>
   );
 };
 
+// Styles
 const styles = StyleSheet.create({
   headerStyle: {
     width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
+    flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
-    gap: 10,
-  },
-  headerButtonsContainer: {
-    width: "100%",
-  },
-  headerButton: {
-    color: "#fff",
-    padding: 10,
-    fontSize: 20,
-  },
-  selectedButton: {
-    color: global.COLORS.RED,
-    fontWeight: "bold",
-    transform: [{ scale: 1.1 }],
-  },
-  newNotificationIndicator: {
-    position: "absolute",
-    top: 5,
-    right: 5,
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: "red",
+    paddingVertical: 10,
   },
 });
 
