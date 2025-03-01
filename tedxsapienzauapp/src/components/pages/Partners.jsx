@@ -60,10 +60,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#0b0c0e",
+    
   },
   card: {
     width: "30%",
-    margin: 10,
+    margin: 5,
+    marginVertical: 10,
     borderRadius: 5,
     elevation: 2,
   },

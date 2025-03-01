@@ -33,70 +33,70 @@ const Paradoxa = () => {
 
   const paradoxa = language === "ita" ? paradoxaita : paradoxaeng;
 
-   return (
-      <SafeAreaView style={styles.container}>
-        <ScrollView>
-          <Image
-            source={require("../images/Logo3_bianco.png")}
-            style={styles.image}
-          />
-          {paradoxa.map((item, index) => (
-            <View key={index} style={styles.container1}>
-              <Text style={styles.text}>{item.text}</Text>
-            </View>
-          ))}
-        </ScrollView>
-      </SafeAreaView>
-    );
-  };
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Image
+          source={require("../images/Logo2_bianco.svg")}
+          style={styles.image}
+        />
+        {paradoxa.map((item, index) => (
+          <View key={index} style={styles.container1}>
+            <Text style={styles.text}>{item.text}</Text>
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#0b0c0e",
-    },
-    container1: {
-      flex: 1,
-      backgroundColor: "black",
-      padding: 15,
-    },
-    text: {
-      marginTop: 18,
-      fontSize: RFValue(18),
-      color: "white",
-      textAlign: "justify",
-    },
-    text1: {
-      fontSize: RFValue(20),
-      color: "white",
-      textAlign: "center",
-    },
-    image: {
-      width: 350,
-      height: 200,
-      resizeMode: "contain",
-      alignSelf: "center",
-    },
-    social: {
-      flexDirection: "row",
-      justifyContent: "center",
-      marginBottom: "25px",
-      marginTop: "25px",
-    },
-    roundButton1: {
-      width: SocialWidth,
-      height: SocialWidth,
-      justifyContent: "center",
-      alignItems: "center",
-      padding: 30,
-      borderRadius: 100,
-      backgroundColor: "white",
-      margin: 1,
-    },
-    socialLogo: {
-      width: 35,
-      height: 35,
-    },
-  });
-  
-  export default Paradoxa;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#0b0c0e",
+  },
+  container1: {
+    flex: 1,
+    backgroundColor: "black",
+    padding: 15,
+  },
+  text: {
+    marginTop: 18,
+    fontSize: RFValue(18),
+    color: "white",
+    textAlign: "justify",
+  },
+  text1: {
+    fontSize: RFValue(20),
+    color: "white",
+    textAlign: "center",
+  },
+  image: {
+    width: 350,
+    height: 200,
+    resizeMode: "contain",
+    alignSelf: "center",
+  },
+  social: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: "25px",
+    marginTop: "25px",
+  },
+  roundButton1: {
+    width: SocialWidth,
+    height: SocialWidth,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 30,
+    borderRadius: 100,
+    backgroundColor: "white",
+    margin: 1,
+  },
+  socialLogo: {
+    width: 35,
+    height: 35,
+  },
+});
+
+export default Paradoxa;
