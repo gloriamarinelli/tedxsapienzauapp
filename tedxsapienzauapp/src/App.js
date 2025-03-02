@@ -1,5 +1,8 @@
 import React, { useState, createContext } from "react";
 import MainContainer from "./components/MainContainer.js";
+import LoadingScreen from "./components/pages/LoadingScreen.jsx";
+import LoadingTransition from "./components/pages/LoadingTransition.jsx";
+import GetStarted from "./components/pages/GetStarted.jsx";
 
 // Context for language settings
 export const LanguageContext = createContext();
@@ -9,9 +12,8 @@ const App = () => {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
-      <MainContainer />
+      <MainContainer/>
     </LanguageContext.Provider>
-    
   );
 };
 

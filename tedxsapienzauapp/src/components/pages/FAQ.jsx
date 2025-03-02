@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#0b0c0e",
   },
   faqItem: {
-    borderBottomColor: "white",
+    borderBottomColor: "#009FE3",
     borderBottomWidth: 2,
     paddingVertical: 10,
     paddingHorizontal: 5,
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionText: {
-    color: global.COLORS.RED,
+    color: "#E7348B",
     fontSize: RFValue(20),
     fontWeight: "bold",
   },

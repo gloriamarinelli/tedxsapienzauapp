@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -45,21 +45,25 @@ export default function MainContainer() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="LoadingScreen"
+        initialRouteName="Home"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
             let iconName;
 
             if (route.name === "Home") iconName = "home";
-            else if (route.name === "Speech") iconName = "bullhorn";
             else if (route.name === "FAQ") iconName = "question-circle";
             else if (route.name === "Partners") iconName = "handshake";
             else if (route.name === "PARA DOXA") iconName = "times";
 
             return <FontAwesome5 name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: global.COLORS.RED,
-          tabBarInactiveTintColor: "gray",
+          tabBarActiveTintColor: "#E7348B",
+          tabBarInactiveTintColor: "#009FE3",
+          tabBarStyle: {
+            backgroundColor: "#000",
+            borderTopWidth: 0, // Remove the border
+            borderTopColor: "#000", // Change the border color to black if needed
+          },
           header: () => <CustomHeader />,
           headerStyle: { backgroundColor: "#0b0c0e", height: 100 },
         })}
@@ -68,11 +72,18 @@ export default function MainContainer() {
         <Tab.Screen name="PARA DOXA" component={Paradoxa} />
         <Tab.Screen name="Partners" component={Partners} />
         <Tab.Screen name="FAQ" component={FAQ} />
-        <Tab.Screen name="Speech" component={descriptionSpeech} />
+        <Tab.Screen
+          name="descriptionSpeech"
+          component={descriptionSpeech}
+          options={{
+            tabBarButton: () => null,
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
 const styles = StyleSheet.create({
   headerStyle: {
     width: "100%",
@@ -80,5 +91,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
+    backgroundColor: "#000",
   },
 });

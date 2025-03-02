@@ -1,85 +1,77 @@
 import React, { useRef, useState, useEffect } from "react";
 import {
-  ScrollView,
-  Text,
   View,
+  Text,
   StyleSheet,
   TouchableOpacity,
   Image,
-  FlatList,
+  Dimensions,
 } from "react-native";
 import { Audio } from "expo-av";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Card } from "react-native-elements";
-import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
-const buttonColor = ["#ffffff", "#ffffff", "#ffffff"];
 const logoPause = require("../images/player/pause.png");
 const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
 const logoBack = require("../images/player/back.png");
 
-const speech = [
-  require("../../../speech/TULLIO.aac"),
-  require("../../../speech/ILARIA-ROSSI.aac"),
-  require("../../../speech/VON_FREYMANN.aac"),
-  require("../../../speech/RICCARDO-BASILONE.aac"),
-  require("../../../speech/GLORIA-SCHITO.aac"),
-  require("../../../speech/MATTEO-CERVELLINI.aac"), 
-  require("../../../speech/ANA-ESTRELA.aac"),
-  require("../../../speech/NINA-LAMBARELLI.aac"),
-  require("../../../speech/ROSE-VILLAIN.aac"),
-  require("../../../speech/ONOFRI.aac"),
-];
-
 const informazioni = [
   {
-    titolo: "Damiano Tullio                       ",
+    nome: "Damiano Tullio",
+    traduzione: require("../../../speech/TULLIO.aac"),
   },
   {
-    titolo: "Ilaria Rossi                         ",
+    nome: "Ilaria Rossi",
+    traduzione: require("../../../speech/ILARIA-ROSSI.aac"),
   },
   {
-    titolo: "Edward von Freymann      ",
+    nome: "Edward von Freymann",
+    traduzione: require("../../../speech/VON_FREYMANN.aac"),
   },
   {
-    titolo: "Riccardo Basilone             ",
+    nome: "Riccardo Basilone",
+    traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
   },
   {
-    titolo: "Gloria Schito                     ",
+    nome: "Gloria Schito",
+    traduzione: require("../../../speech/GLORIA-SCHITO.aac"),
   },
   {
-    titolo: "Matteo Cervellini              ",
+    nome: "Matteo Cervellini",
+    traduzione: require("../../../speech/MATTEO-CERVELLINI.aac"),
   },
   {
-    titolo: "Ana Estrela                         ",
+    nome: "Ana Estrela",
+    traduzione: require("../../../speech/ANA-ESTRELA.aac"),
   },
   {
-    titolo: "Nina Lambarelli                ",
+    nome: "Nina Lambarelli",
+    traduzione: require("../../../speech/NINA-LAMBARELLI.aac"),
   },
   {
-    titolo: "Rose Villain                       ",
+    nome: "Rose Villain",
+    traduzione: require("../../../speech/ROSE-VILLAIN.aac"),
   },
   {
-    titolo: "Silvano Onofri                  ",
+    nome: "Silvano Onofri",
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
 ];
 
-const Speech = () => {
+const Speech = ({ speakerDes }) => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
   const [duration, setDuration] = useState(null);
   const [position, setPosition] = useState(null);
   const [everPlayed, setEverPlayed] = useState(false);
 
-  const handlePlaySpeech = async (uri, index) => {
+  const selectedSpeech = informazioni.find((item) => item.nome === speakerDes);
+
+  const handlePlaySpeech = async () => {
     try {
-      setActiveIndex(index);
-      setIsSelected(index);
       await Audio.setAudioModeAsync({
         allowsRecordingIOS: false,
         playsInSilentModeIOS: true,
@@ -88,11 +80,12 @@ const Speech = () => {
         playThroughEarpieceAndroid: true,
       });
       await soundObject.unloadAsync();
-      await soundObject.loadAsync(uri, {}, false);
+      await soundObject.loadAsync(selectedSpeech.traduzione, {}, false);
       const { durationMillis } = await soundObject.getStatusAsync();
       setDuration(durationMillis);
       await soundObject.playAsync();
       setIsPlaying(true);
+      setIsPaused(false);
       setEverPlayed(true);
     } catch (error) {
       console.log(error);
@@ -116,8 +109,6 @@ const Speech = () => {
       await soundObject.stopAsync();
       await soundObject.unloadAsync();
       setIsPlaying(false);
-      setIsSelected(false);
-      setActiveIndex(null);
       setIsPaused(false);
       setEverPlayed(false);
     } catch (error) {
@@ -140,7 +131,7 @@ const Speech = () => {
       const { positionMillis } = await soundObject.getStatusAsync();
       if (positionMillis >= 10000) {
         setIsPaused(true); // Pause the audio temporarily
-        const newPosition = (positionMillis - 10000);
+        const newPosition = positionMillis - 10000;
         await soundObject.setPositionAsync(newPosition);
         await soundObject.playAsync(); // Start playing from the new position
         setPosition(newPosition);
@@ -159,7 +150,6 @@ const Speech = () => {
       if (status.didJustFinish) {
         setIsPlaying(false);
         setPosition(0);
-        setActiveIndex(null);
         soundObject.unloadAsync();
       }
     };
@@ -171,137 +161,68 @@ const Speech = () => {
     };
   }, [soundObject]);
 
-  const renderItem = ({ item, index }) => {
-    const isCurrentlyActive = activeIndex === index;
-    return (
-      <Card containerStyle={styles.card} key={index}>
-        <View style={styles.buttonContainer}>
-          <View
-            style={{
-              flexDirection: "row",
-            }}
-          >
-            <TouchableOpacity
-              style={[styles.buttonName]}
-              onPress={() => handlePlaySpeech(speech[index], index)}
-            >
-              <Text style={styles.text}>{item.titolo}</Text>
-            </TouchableOpacity>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "row",
-                justifyContent: "flex-end",
-              }}
-            >
-              {isSelected === index ? (
-  <TouchableOpacity
-    style={styles.roundButton1}
-    onPress={() => (isPaused ? handleResume() : handlePause())}
-  >
-    <Image source={isPaused ? logoPlay : logoPause} style={styles.playerLogo} />
-  </TouchableOpacity>
-) : (
-  <TouchableOpacity
-    style={styles.roundButton1}
-    onPress={() => handlePlaySpeech(speech[index], index)}
-  >
-    <Image source={logoPlay} style={styles.playerLogo} />
-  </TouchableOpacity>
-)}
-              <TouchableOpacity
-                style={styles.roundButton1}
-                onPress={() => handleStop()}
-              >
-                <Image source={logoStop} style={styles.playerLogo} />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={styles.roundButton1}
-                onPress={() => handleTenSeconds()}
-              >
-                <Image source={logoBack} style={styles.playerLogo} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Card>
-    );
-  };
-
   return (
-    <FlatList
-      data={informazioni}
-      renderItem={renderItem}
-      keyExtractor={(item, index) => `${item.titolo}-${index}`}
-      style={styles.flatlist}
-    />
+    <Card containerStyle={styles.card}>
+      <View style={styles.buttonContainer}>
+        {!isPlaying && !isPaused && (
+          <TouchableOpacity
+            style={styles.roundButton1}
+            onPress={handlePlaySpeech}
+          >
+            <Image source={logoPlay} style={styles.playerLogo} />
+          </TouchableOpacity>
+        )}
+        {isPlaying && (
+          <TouchableOpacity style={styles.roundButton1} onPress={handlePause}>
+            <Image source={logoPause} style={styles.playerLogo} />
+          </TouchableOpacity>
+        )}
+        {isPaused && (
+          <TouchableOpacity style={styles.roundButton1} onPress={handleResume}>
+            <Image source={logoPlay} style={styles.playerLogo} />
+          </TouchableOpacity>
+        )}
+        <TouchableOpacity style={styles.roundButton1} onPress={handleStop}>
+          <Image source={logoStop} style={styles.playerLogo} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.roundButton1}
+          onPress={handleTenSeconds}
+        >
+          <Image source={logoBack} style={styles.playerLogo} />
+        </TouchableOpacity>
+      </View>
+    </Card>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#0b0c0e",
-    padding: 15,
-    flexDirection: "row",
-  },
-  flatlist: {
-    flex: 1,
-    backgroundColor: "#0b0c0e",
-    padding: 15,
-  },
-  button: {
-    padding: 10,
-    marginVertical: 10,
-    alignItems: "center",
-    borderRadius: 50,
-  },
-  controls: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  controlText: {
-    fontSize: 18,
-    color: "#ffffff",
-    marginVertical: 5,
-  },
-  text: {
-    fontSize: RFValue(13),
-    color: "#eb0028",
-    fontWeight: "bold",
-  },
-  roundButton1: {
-    width: 20,
-    height: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "white",
-  },
-  playerLogo: {
-    width: 20,
-    height: 20,
-  },
-
-  buttonContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    marginTop: 1,
-  },
   card: {
     width: windowWidth - 60,
-    alignSelf: "stretch",
+    alignSelf: "center",
     borderRadius: 5,
     flexDirection: "row",
     height: 60,
     alignItems: "center",
+    justifyContent: "center",
   },
-  buttonName: {
-    marginVertical: 10,
+  buttonContainer: {
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+  },
+  roundButton1: {
+    width: 40,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "white",
+    marginHorizontal: 10,
+  },
+  playerLogo: {
+    width: 20,
+    height: 20,
   },
 });
 
