@@ -17,7 +17,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 import global from "../../resources/global.json";
 
-
+//speaker23
 export const speaker23 = [
     {
       id: "1",

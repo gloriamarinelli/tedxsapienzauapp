@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const PlaceholderImage = require("../images/Red-Circle.png");
 
+//Speaker
 const Speaker = () => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);

@@ -1,21 +1,17 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext,} from "react";
 import { LanguageContext } from "../../App.js";
 import {
-  TouchableOpacity,
   View,
   Text,
   Image,
   StyleSheet,
   Dimensions,
   ScrollView,
-  Linking,
-  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
-const windowWidth = Dimensions.get("window").width;
-const SocialWidth = windowWidth / 6 - 8;
 
+//Paradoxa
 const Paradoxa = () => {
   const { language } = useContext(LanguageContext);
 
@@ -76,26 +72,6 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: "contain",
     alignSelf: "center",
-  },
-  social: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginBottom: "25px",
-    marginTop: "25px",
-  },
-  roundButton1: {
-    width: SocialWidth,
-    height: SocialWidth,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 30,
-    borderRadius: 100,
-    backgroundColor: "white",
-    margin: 1,
-  },
-  socialLogo: {
-    width: 35,
-    height: 35,
   },
 });
 

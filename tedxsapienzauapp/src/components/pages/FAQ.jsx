@@ -11,13 +11,13 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import Feather from "react-native-vector-icons/Feather";
-import global from "../../resources/global.json";
 
+//FAQ
 const FAQ = () => {
   const [selectedFaqIndex, setSelectedFaqIndex] = useState(null);
   const { language } = useContext(LanguageContext);
 
-  // domande e risposte
+  // faqDataita
   const faqDataita = [
     {
       question: "Come troverò l'Aula Magna?",
@@ -57,6 +57,7 @@ const FAQ = () => {
     },
   ];
 
+//faqDataeng
   const faqDataeng = [
     {
       question: "Where can I find the Aula Magna?",

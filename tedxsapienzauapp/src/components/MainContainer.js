@@ -1,29 +1,15 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, View, StyleSheet, Pressable } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-
-import LoadingScreen from "./pages/LoadingScreen.jsx";
-import LoadingTransition from "./pages/LoadingTransition.jsx";
-import GetStarted from "./pages/GetStarted.jsx";
 import Partners from "./pages/Partners.jsx";
-
 import FAQ from "./pages/FAQ.jsx";
 import Speakers from "./pages/Speakers.jsx";
-import Speech from "./pages/Speech.jsx";
 import descriptionSpeech from "./pages/descriptionSpeech.jsx";
-import global from "../resources/global.json";
 import Paradoxa from "./pages/Paradoxa.jsx";
 
-const homeName = "Home";
-const paraDoxaName = "Paradoxa";
-const faqName = "FAQ";
-const partnersName = "Partners";
-
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const CustomHeader = () => {
@@ -61,8 +47,8 @@ export default function MainContainer() {
           tabBarInactiveTintColor: "#009FE3",
           tabBarStyle: {
             backgroundColor: "#000",
-            borderTopWidth: 0, // Remove the border
-            borderTopColor: "#000", // Change the border color to black if needed
+            borderTopWidth: 0,
+            borderTopColor: "#000",
           },
           header: () => <CustomHeader />,
           headerStyle: { backgroundColor: "#0b0c0e", height: 100 },

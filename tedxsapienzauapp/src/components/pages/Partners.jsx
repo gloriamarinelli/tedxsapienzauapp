@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, Image, StyleSheet, SafeAreaView } from "react-native";
 import { Card } from "react-native-elements";
-
+//Partners
 const Partners = () => {
   const partnerLogos = [
     { id: "2", logo: require("../images/partners23/Tim.webp") },

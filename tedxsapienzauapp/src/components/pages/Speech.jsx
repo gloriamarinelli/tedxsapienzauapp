@@ -1,14 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   Image,
   Dimensions,
 } from "react-native";
 import { Audio } from "expo-av";
-import { RFValue } from "react-native-responsive-fontsize";
 import { Card } from "react-native-elements";
 
 const windowWidth = Dimensions.get("window").width;
@@ -17,6 +15,7 @@ const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
 const logoBack = require("../images/player/back.png");
 
+// informazioni
 const informazioni = [
   {
     nome: "Damiano Tullio",
@@ -60,6 +59,7 @@ const informazioni = [
   },
 ];
 
+//Speech
 const Speech = ({ speakerDes }) => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
   const [isPlaying, setIsPlaying] = useState(false);
