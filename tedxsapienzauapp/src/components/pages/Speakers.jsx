@@ -72,7 +72,7 @@ const Speaker = () => {
               <LinearGradient
                 style={styles.gradient}
                 colors={["transparent", "#000"]}
-                locations={[0, 0.8]}
+                locations={[0.6, 0.8]}
               />
               <View style={styles.textContainer}>
                 <Text style={styles.nameText}>{item.name}</Text>
