@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import Feather from "react-native-vector-icons/Feather";
-
+import '@fontsource-variable/bricolage-grotesque/index.css';
 //FAQ
 const FAQ = () => {
   const [selectedFaqIndex, setSelectedFaqIndex] = useState(null);
@@ -100,9 +100,21 @@ const FAQ = () => {
 
   const faqData = language === "ita" ? faqDataita : faqDataeng;
 
-  const iconRotationValues = faqData.map(
-    () => useRef(new Animated.Value(0)).current
-  );
+  const scrollY = useRef(new Animated.Value(0)).current;
+
+  const headerOpacity = scrollY.interpolate({
+    inputRange: [0, 100],
+    outputRange: [1, 0],
+    extrapolate: "clamp",
+  });
+
+  const headerHeight = scrollY.interpolate({
+    inputRange: [0, 100],
+    outputRange: [50, 0],
+    extrapolate: "clamp",
+  });
+
+  const iconRotationValues = faqData.map(() => useRef(new Animated.Value(0)).current);
 
   const toggleAnswer = (index) => {
     Animated.timing(iconRotationValues[index], {
@@ -115,22 +127,26 @@ const FAQ = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <Animated.View style={[styles.header, { height: headerHeight, opacity: headerOpacity }]}> 
+        <Animated.Text style={[styles.titlePage, { opacity: headerOpacity }]}>FAQ</Animated.Text>
+      </Animated.View>
+      <ScrollView 
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: false }
+        )}
+        scrollEventThrottle={16}
+      >
         {faqData.map((item, index) => (
           <View key={index} style={styles.faqItem}>
-            <TouchableOpacity
-              onPress={() => toggleAnswer(index)}
-              style={styles.faqQuestion}
-            >
+            <TouchableOpacity onPress={() => toggleAnswer(index)} style={styles.faqQuestion}>
               <Text style={styles.questionText}>{item.question}</Text>
-              <Animated.View>
-                <Feather
-                  name={selectedFaqIndex === index ? "x" : "plus"}
-                  size={24}
-                  color="white"
-                  style={styles.icon}
-                />
-              </Animated.View>
+              <Feather
+                name={selectedFaqIndex === index ? "x" : "plus"}
+                size={24}
+                color="white"
+                style={styles.icon}
+              />
             </TouchableOpacity>
             {selectedFaqIndex === index && (
               <Text style={styles.answerText}>{item.answer}</Text>
@@ -147,8 +163,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0b0c0e",
   },
+  header: {
+    overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    paddingLeft: 20,
+  },
   faqItem: {
-    borderBottomColor: "#009FE3",
+    borderBottomColor: "#D3D3D3",
     borderBottomWidth: 2,
     paddingVertical: 10,
     paddingHorizontal: 5,
@@ -163,15 +185,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionText: {
-    color: "#E7348B",
+    color: "#EB0028",
     fontSize: RFValue(20),
     fontWeight: "bold",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   answerText: {
-    color: "lightgrey",
+    color: "#D3D3D3",
     fontSize: RFValue(16),
     padding: 10,
     textAlign: "justify",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
+  },
+  titlePage: {
+    color: "#fff",
+    fontSize: 30,
+    fontWeight: "bold",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
 });
 

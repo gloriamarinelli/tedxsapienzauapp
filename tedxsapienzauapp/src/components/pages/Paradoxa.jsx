@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
+import '@fontsource-variable/bricolage-grotesque/index.css';
 
 //Paradoxa
 const Paradoxa = () => {
@@ -61,11 +62,13 @@ const styles = StyleSheet.create({
     fontSize: RFValue(18),
     color: "white",
     textAlign: "justify",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
   },
   text1: {
     fontSize: RFValue(20),
     color: "white",
     textAlign: "center",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
   },
   image: {
     width: 350,

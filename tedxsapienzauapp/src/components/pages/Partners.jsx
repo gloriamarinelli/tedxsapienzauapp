@@ -1,7 +1,9 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, SafeAreaView } from "react-native";
+import { FlatList, Image, StyleSheet, SafeAreaView, Animated, Text } from "react-native";
 import { Card } from "react-native-elements";
-//Partners
+import '@fontsource-variable/bricolage-grotesque/index.css';
+
+// Partners
 const Partners = () => {
   const partnerLogos = [
     { id: "2", logo: require("../images/partners23/Tim.webp") },
@@ -39,13 +41,34 @@ const Partners = () => {
     { id: "34", logo: require("../images/partners23/RegioneLazio.webp") },
   ];
 
+  const scrollY = new Animated.Value(0);
+
+  const headerOpacity = scrollY.interpolate({
+    inputRange: [0, 150],
+    outputRange: [1, 0],
+    extrapolate: "clamp",
+  });
+
+  const headerHeight = scrollY.interpolate({
+    inputRange: [0, 100],
+    outputRange: [50, 0],
+    extrapolate: "clamp",
+  });
+
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
+      <Animated.View style={{ height: headerHeight, opacity: headerOpacity, overflow: "hidden" }}>
+        <Text style={styles.titlePage}>Partners</Text>
+      </Animated.View>
+      <Animated.FlatList
         columnWrapperStyle={{ justifyContent: "center" }}
         data={partnerLogos}
         numColumns={3}
         keyExtractor={(item) => item.id}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: false }
+        )}
         renderItem={({ item }) => (
           <Card containerStyle={styles.card}>
             <Image source={item.logo} style={styles.logo} />
@@ -60,7 +83,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#0b0c0e",
-    
   },
   card: {
     width: "30%",
@@ -74,6 +96,13 @@ const styles = StyleSheet.create({
     height: 50,
     resizeMode: "contain",
     transform: [{ scale: 1.35 }],
+  },
+  titlePage: {
+    paddingLeft: 20,
+    color: "#fff",
+    fontSize: 30,
+    fontWeight: "bold",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
 });
 

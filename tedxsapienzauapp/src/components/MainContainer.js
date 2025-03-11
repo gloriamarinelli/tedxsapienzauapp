@@ -9,6 +9,8 @@ import FAQ from "./pages/FAQ.jsx";
 import Speakers from "./pages/Speakers.jsx";
 import descriptionSpeech from "./pages/descriptionSpeech.jsx";
 import Paradoxa from "./pages/Paradoxa.jsx";
+import '@fontsource-variable/bricolage-grotesque/index.css';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -43,8 +45,8 @@ export default function MainContainer() {
 
             return <FontAwesome5 name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "#E7348B",
-          tabBarInactiveTintColor: "#009FE3",
+          tabBarActiveTintColor: "#EB0028",
+          tabBarInactiveTintColor: "#D3D3D3",
           tabBarStyle: {
             backgroundColor: "#000",
             borderTopWidth: 0,

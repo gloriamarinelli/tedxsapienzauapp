@@ -14,7 +14,6 @@ import {
   Modal,
 } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-
 import global from "../../resources/global.json";
 
 //speaker23
