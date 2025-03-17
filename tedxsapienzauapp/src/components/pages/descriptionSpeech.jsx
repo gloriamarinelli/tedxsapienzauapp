@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState, useContext, useRef } from "react";
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
   ImageBackground,
+  Pressable,
+  TouchableOpacity,
+  Animated,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { RFValue } from "react-native-responsive-fontsize";
 import Speech from "./Speech.jsx";
 import '@fontsource-variable/bricolage-grotesque/index.css';
+import { Button } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
 
 //descriptionSpeech
 const DescriptionSpeech = ({ route }) => {
-  const { speakerDes, descriptionDes, imageDes, speechTitleDes } = route.params;
+  const navigation = useNavigation();
+  const { speakerDes, descriptionDes, imageDes, speechTitleDes, speechDes } = route.params;
 
   return (
     <View style={styles.container}>
@@ -33,7 +39,21 @@ const DescriptionSpeech = ({ route }) => {
         <Text style={styles.titleText}>{speechTitleDes}</Text>
 
         {/* Speech Player */}
-        <Speech speakerDes={speakerDes} />
+        
+        <TouchableOpacity
+                    style={styles.button}
+  onPress={() => {
+    navigation.navigate("Transcription", {
+      speakerDes,
+      descriptionDes,
+      imageDes,
+      speechTitleDes,
+      speechDes
+    });
+  }}
+>
+  <Text style={styles.buttonLabel}>Speech</Text>
+</TouchableOpacity>
 
         {/* Speech Description */}
         <Text style={styles.descriptionText}>{descriptionDes}</Text>
@@ -93,6 +113,29 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
     fontWeight: "bold",
+  },
+  buttonContainer: {
+    width: 320,
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    bottom: 20,
+  },
+  button: {
+    width: "100%",
+    height: 55,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#E7348B",
+    borderRadius: 18,
+  },
+  buttonLabel: {
+    color: "#FFF",
+    fontSize: RFValue(20),
+    fontWeight: "bold",
+    textAlign: "center",
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
 });
 

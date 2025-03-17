@@ -21,11 +21,13 @@ export const speaker23 = [
     {
       id: "1",
       name: "Damiano Tullio",
-      image: require("../../../public/images/rossi.jpg"),
+      image: require("../../../img/tullio.webp"),
       time: "10:15",
       speechTitle: "Il binomio uomo-natura, secondo Damiano Tullio",
       bioIta: "Damiano Tullio è un antropologo, divulgatore, naturalista, Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi. ",
       bioEng: "Damiano Tullio is an anthropologist, popularizer, naturalist, educator in AnthropoEcology, and creator of the practice of Existential Rewilding. In 2007, he founded Antropostudio, an interdisciplinary project where Anthropology, Ecology and Outdoor meet to create educational experiences aimed at understanding the primordial relationship that binds our species to wild environments.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
 
     },
     {
@@ -36,6 +38,8 @@ export const speaker23 = [
       speechTitle: "Fare scienza deve per forza essere così?",
       bioIta: "Ilaria Rossi: laureanda in fisica e divulgatrice scientifica. Nei suoi canali social si batte per l'empowerment femminile e l'uguaglianza di genere nelle discipline STEM, nella speranza di contribuire a creare un ambiente accademico libero dalle discriminazioni.  ",
       bioEng: "Ilaria Rossi: physics graduate and science populariser. On her social channels, she fights for women's empowerment and gender equality in STEM disciplines, hoping to contribute to an academic environment free of discrimination.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "3",
@@ -45,6 +49,8 @@ export const speaker23 = [
       speechTitle: "La vita è Gaia",
       bioIta: "Edward von Freymann: un padre che dopo la morte prematura della sua unica figlia Gaia, ha costituito la fondazione Gaia von Freymann per tenere sempre vivo il suo ricordo andando nelle scuole insieme alla polizia stradale a sensibilizzare i ragazzi nell'educazione stradale e l'abbattimento delle barriere architettoniche. Dopo 2 processi, ha messo a disposizione gratuitamente i propri avvocati e psicologi per le famiglie vittime della strada.  ",
       bioEng: "Edward von Freymann: a father who, after the untimely death of his only daughter Gaia, set up the Gaia von Freymann Foundation to always keep her memory alive by going to schools together with the traffic police to raise awareness among young people in road safety education and the removal of architectural barriers. After two trials, he made his lawyers and psychologists available free of charge to families affected by road accidents.  ",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "4",
@@ -54,6 +60,8 @@ export const speaker23 = [
       speechTitle: "A non capirci mai ci vogliam bene lo stesso",
       bioIta: "Riccardo Basilone ha 24 anni ed è nato e cresciuto a Toronto, in Canada. Ha imparato l'italiano dopo essersi trasferito a Milano, dove ha frequentato il liceo classico e si è laureato in Fisica. Vive a Roma da due anni, per finire i suoi studi magistrali di Fisica e per suonare nelle strade della città. L'arte di strada è il suo lavoro, che gli dà la possibilità di comunicare ogni giorno con il resto del mondo, attraverso la sua musica. Gli esseri umani sono gli unici animali in grado di esprimere incomprensione. Come facciamo a capirci tra di noi, e perché vogliamo di farlo? Il discorso di Riccardo esplora la comunicazione umana attraverso la storia della sua vita. L'arte e la scienza fanno trionfare la civiltà umana in un problema che all'apparenza sembra semplice, ma nasconde complessità di livello filosofico.",
       bioEng: "How do we communicate? And why do we do it? This subject has fascinated Riccardo from a young age, ever since he moved to Italy from Canada. A physics student at university, it is with the notes of piano, guitar and voice that Riccardo brings us into the most human dimension of our being together: communicating, and loving each other.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "5",
@@ -63,6 +71,8 @@ export const speaker23 = [
       speechTitle: "A far la moda comincia tu",
       bioIta: "Gloria Schito, in arte @glojoined, è una fashion content creator e imprenditrice. Classe 1995, muove i suoi primi passi nel mondo del digitale giovanissima grazie alla sua passione: la moda. In breve tempo crea una community solida e affiatata, con cui condivide look, consigli, pensieri. Nel frattempo è Ingegnere informatico e si specializza in management engineering. Dopo qualche anno, nel 2021, Gloria arriva anche nelle librerie con una guida su come trovare il proprio stile, intitolata 'A far la moda comincia tu'. La sua innata curiosità l'ha sempre spinta a cercare e innovare, e recentemente è atterrata nel mondo del Metaverso, creando il concetto di Metafashion. Metafashion è un termine che  identifica una moda innovativa nel metaverso, che a differenza  sarà più interattiva e stimolante di quella reale, offrendo un'esperienza di shopping immersiva svolta digitalmente comodamente da casa.",
       bioEng: "Gloria Schito is an Italian entrepreneur and influencer working in the fashion world. Author of the book 'A far la moda comincia tu', she argues for the idea that fashion is an industry for everyone and that it is an excellent field for experimentation and innovation: this is the case with Metafashion.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "6",
@@ -72,6 +82,8 @@ export const speaker23 = [
       speechTitle: "Come essere felice anche se non sei un supereroe",
       bioIta: "Matteo Cervellini, fisioterapista di 25 anni. Dall’influenza di Youtubers famosi e libri di crescita personale, ha spesso inseguito il successo per sentirsi soddisfatto, fino al momento in cui ha realizzato di non essere per niente felice. Da un anno sta recuperando tutto il tempo passato ad ispirarsi ad un eroe che non sarebbe mai diventato, sperimenta esperienze come se fosse un bambino che non conosce il mondo. Gli piace far sorridere le persone, la montagna e il cibo gratis. ",
       bioEng: "A 25-year-old physiotherapist, Matteo often chased success to feel satisfied, until the moment he realized that it did not make him happy. The hero he was chasing was completely alien to him, and ever since he understood this, he started to live his life again as he never had before.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "7",
@@ -81,6 +93,8 @@ export const speaker23 = [
       speechTitle: "Come essere felice anche se non sei un supereroe",
       bioIta: "Ana Estrela, nata a Salvador di Bahia, Brasile, è una ballerina e assistente di coreografia presso la 'Companhia Brasileira de Danças Populares'. Ha dedicato la sua arte alla promozione di percorsi di socializzazione per ragazzi di strada, bambini e adolescenti a rischio, nonché per persone con abilità diverse e pazienti psichiatrici, inizialmente in Brasile e successivamente in Italia a partire dal 1998. Nel 2008, Ana ha fondato a Bari l'associazione Origens, che si impegna a promuovere la cultura brasiliana attraverso l'arte, la gastronomia e eventi culturali, evolvendosi nel tempo in un'associazione multietnica. Nel 2013, ha avuto l'idea di utilizzare la cucina come mezzo per connettere le persone e come percorso professionale. Così, ha creato Ethnic Cook, un laboratorio in cui rifugiati e migranti, soprattutto donne, possono apprendere un mestiere, interagire tra loro, abituarsi alle diversità, scambiare idee e competenze. Il progetto ha ottenuto finanziamenti dalla Regione Puglia, dal comune e da una fondazione privata in collaborazione con l'antitratta. È stato riconosciuto da entità come l'UNHCR e l'Università di Scienze Gastronomiche di Pollenzo per il suo contributo stimolante e di supporto all'integrazione dei partecipanti. L'Università di Bari, insieme alla Fondazione ISMU, ha selezionato il progetto come una delle tre migliori iniziative nel Sud Italia che valorizzano le competenze dei migranti. Per il suo impegno nell'inclusione sociale attraverso il cibo, Ana Estrela ha ricevuto una menzione speciale al Basque Culinary World Prize 2021 e è stata scelta come uno dei '20 volti del cibo 2021' nella sezione empowerment da Cook, la rubrica del Corriere della Sera. Nel 2020, insieme alle sue compagne, ha aperto il Bistrot Sociale Multietnico nel cuore di Bari e ha pubblicato il libro 'Ethnic Cook - Sapori e storie dal Mondo'. Attualmente, Ana dirige il Bistrot, organizza eventi e corsi di formazione dedicati alle donne rifugiate e presta consulenza alle associazioni interessate a sviluppare progetti simili. Rappresenta il Coordinamento Diaspore in Puglia per la cooperazione internazionale.",
       bioEng: "Born in Salvador di Bahia in Brazil, she became a dancer and assistant choreographer for the 'Companhia Brasileira de Danças Populare'.  In 2013, in Italy, she had the intuition to use cooking as a bridge between people, as well as a career path. She then founded Ethnic Cook, a workshop where refugees and immigrants, especially women, can learn a job and get to know each other, get used to each other, exchange ideas and skills, be there.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "8",
@@ -90,6 +104,8 @@ export const speaker23 = [
       speechTitle: "A mille ce n'è. Storia di una bambina qualunque",
       bioIta: "Nina Lambarelli è una poetessa performativa. Ha debuttato con il suo spettacolo 'L'appel du vide' nel 2020 ed ha continuato per la strada del Poetry Slam e del teatro d'improvvisazione, dove lo spettacolo 'A mille ce n'è' ha preso forma per arrivare al Back to Zero Awards 2023. Ha partecipato come artista per uno spettacolo della FAO ed al festival 'Arterie - Rassegna di Ipotesi espressive'. È prossima alla laurea in Lingue e letterature straniere dopo aver passato un periodo alla Sorbonne Nouvelle di Parigi e prevede di continuare gli studi in ambito postcoloniale.",
       bioEng: "Nina Lambarelli is a performance poet. She debuted with her show 'L'appel du vide' in 2020 and continued down the road of Poetry Slam and improvisational theater, where the show 'A thousand is one' took shape to reach the Back to Zero Awards 2023. She participated as an artist in an FAO show and in the festival 'Arterie - Rassegna di Ipotesi espressive'. She is close to graduating in Foreign Languages and Literatures after spending a period at the Sorbonne Nouvelle in Paris and plans to continue her studies in the postcolonial field.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "9",
@@ -99,6 +115,8 @@ export const speaker23 = [
       speechTitle: "Human-Machine Symbiosis and the Quest for Neurorights",
       bioIta: "Marcello Ienca, nato nel 1988, ha alle spalle una lunga carriera nel campo delle neurotecnologie: è stato studente di filosofia e scienze cognitive presso varie università sparse in giro per il mondo, tra cui la Sapienza (Roma), Humboldt (Berlino) e la New York University. Nel 2018 ha conseguito il dottorato in etica biomedica presso l'Università di Basilea, per poi lavorare come ricercatore presso l'ETH di Zurigo. In tempi più recenti ha fondato l'Intelligent Systems Ethics Group presso l'EPFL ed è stato visiting scholar all'Università di Oxford. Dal 2023 è titolare della cattedra di Etica delle IA e delle Neuroscienze presso il Politecnico di Monaco (TUM) in Germania. Utilizza metodi teorici ed empirici per indagare le implicazioni etiche, sociali e politiche di tecnologie come le BCI ('Brain Computer Interface') e gli algoritmi di elaborazione dei Big Data, concentrandosi su argomenti come la relazione tra intelligenza artificiale e cognizione umana. È noto per il suo lavoro pionieristico sui cosiddetti 'neurodiritti' (neurorights), tema portante del TED Talk che porterà sul palco della Sapienza: un ritorno alle origini non solo nell'edizione (Back To Zero), ma anche dal punto di vista professionale.  ",
       bioEng: "Marcello Ienca is a Professor of Ethics of AI and Neuroscience at the Technical University of Munich and a Senior Scientist at the Swiss Federal Institute of Technology, in Lausanne. His research focuses on the ethics of human-machine interaction, with a particular interest in the responsible development and human rights implications of neurotechnologies, artificial intelligence, big data, robotics and virtual environments. Marcello Ienca will address these topics on the TEDx stage, with a specific emphasis on the concept of 'neurorights.'",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "10",
@@ -108,6 +126,8 @@ export const speaker23 = [
       speechTitle: "Musica e cura di sé: un cambio di prospettiva sul mondo",
       bioIta: "Nata a Milano e poi trasferitasi a New York, la cantante e autrice ha all'attivo milioni di stream. Rose Villain ha tutte le carte in regola per ribaltare l'attuale scena musicale, curando lei stessa in prima persona la creatività di ogni progetto artistico che la riguarda.  A gennaio 2023 esce il suo primo lavoro discografico, 'Radio Gotham': un album esplosivo, inaspettato e ricco di tematiche personali, che ha entusiasmato pubblico e critica.",
       bioEng: "Born in Milan and later settled in New York, the singer and songwriter has millions of streams to her credit. Rose Villain has all the credentials to turn the current music scene upside down, curating the creativity of each of her artistic projects herself. In January 2023, she released her first record, 'Radio Gotham': an explosive, unexpected and thematically personal album, which delighted audiences and critics alike.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "11",
@@ -117,6 +137,8 @@ export const speaker23 = [
       speechTitle: "Esplorare Antartide e spazio per conoscere i limiti della vita",
       bioIta: "Silvano Onofri è Presidente della Commissione Scientifica Nazionale per l’Antartide, che coordina il Programma Nazionale di Ricerche in Antartide. Ha partecipato a 6 spedizioni scientifiche in Antartide e una in Artico. Ha diretto esperimenti biologici sulla Stazione Spaziale Internazionale, che aprono nuove strade per la ricerca della vita, passata o presente, su altri pianeti. Ha pubblicato numerosi generi e specie nuove di microfunghi da ambienti estremi. E’ consulente ESA e NASA per la biologia spaziale, e ha diretto il Programma Nazionale di Astrobiologia dell’Agenzia Spaziale Italiana. Insignito della Medaglia d’onore dalla European Mycological Association. Le nuove specie fungine Naganishia onofrii, Antarctolichenia onofrii e Cystobasidium onofrii prendono il nome da lui. ",
       bioEng: "Silvano Onofri is President of the National Scientific Commission for Antarctica, which coordinates the National Antarctic Research Program. He has participated in six scientific expeditions to Antarctica and one to the Arctic. He has directed biological experiments on the International Space Station that open new avenues for the search for life, past or present, on other planets. He has published numerous genera and new species of micro fungi from extreme environments. He is an ESA and NASA consultant for space biology, and has directed the Italian Space Agency's National Astrobiology Program. Awarded the Medal of Honor by the European Mycological Association. The new fungal species Naganishia onofrii, Antarctolichenia onofrii and Cystobasidium onofrii are named after him.  ",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
     {
       id: "12",
@@ -126,5 +148,7 @@ export const speaker23 = [
       speechTitle: "How to get into a Phd at 20 years old",
       bioIta: "Originaria del Camerun, Nakita ha iniziato il suo dottorato di ricerca in Economia a 20 anni presso Sapienza Università di Roma. Nel 2020 è anche entrata a far parte del prestigioso M.I.T/Harvard Economics Mentoring Program. Ora lavora per la FAO. Provenendo da un ambiente umile, il suo discorso sarà incentrato su come sia riuscita a raggiungere le maggiori istituzioni in giovane età, nonostante le difficoltà di viaggiare da sola verso l'Europa.",
       bioEng: "A native of Cameroon, Nakita started her Ph.D. Economics at 20 years old at Sapienza University of Rome. She also joined the prestigious M.I.T/Harvard Economics Mentoring Program in 2020. She now works for the FAO. Coming from a humble background, her speech will be centered around how she made it to top institutions at a young age despite the difficulties of traveling alone to Europe.",
+      speechIta: "discorso in italiano",
+      speechEng: "english speech",
     },
   ];

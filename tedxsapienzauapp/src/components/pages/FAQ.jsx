@@ -202,6 +202,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
+    alignSelf: "center",
+    marginTop: "10px",
   },
 });
 

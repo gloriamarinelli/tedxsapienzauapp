@@ -27,6 +27,8 @@ const Speaker = () => {
   const [currentSpeakerImage, setCurrentSpeakerImage] = useState("");
   const [currentSpeaker, setCurrentSpeaker] = useState("");
   const [currentSpeechTitle, setCurrentSpeechTitle] = useState("");
+  const [currentSpeech, setCurrentSpeech] = useState("");
+
   const { language } = useContext(LanguageContext);
   const scrollY = useRef(new Animated.Value(0)).current;
 
@@ -64,6 +66,7 @@ const Speaker = () => {
                 descriptionDes: language === "ita" ? item.bioIta : item.bioEng,
                 imageDes: item.image,
                 speechTitleDes: item.speechTitle,
+                speechDes: language === "ita" ? item.speechIta : item.speechEng,
               });
             }}
           >
@@ -158,7 +161,9 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 30,
     fontWeight: "bold",
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
+    alignSelf: "center",
+    marginTop: "10px",
   },
 });
 

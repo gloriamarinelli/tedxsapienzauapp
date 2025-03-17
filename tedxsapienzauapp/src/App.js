@@ -55,7 +55,7 @@ const LoadingTransition = ({ setCurrentScreen }) => {
   return (
     <View style={styles.containerLT}>
       <Image
-        source={require("./components/images/X_lowres.png")}
+        source={require("./components/images/Logo1_bianco.png")}
         style={styles.imageLT}
       />
     </View>
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  imageLT: { width: 100, height: 100, resizeMode: "contain" },
+  imageLT: { width: 300, height: 300, resizeMode: "contain" },
   container: { flex: 1, backgroundColor: "#000000" },
   gradient: {
     ...StyleSheet.absoluteFillObject,

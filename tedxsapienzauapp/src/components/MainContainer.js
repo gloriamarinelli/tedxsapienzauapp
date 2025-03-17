@@ -10,6 +10,7 @@ import Speakers from "./pages/Speakers.jsx";
 import descriptionSpeech from "./pages/descriptionSpeech.jsx";
 import Paradoxa from "./pages/Paradoxa.jsx";
 import '@fontsource-variable/bricolage-grotesque/index.css';
+import Transcription from "./pages/Transcription.jsx";
 
 
 const Tab = createBottomTabNavigator();
@@ -63,6 +64,13 @@ export default function MainContainer() {
         <Tab.Screen
           name="descriptionSpeech"
           component={descriptionSpeech}
+          options={{
+            tabBarButton: () => null,
+          }}
+        />
+        <Tab.Screen
+          name="Transcription"
+          component={Transcription}
           options={{
             tabBarButton: () => null,
           }}
