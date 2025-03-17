@@ -21,7 +21,7 @@ export const speaker23 = [
     {
       id: "1",
       name: "Damiano Tullio",
-      image: require("../images/speakers23/tullio.webp"),
+      image: require("../../../public/images/rossi.jpg"),
       time: "10:15",
       speechTitle: "Il binomio uomo-natura, secondo Damiano Tullio",
       bioIta: "Damiano Tullio è un antropologo, divulgatore, naturalista, Formatore in AntropoEcologia, e creatore della pratica del Rewilding Esistenziale. Nel 2007 fonda Antropostudio progetto interdisciplinare dove Antropologia, Ecologia ed Outdoor si incontrano per dar vita ad esperienze formative volte alla comprensione del rapporto primordiale che lega la nostra specie agli ambienti selvaggi. ",

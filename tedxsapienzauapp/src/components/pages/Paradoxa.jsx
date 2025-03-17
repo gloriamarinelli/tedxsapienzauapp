@@ -34,7 +34,7 @@ const Paradoxa = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <Image
-          source={require("../images/Logo2_bianco.svg")}
+          source={require("../images/Logo1_bianco.png")}
           style={styles.image}
         />
         {paradoxa.map((item, index) => (
