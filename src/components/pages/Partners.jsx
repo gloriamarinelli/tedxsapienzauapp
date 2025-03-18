@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   card2: {
     width: "40%",
-    height: "40%",
+    height: "50%",
     margin: 5,
     marginVertical: 10,
     borderRadius: 5,
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
   },
   logo2: {
     width: "100%",
-    height: 50,
-    resizeMode: "cover",
-    transform: [{ scale: 1.00 }],
+    height: 60,
+    resizeMode: "contain",
+    transform: [{ scale: 1.10 }],
   },
   titlePage: {
     paddingLeft: 20,
