@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, SafeAreaView, Animated, Text } from "react-native";
+import { FlatList, Image, StyleSheet,ImageBackground, SafeAreaView, Animated, Text } from "react-native";
 import { Card } from "react-native-elements";
 import '@fontsource-variable/bricolage-grotesque/index.css';
 
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
   logo2: {
     width: "100%",
     height: 50,
-    resizeMode: "contain",
-    transform: [{ scale: 1.20 }],
+    resizeMode: "cover",
+    transform: [{ scale: 1.00 }],
   },
   titlePage: {
     paddingLeft: 20,
