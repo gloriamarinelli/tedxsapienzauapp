@@ -71,7 +71,7 @@ const Speaker = () => {
             }}
           >
             <Card containerStyle={styles.card}>
-              <Image source={item.image} style={styles.image} />
+              <ImageBackground source={item.image} style={styles.image} />
               <LinearGradient
                 style={styles.gradient}
                 colors={["transparent", "#000"]}
