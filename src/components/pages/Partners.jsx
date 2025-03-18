@@ -52,7 +52,7 @@ const Partners = () => {
         )}
         renderItem={({ item }) => (
           <Card containerStyle={styles.card2}>
-            <Image source={item.logo} style={styles.logo2} />
+            <ImageBackground source={item.logo} style={styles.logo2} />
           </Card>
         )}
       />
