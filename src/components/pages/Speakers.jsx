@@ -61,14 +61,17 @@ const Speaker = () => {
         renderItem={({ item }) => (
           <Pressable
             onPress={() => {
-              navigation.navigate("descriptionSpeech", {
-                speakerDes: item.name,
-                descriptionDes: language === "ita" ? item.bioIta : item.bioEng,
-                imageDes: item.image,
-                speechTitleDes: item.speechTitle,
-                speechDes: language === "ita" ? item.speechIta : item.speechEng,
-              });
+              if (item.id !== "5" && item.id !== "9") {
+                navigation.navigate("descriptionSpeech", {
+                  speakerDes: item.name,
+                  descriptionDes: language === "ita" ? item.bioIta : item.bioEng,
+                  imageDes: item.image,
+                  speechTitleDes: item.speechTitle,
+                  speechDes: language === "ita" ? item.speechIta : item.speechEng,
+                });
+              }
             }}
+            disabled={item.id == "5" || item.id == "9"}
           >
             <Card containerStyle={styles.card}>
               <ImageBackground source={item.image} style={styles.image} />

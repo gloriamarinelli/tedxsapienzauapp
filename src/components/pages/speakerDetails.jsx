@@ -21,7 +21,7 @@ export const speaker23 = [
     {
       id: "1",
       name: "Alessia Dapoto",
-      image: require("../images/speakers23/dapoto.webp"),
+      image: require("../images/speakers23/dapoto.png"),
       time: "10:40",
       speechTitle: "Titolo 1",
       bioIta: "Bio in italiano ",
@@ -87,7 +87,7 @@ export const speaker23 = [
     },
     {
       id: "7",
-      name: "Nome Moretti",
+      name: "Esmeralda Moretti",
       image: require("../images/speakers23/moretti.webp"),
       time: "12:40",
       speechTitle: "Titolo 7",
@@ -99,7 +99,7 @@ export const speaker23 = [
     {
       id: "8",
       name: "Pepa Pasatu",
-      image: require("../images/speakers23/pasatu.webp"),
+      image: require("../images/speakers23/pasatu.png"),
       time: "13:00",
       speechTitle: "Titolo 8",
       bioIta: "Bio in italiano ",
@@ -110,8 +110,8 @@ export const speaker23 = [
     {
       id: "9",
       name: "Pausa pranzo",
-      image: require("../images/speakers23/pasatu.webp"),
-      time: "!3:30 - 15:00",
+      image: require("../images/speakers23/pasatu.png"),
+      time: "13:30 - 15:00",
       speechTitle: "Titolo 9",
       bioIta: "Bio in italiano ",
       bioEng: "Bio in inglese",
@@ -121,7 +121,7 @@ export const speaker23 = [
     {
       id: "10",
       name: "Riccardo Azzali",
-      image: require("../images/speakers23/azzali.webp"),
+      image: require("../images/speakers23/azzali.png"),
       time: "15:00",
       speechTitle: "Titolo 10",
       bioIta: "Bio in italiano ",
@@ -143,7 +143,7 @@ export const speaker23 = [
     {
       id: "12",
       name: "Kento",
-      image: require("../images/speakers23/kento.webp"),
+      image: require("../images/speakers23/kento.png"),
       time: "15:40",
       speechTitle: "Titolo 12",
       bioIta: "Bio in italiano ",
