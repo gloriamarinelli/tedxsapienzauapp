@@ -11,6 +11,7 @@ import descriptionSpeech from "./pages/descriptionSpeech.jsx";
 import Paradoxa from "./pages/Paradoxa.jsx";
 import '@fontsource-variable/bricolage-grotesque/index.css';
 import Transcription from "./pages/Transcription.jsx";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const Tab = createBottomTabNavigator();
@@ -19,14 +20,14 @@ const CustomHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.headerStyle}>
+    <SafeAreaView style={styles.headerStyle}>
       <Pressable onPress={() => navigation.navigate("Home")}>
         <Image
           style={{ width: 200, height: 30 }}
           source={require("./images/logo-white.png")}
         />
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 };
 

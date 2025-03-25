@@ -1,22 +1,17 @@
-import React, { useState, useContext, useRef } from "react";
+import React from "react";
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
   ImageBackground,
-  Pressable,
   TouchableOpacity,
-  Animated,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { RFValue } from "react-native-responsive-fontsize";
-import Speech from "./Speech.jsx";
-import '@fontsource-variable/bricolage-grotesque/index.css';
-import { Button } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-//descriptionSpeech
 const DescriptionSpeech = ({ route }) => {
   const navigation = useNavigation();
   const { speakerDes, descriptionDes, imageDes, speechTitleDes, speechDes } = route.params;
@@ -25,35 +20,35 @@ const DescriptionSpeech = ({ route }) => {
     <View style={styles.container}>
       <ScrollView>
         {/* Image Background with Gradient */}
-        <ImageBackground source={{ uri: imageDes }} style={styles.imageBackground} imageStyle={{ borderRadius: 15}}>
-          <LinearGradient
-                          style={styles.gradient}
-                          colors={["transparent", "#000"]}
-                          locations={[0.6, 0.9]}
-                        >
-          </LinearGradient>
-          <Text style={styles.spNameText}>{speakerDes}</Text>
-        </ImageBackground>
+        <View style={styles.imageContainer}>
+          <ImageBackground source={{ uri: imageDes }} style={styles.imageBackground} imageStyle={{ borderRadius: 15 }}>
+            <LinearGradient style={styles.gradient} colors={["transparent", "#000"]} locations={[0.6, 0.9]} />
+            {/* Back Button */}
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
+            <Text style={styles.spNameText}>{speakerDes}</Text>
+          </ImageBackground>
+        </View>
 
         {/* Speech Title */}
         <Text style={styles.titleText}>{speechTitleDes}</Text>
 
-        {/* Speech Player */}
-        
+        {/* Speech Button */}
         <TouchableOpacity
-                    style={styles.button}
-  onPress={() => {
-    navigation.navigate("Transcription", {
-      speakerDes,
-      descriptionDes,
-      imageDes,
-      speechTitleDes,
-      speechDes
-    });
-  }}
->
-  <Text style={styles.buttonLabel}>Speech</Text>
-</TouchableOpacity>
+          style={styles.button}
+          onPress={() => {
+            navigation.navigate("Transcription", {
+              speakerDes,
+              descriptionDes,
+              imageDes,
+              speechTitleDes,
+              speechDes,
+            });
+          }}
+        >
+          <Text style={styles.buttonLabel}>Speech</Text>
+        </TouchableOpacity>
 
         {/* Speech Description */}
         <Text style={styles.descriptionText}>{descriptionDes}</Text>
@@ -69,6 +64,9 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "flex-start",
   },
+  imageContainer: {
+    position: "relative",
+  },
   imageBackground: {
     width: "100%",
     height: RFValue(250),
@@ -81,11 +79,20 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
   },
-  nameText: {
-    fontSize: RFValue(22),
+  backButton: {
+    position: "absolute",
+    top: 15,
+    left: 15,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    borderRadius: 20,
+    padding: 8,
+  },
+  spNameText: {
+    fontSize: RFValue(26),
     color: "white",
-    fontWeight: "bold",
     textAlign: "center",
+    fontWeight: "bold",
+    marginVertical: 15,
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   titleText: {
@@ -95,7 +102,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginVertical: 15,
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   descriptionText: {
     fontSize: RFValue(18),
@@ -105,23 +112,6 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
-  spNameText: {
-    fontSize: RFValue(26),
-    color: "white",
-    textAlign: "center",
-    fontWeight: "600",
-    marginVertical: 15,
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
-    fontWeight: "bold",
-  },
-  buttonContainer: {
-    width: 320,
-    height: 80,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-    bottom: 20,
-  },
   button: {
     width: "100%",
     height: 55,
@@ -129,6 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#E7348B",
     borderRadius: 18,
+    marginVertical: 15,
   },
   buttonLabel: {
     color: "#FFF",
