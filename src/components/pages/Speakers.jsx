@@ -77,7 +77,7 @@ const Speaker = () => {
               <ImageBackground source={item.image} style={styles.image} />
               <LinearGradient
                 style={styles.gradient}
-                colors={["transparent", "#000"]}
+                colors={["transparent", "#0b0c0e"]}
                 locations={[0.6, 0.8]}
               />
               <View style={styles.textContainer}>

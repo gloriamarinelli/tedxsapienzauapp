@@ -22,7 +22,7 @@ const DescriptionSpeech = ({ route }) => {
         {/* Image Background with Gradient */}
         <View style={styles.imageContainer}>
           <ImageBackground source={{ uri: imageDes }} style={styles.imageBackground} imageStyle={{ borderRadius: 15 }}>
-            <LinearGradient style={styles.gradient} colors={["transparent", "#000"]} locations={[0.6, 0.9]} />
+            <LinearGradient style={styles.gradient} colors={["transparent", "#0b0c0e"]} locations={[0.6, 0.9]} />
             {/* Back Button */}
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Ionicons name="arrow-back" size={24} color="white" />
