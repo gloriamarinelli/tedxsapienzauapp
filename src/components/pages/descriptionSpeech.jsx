@@ -14,17 +14,35 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const DescriptionSpeech = ({ route }) => {
   const navigation = useNavigation();
-  const { speakerDes, descriptionDes, imageDes, speechTitleDes, speechDes } = route.params;
+  const {
+    speakerDes,
+    descriptionDes,
+    imageDes,
+    speechTitleDes,
+    speechDes,
+    resumeDes,
+  } = route.params;
 
   return (
     <View style={styles.container}>
       <ScrollView>
         {/* Image Background with Gradient */}
         <View style={styles.imageContainer}>
-          <ImageBackground source={{ uri: imageDes }} style={styles.imageBackground} imageStyle={{ borderRadius: 15 }}>
-            <LinearGradient style={styles.gradient} colors={["transparent", "#0b0c0e"]} locations={[0.6, 0.9]} />
+          <ImageBackground
+            source={{ uri: imageDes }}
+            style={styles.imageBackground}
+            imageStyle={{ borderRadius: 15 }}
+          >
+            <LinearGradient
+              style={styles.gradient}
+              colors={["transparent", "#0b0c0e"]}
+              locations={[0.6, 0.9]}
+            />
             {/* Back Button */}
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => navigation.goBack()}
+            >
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             <Text style={styles.spNameText}>{speakerDes}</Text>
@@ -50,8 +68,11 @@ const DescriptionSpeech = ({ route }) => {
           <Text style={styles.buttonLabel}>Speech</Text>
         </TouchableOpacity>
 
-        {/* Speech Description */}
+        {/* Bio Description */}
         <Text style={styles.descriptionText}>{descriptionDes}</Text>
+
+        {/* Speech Description */}
+        <Text style={styles.descriptionText}>{resumeDes}</Text>
       </ScrollView>
     </View>
   );

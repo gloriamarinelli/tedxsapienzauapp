@@ -15,7 +15,7 @@ const logoStop = require("../images/player/stop.png");
 const logoPlay = require("../images/player/play.png");
 const logoBack = require("../images/player/back.png");
 
-// informazioni
+// Informazioni
 const informazioni = [
   {
     nome: "Damiano Tullio",
@@ -59,7 +59,7 @@ const informazioni = [
   },
 ];
 
-//Speech
+// Speech
 const Speech = ({ speakerDes }) => {
   const [soundObject, setSoundObject] = useState(new Audio.Sound());
   const [isPlaying, setIsPlaying] = useState(false);

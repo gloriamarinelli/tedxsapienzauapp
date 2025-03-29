@@ -1,11 +1,9 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { LanguageContext } from "../../App.js";
 import {
   View,
   Text,
-  Image,
   StyleSheet,
-  FlatList,
   ImageBackground,
   Pressable,
   Animated,
@@ -13,21 +11,13 @@ import {
 import { RFValue } from "react-native-responsive-fontsize";
 import { LinearGradient } from "expo-linear-gradient";
 import { Card } from "react-native-elements";
-import { speaker23 } from "./speakerDetails.jsx";
+import { speaker24 } from "../pages/speakerDetails.jsx";
 import { useNavigation } from "@react-navigation/native";
-import '@fontsource-variable/bricolage-grotesque/index.css';
+import "@fontsource-variable/bricolage-grotesque/index.css";
 
-const PlaceholderImage = require("../images/Red-Circle.png");
-
-//Speaker
+// Speaker
 const Speaker = () => {
   const navigation = useNavigation();
-  const [modalVisible, setModalVisible] = useState(false);
-  const [currentDescription, setCurrentDescription] = useState("");
-  const [currentSpeakerImage, setCurrentSpeakerImage] = useState("");
-  const [currentSpeaker, setCurrentSpeaker] = useState("");
-  const [currentSpeechTitle, setCurrentSpeechTitle] = useState("");
-  const [currentSpeech, setCurrentSpeech] = useState("");
 
   const { language } = useContext(LanguageContext);
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -46,12 +36,18 @@ const Speaker = () => {
 
   return (
     <View style={styles.container}>
-      <Animated.View style={{ height: headerHeight, opacity: headerOpacity, overflow: "hidden" }}>
+      <Animated.View
+        style={{
+          height: headerHeight,
+          opacity: headerOpacity,
+          overflow: "hidden",
+        }}
+      >
         <Text style={styles.titlePage}>Lineup</Text>
       </Animated.View>
 
       <Animated.FlatList
-        data={speaker23}
+        data={speaker24}
         numColumns={1}
         keyExtractor={(item) => item.id}
         onScroll={Animated.event(
@@ -64,14 +60,18 @@ const Speaker = () => {
               if (item.id !== "5" && item.id !== "9") {
                 navigation.navigate("descriptionSpeech", {
                   speakerDes: item.name,
-                  descriptionDes: language === "ita" ? item.bioIta : item.bioEng,
+                  descriptionDes:
+                    language === "ita" ? item.bioIta : item.bioEng,
                   imageDes: item.image,
                   speechTitleDes: item.speechTitle,
-                  speechDes: language === "ita" ? item.speechIta : item.speechEng,
+                  speechDes:
+                    language === "ita" ? item.speechIta : item.speechEng,
+                  resumeDes:
+                    language === "ita" ? item.resumeIta : item.resumeEng,
                 });
               }
             }}
-            disabled={item.id == "5" || item.id == "9"}
+            disabled={item.id === "5" || item.id === "9"}
           >
             <Card containerStyle={styles.card}>
               <ImageBackground source={item.image} style={styles.image} />
@@ -135,13 +135,13 @@ const styles = StyleSheet.create({
     bottom: 10,
     left: 10,
     right: 10,
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   nameText: {
     fontSize: RFValue(22),
     color: "white",
     fontWeight: "bold",
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   timeContainer: {
     alignItems: "flex-end",
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
     fontWeight: "bold",
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   titlePage: {
     paddingLeft: "20px",

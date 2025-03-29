@@ -1,9 +1,17 @@
 import React from "react";
-import { FlatList, Image, StyleSheet,ImageBackground, SafeAreaView, Animated, Text } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  ImageBackground,
+  SafeAreaView,
+  Animated,
+  Text,
+} from "react-native";
 import { Card } from "react-native-elements";
-import '@fontsource-variable/bricolage-grotesque/index.css';
+import "@fontsource-variable/bricolage-grotesque/index.css";
 
-// Partners
+// Partners24
 const Partners = () => {
   const partnerLogos = [
     { id: "2", logo: require("../images/partners23/Unicredit.webp") },
@@ -38,7 +46,13 @@ const Partners = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Animated.View style={{ height: headerHeight, opacity: headerOpacity, overflow: "hidden" }}>
+      <Animated.View
+        style={{
+          height: headerHeight,
+          opacity: headerOpacity,
+          overflow: "hidden",
+        }}
+      >
         <Text style={styles.titlePage}>Partners</Text>
       </Animated.View>
       <Animated.FlatList
@@ -89,7 +103,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 60,
     resizeMode: "contain",
-    transform: [{ scale: 1.10 }],
+    transform: [{ scale: 1.1 }],
   },
   titlePage: {
     paddingLeft: 20,

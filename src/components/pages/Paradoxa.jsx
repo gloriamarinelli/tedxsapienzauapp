@@ -1,4 +1,4 @@
-import React, { useContext,} from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "../../App.js";
 import {
   View,
@@ -10,9 +10,9 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
-import '@fontsource-variable/bricolage-grotesque/index.css';
+import "@fontsource-variable/bricolage-grotesque/index.css";
 
-//Paradoxa
+// Paradoxa
 const Paradoxa = () => {
   const { language } = useContext(LanguageContext);
 
@@ -24,7 +24,7 @@ const Paradoxa = () => {
 
   const paradoxaeng = [
     {
-      text: "Our goal is to zero out, to seek a zero point: inequalities, conflicts, bad lifestyles, emissions and waste. To reduce those polluting factors that slow down the growth of our society, degrading the quality of our lives. Reconsider ourselves and the way we compare ourselves. Learning and interacting with contemporary society, the arts and sciences. It is fundamental to building a world where human beings can be 'reborn,' thriving and expressing themselves at their best in every discipline. Rediscover the basics of being reborn, becoming better people in a better place.",
+      text: "From the Greek παράδοξος, compound of παρα- meaning 'against' and δόξα meaning 'opinion.' Going against the  common way of thinking. The history of paradoxes is ancient and dates back to the birth of logic. However, while the first paradoxes were more like mind games, modernity has given rise to new ones within the reality that surrounds us. Justice that creates inequality, opportunities that create laziness, conflicts to bring peace. Just as ancient thinkers developed paradoxes to stimulate reflection, we too must face, not avoid, the paradoxes that permeate the nature of the human world in order to sprout ideas that can improve it. PARA DOXA will be the fertile ground to cultivate them.",
     },
   ];
 
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
     fontSize: RFValue(18),
     color: "white",
     textAlign: "justify",
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   text1: {
     fontSize: RFValue(20),
     color: "white",
     textAlign: "center",
-    fontFamily: "'Bricolage Grotesque Variable', sans-serif"
+    fontFamily: "'Bricolage Grotesque Variable', sans-serif",
   },
   image: {
     width: 350,

@@ -11,7 +11,8 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import Feather from "react-native-vector-icons/Feather";
-import '@fontsource-variable/bricolage-grotesque/index.css';
+import "@fontsource-variable/bricolage-grotesque/index.css";
+
 //FAQ
 const FAQ = () => {
   const [selectedFaqIndex, setSelectedFaqIndex] = useState(null);
@@ -57,7 +58,7 @@ const FAQ = () => {
     },
   ];
 
-//faqDataeng
+  //faqDataeng
   const faqDataeng = [
     {
       question: "Where can I find the Aula Magna?",
@@ -114,7 +115,9 @@ const FAQ = () => {
     extrapolate: "clamp",
   });
 
-  const iconRotationValues = faqData.map(() => useRef(new Animated.Value(0)).current);
+  const iconRotationValues = faqData.map(
+    () => useRef(new Animated.Value(0)).current
+  );
 
   const toggleAnswer = (index) => {
     Animated.timing(iconRotationValues[index], {
@@ -127,10 +130,17 @@ const FAQ = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Animated.View style={[styles.header, { height: headerHeight, opacity: headerOpacity }]}> 
-        <Animated.Text style={[styles.titlePage, { opacity: headerOpacity }]}>FAQ</Animated.Text>
+      <Animated.View
+        style={[
+          styles.header,
+          { height: headerHeight, opacity: headerOpacity },
+        ]}
+      >
+        <Animated.Text style={[styles.titlePage, { opacity: headerOpacity }]}>
+          FAQ
+        </Animated.Text>
       </Animated.View>
-      <ScrollView 
+      <ScrollView
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
           { useNativeDriver: false }
@@ -139,7 +149,10 @@ const FAQ = () => {
       >
         {faqData.map((item, index) => (
           <View key={index} style={styles.faqItem}>
-            <TouchableOpacity onPress={() => toggleAnswer(index)} style={styles.faqQuestion}>
+            <TouchableOpacity
+              onPress={() => toggleAnswer(index)}
+              style={styles.faqQuestion}
+            >
               <Text style={styles.questionText}>{item.question}</Text>
               <Feather
                 name={selectedFaqIndex === index ? "x" : "plus"}
