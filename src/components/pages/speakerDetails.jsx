@@ -26,10 +26,10 @@ export const speaker24 = [
     speechTitle: "Titolo 1",
     bioIta:
       "23 anni, studentessa al corso internazionale di medicina della Sapienza. Ha vissuto tra Francia, Germania e Italia, dove ha studiato e fatto ricerca. Scrittrice, poliglotta, attrice, musicista, past president un’associazione giovanile del Rotary International e membro dello European Youth Parliament.",
-    bioEng: "Bio in inglese",
+    bioEng: "...",
     resumeIta:
       "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
-    resumeEng: "",
+    resumeEng: "...",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },

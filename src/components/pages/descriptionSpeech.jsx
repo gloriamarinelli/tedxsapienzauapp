@@ -71,6 +71,8 @@ const DescriptionSpeech = ({ route }) => {
         {/* Bio Description */}
         <Text style={styles.descriptionText}>{descriptionDes}</Text>
 
+        <hr />
+        
         {/* Speech Description */}
         <Text style={styles.descriptionText}>{resumeDes}</Text>
       </ScrollView>
