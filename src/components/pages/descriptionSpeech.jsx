@@ -71,8 +71,8 @@ const DescriptionSpeech = ({ route }) => {
         {/* Bio Description */}
         <Text style={styles.descriptionText}>{descriptionDes}</Text>
 
-        <hr />
-        
+        <Text style={styles.line}> ────────── </Text>
+
         {/* Speech Description */}
         <Text style={styles.descriptionText}>{resumeDes}</Text>
       </ScrollView>
@@ -150,6 +150,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     fontFamily: "'Bricolage Grotesque Variable', sans-serif",
+  },
+  line: {
+    textAlign: "center",
+    marginVertical: 10,
+    color: "white",
   },
 });
 

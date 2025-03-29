@@ -3270,6 +3270,11 @@
     "@urql/core" ">=2.3.1"
     wonka "^4.0.14"
 
+"@vercel/analytics@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.5.0.tgz"
+  integrity sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==
+
 "@webassemblyjs/ast@^1.14.1", "@webassemblyjs/ast@1.14.1":
   version "1.14.1"
   resolved "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.14.1.tgz"

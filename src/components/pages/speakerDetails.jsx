@@ -1,21 +1,3 @@
-import React, { useState, useContext } from "react";
-import { LanguageContext } from "../../App.js";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-  ImageBackground,
-  FlatList,
-  SafeAreaView,
-  Pressable,
-  Modal,
-} from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
-import global from "../../resources/global.json";
-
 // Speaker24
 export const speaker24 = [
   {
@@ -41,8 +23,7 @@ export const speaker24 = [
     speechTitle: "Titolo 2",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -55,8 +36,7 @@ export const speaker24 = [
     speechTitle: "Titolo 3",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -69,8 +49,7 @@ export const speaker24 = [
     speechTitle: "Titolo 4",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -89,8 +68,7 @@ export const speaker24 = [
     speechTitle: "Titolo 6",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -103,8 +81,7 @@ export const speaker24 = [
     speechTitle: "Titolo 7",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -116,10 +93,11 @@ export const speaker24 = [
     time: "13:00",
     speechTitle: "Titolo 8",
     bioIta: "Bio in italiano ",
-    bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
-    resumeEng: "",
+    bioEng:
+      "Pepa Pasatu explores sexual pleasure and body awareness. Born in Berlin, Pepa has lived and learned in Italy, Argentina, and Austria. Holding a BSc in Psychology (University of Potsdam) and an MSc in Clinical Psychosexology (Sapienza, Rome), Pepa researches sexuality, performs, and leads workshops.",
+    resumeIta: "...",
+    resumeEng:
+      "Why do we follow unspoken scripts in sex, performing instead of feeling? What if we replaced pressure with curiosity and expectation with exploration? I invite you to reconnect with your desires, tune into your sensations, by embracing your journey of electrifying pleasure.",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },
@@ -137,8 +115,7 @@ export const speaker24 = [
     speechTitle: "Titolo 10",
     bioIta: "Bio in italiano ",
     bioEng: "Bio in inglese",
-    resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+    resumeIta: "...",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -149,10 +126,11 @@ export const speaker24 = [
     image: require("../images/speakers24/panepinto.webp"),
     time: "15:20",
     speechTitle: "Titolo 11",
-    bioIta: "Bio in italiano ",
+    bioIta:
+      "Carmen Panepinto Zayati, ingegnere bionico e Miss Universe Italy 2023, sfida le barriere psicologiche nelle materie STEM. Dimostra che fascino e intelligenza possono coesistere, ispirando le nuove generazioni a rompere gli schemi. La sua storia ispira le nuove generazioni a superare i pregiudizi e i ruoli di genere.",
     bioEng: "Bio in inglese",
     resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+      "Le barriere psicologiche che avvolgono le STEM e cosa succederebbe se le eliminassimo. Se già la tecnologia sembra fantascientifica, cosa succederebbe se più persone contribuissero all’innovazione tecnologica?",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
@@ -163,10 +141,11 @@ export const speaker24 = [
     image: require("../images/speakers24/kento.png"),
     time: "15:40",
     speechTitle: "Titolo 12",
-    bioIta: "Bio in italiano ",
+    bioIta:
+      "Kento, pseudonimo di Francesco Carlo, è un rapper originario di Reggio Calabria in cui inizia la carriera agli inizi degli anni 90 diventando l’esponente di un genere di rap di denuncia, impegnato nella lotta contro le ingiustizie sociali, la discriminazione, i diritti umani e la politica.",
     bioEng: "Bio in inglese",
     resumeIta:
-      "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
+      "Le immagini che abbiamo del carcere minorile sono spesso sbagliate. Opinioni diffuse nella società, media e fiction alimentano una narrazione irrealistica. Serve un cambiamento nella prospettiva e nelle opportunità offerte ai ragazzi, partendo dal ricordarci che dietro ogni errore c’è un essere umano.",
     resumeEng: "",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
