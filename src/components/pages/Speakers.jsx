@@ -63,7 +63,7 @@ const Speaker = () => {
                   descriptionDes:
                     language === "ita" ? item.bioIta : item.bioEng,
                   imageDes: item.image,
-                  speechTitleDes: item.speechTitle,
+                  speechTitleDes: language === "ita" ? item.speechTitleIta : item.speechTitleEng,
                   speechDes:
                     language === "ita" ? item.speechIta : item.speechEng,
                   resumeDes:
