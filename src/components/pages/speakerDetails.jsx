@@ -25,8 +25,8 @@ export const speaker24 = [
     name: "Nicola Armaroli ",
     image: require("../images/speakers24/armaroli.webp"),
     time: "11:00",
-    speechTitleIta: "La transizione energetica è una fregatura.",
-    speechTitleEng: "Title 2",
+    speechTitleIta: "La transizione energetica è una fregatura?",
+    speechTitleEng: "Is the energy transition a scam?,",
     bioIta:
       "Nicola Armaroli è un chimico, dirigente di ricerca presso il CNR, direttore della rivista Sapere e membro dell'Accademia Nazionale delle Scienze. La sua attività scientifica riguarda fotochimica e fotofisica. Studia inoltre la transizione del sistema energetico globale verso modelli più sostenibili.",
     bioEng:
@@ -45,10 +45,14 @@ export const speaker24 = [
     time: "11:20",
     speechTitleIta: "Tante Eccezioni Decentralizzate",
     speechTitleEng: "Many Decentralized Exceptions",
-    bioIta: "Abbozzo, in arte Matteo Abozzi, classe 2000, anche se alle medie stava nella classe 3B. Ha studiato alla scuola elementare di Springfield, ha superato i test Gufo ed ha acquisito la Forza. Gli piace il blues e il latte freddo. Prima o poi morirà.",
-    bioEng: "Abbozzo, aka Matteo Abozzi, class of 2000, although his middle school class was the 3B. He studied at Springfield Elementary School, passed the O.W.L tests and acquired the Force. He likes blues and cold milk. Sooner or later he will die",
-    resumeIta: "",
-    resumeEng: "",
+    bioIta:
+      "Abbozzo, in arte Matteo Abozzi, classe 2000, anche se alle medie stava nella classe 3B. Ha studiato alla scuola elementare di Springfield, ha superato i test Gufo ed ha acquisito la Forza. Gli piace il blues e il latte freddo. Prima o poi morirà.",
+    bioEng:
+      "Abbozzo, aka Matteo Abozzi, class of 2000, although his middle school class was the 3B. He studied at Springfield Elementary School, passed the O.W.L tests and acquired the Force. He likes blues and cold milk. Sooner or later he will die",
+    resumeIta:
+      "Attraverso la sua musica, giocherà sul non senso, lasciando il pubblico con un senso di smarrimento e riflessione. Con la sua esibizione coinvolgerà il pubblico in un viaggio affascinante, dimostrando come il paradosso si riveli una parte fondamentale della nostra esistenza.",
+    resumeEng:
+      "Through his music, he will play on nonsense, leaving the audience with a sense of bewilderment and reflection. His performance will engage the audience in a fascinating journey, demonstrating how paradox turns out to be a fundamental part of our existence.",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },
@@ -80,12 +84,16 @@ export const speaker24 = [
     name: "Lorenzo Saltarelli",
     image: require("../images/speakers24/saltarelli.webp"),
     time: "12:20",
-    speechTitleIta: "Titolo 2",
-    speechTitleEng: "Title 2",
-    bioIta: "Bio in italiano ",
-    bioEng: "Bio in inglese",
-    resumeIta: "...",
-    resumeEng: "",
+    speechTitleIta: "",
+    speechTitleEng: "",
+    bioIta:
+      "Lorenzo Saltarelli, prestigiatore professionista e studente di psicologia, tra i vincitori nella categoria 'artist' dei SapienzaU Awards",
+    bioEng:
+      "Lorenzo Saltarelli, professional magician and psychology student, among the winners in the 'artist' category of the SapienzaU Awards.",
+    resumeIta:
+      "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
+    resumeEng:
+      "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },
@@ -94,12 +102,16 @@ export const speaker24 = [
     name: "Esmeralda Moretti",
     image: require("../images/speakers24/moretti.webp"),
     time: "12:40",
-    speechTitleIta: "Titolo 2",
-    speechTitleEng: "Title 2",
-    bioIta: "Bio in italiano ",
-    bioEng: "Bio in inglese",
-    resumeIta: "...",
-    resumeEng: "",
+    speechTitleIta: "Non si può dire più niente.",
+    speechTitleEng: "You can't say anything anymore.",
+    bioIta:
+      "Esmeralda, divulgatrice di filosofia come @esme_psithurisma, ha una laurea in Filosofia e prosegue gli studi magistrali. Collabora stabilmente con Studenti.it, e con realtà come Factanza e Flatmates. Ha condotto programmi TV e radio e ora lancia Le avventure di Bibi, startup educativa per bambini.",
+    bioEng:
+      "Esmeralda, a philosophy communicator known as @esme_psithurisma, holds a degree in Philosophy and is pursuing her master's studies. She collaborates regularly with Studenti.it and with organizations such as Factanza and Flatmates. She has hosted TV and radio programs and is now launching Le avventure di Bibi, an educational startup for children.",
+    resumeIta:
+      "La libertà di parola è essenziale, ma oggi è minacciata da polarizzazione e disinformazione. Con il “paradosso della tolleranza”, Karl Popper mostra che tollerare l’intolleranza senza limiti può distruggere la libertà. Difendere una società aperta significa promuovere dialogo critico e rispetto, rifiutando violenza e sopraffazione.",
+    resumeEng:
+      "Freedom of speech is essential, but today it is threatened by polarization and misinformation. With the 'paradox of tolerance,' Karl Popper shows that tolerating intolerance without limits can destroy freedom. Defending an open society means promoting critical dialogue and respect while rejecting violence and oppression.",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },
@@ -108,13 +120,15 @@ export const speaker24 = [
     name: "Pepa Pasatu",
     image: require("../images/speakers24/pasatu.png"),
     time: "13:00",
-    speechTitleIta: "Titolo 2",
+    speechTitleIta:
+      "Volete un sesso elettrizzante? Abbandona la recita, senti il piacere.",
     speechTitleEng: "Want Electrifying Sex? Drop the Act, Feel the Pleasure.",
     bioIta:
       "Pepa Pasatu esplora il piacere sessuale e la consapevolezza corporea. Di origine berlinese, ha vissuto e studiato in Italia, Argentina e Austria. Con una Laurea in Psicologia (Università di Potsdam) e un Master in Psicosessuologia Clinica (Sapienza, Roma), ricerca la sessualità, si esibisce e conduce workshop.",
     bioEng:
       "Pepa Pasatu explores sexual pleasure and body awareness. Born in Berlin, Pepa has lived and learned in Italy, Argentina, and Austria. Holding a BSc in Psychology (University of Potsdam) and an MSc in Clinical Psychosexology (Sapienza, Rome), Pepa researches sexuality, performs, and leads workshops.",
-    resumeIta: "...",
+    resumeIta:
+      "Perché nel sesso seguiamo copioni non detti, eseguendo invece di sentire? E se sostituissimo la pressione con la curiosità e le aspettative con l'esplorazione? Vi invito a riconnettervi con i vostri desideri, a sintonizzarvi con le vostre sensazioni, abbracciando il vostro viaggio nel piacere elettrizzante.",
     resumeEng:
       "Why do we follow unspoken scripts in sex, performing instead of feeling? What if we replaced pressure with curiosity and expectation with exploration? I invite you to reconnect with your desires, tune into your sensations, by embracing your journey of electrifying pleasure.",
     speechIta: "discorso in italiano",
@@ -149,9 +163,8 @@ export const speaker24 = [
     name: "Carmen Panepinto Zayati",
     image: require("../images/speakers24/panepinto.webp"),
     time: "15:20",
-    speechTitleIta:
-      "Perché il futuro delle STEM ha bisogno di TE (Sì, proprio di te!)",
-    speechTitleEng: "Why the Future of STEM Needs YOU (Yes, You!)",
+    speechTitleIta: "L'ingegnere in glitter",
+    speechTitleEng: "The Engineer in Glitter",
     bioIta:
       "Carmen Panepinto Zayati, ingegnere bionico e Miss Universe Italy 2023, sfida le barriere psicologiche nelle materie STEM. Dimostra che fascino e intelligenza possono coesistere, ispirando le nuove generazioni a rompere gli schemi. La sua storia ispira le nuove generazioni a superare i pregiudizi e i ruoli di genere.",
     bioEng:
