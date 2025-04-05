@@ -14,20 +14,31 @@ import "@fontsource-variable/bricolage-grotesque/index.css";
 // Partners24
 const Partners = () => {
   const partnerLogos = [
-    { id: "2", logo: require("../images/partners23/Unicredit.webp") },
+    { id: "2", logo: require("../images/partners23/Unicredit.png") },
     { id: "3", logo: require("../images/partners23/novo-nordisk.webp") },
-    { id: "4", logo: require("../images/partners23/Balduina1.webp") },
-    { id: "5", logo: require("../images/partners23/hyper-foundry.webp") },
-    { id: "6", logo: require("../images/partners23/EF.webp") },
+    { id: "4", logo: require("../images/partners23/Balduina1.png") },
+    { id: "5", logo: require("../images/partners23/Pioda.png") },
+    { id: "6", logo: require("../images/partners23/hyper-foundry.webp") },
     { id: "7", logo: require("../images/partners23/ypt.webp") },
-    { id: "8", logo: require("../images/partners23/rfw.webp") },
-    { id: "9", logo: require("../images/partners23/SFClubSapienza.webp") },
-    { id: "10", logo: require("../images/partners23/Enea.webp") },
-    { id: "11", logo: require("../images/partners23/cdp.webp") },
-    { id: "12", logo: require("../images/partners23/Roma.webp") },
-    { id: "13", logo: require("../images/partners23/CNR.webp") },
-    { id: "14", logo: require("../images/partners23/technotown.webp") },
+    { id: "8", logo: require("../images/partners23/EF.png") },
+    { id: "9", logo: require("../images/partners23/hxo.webp") },
+    { id: "10", logo: require("../images/partners23/tfi.webp") },
+    { id: "11", logo: require("../images/partners23/dl.webp") },
+    { id: "12", logo: require("../images/partners23/zeta.webp") },
+    { id: "13", logo: require("../images/partners23/upr.webp") },
+    { id: "14", logo: require("../images/partners23/technotown.png") },
     { id: "15", logo: require("../images/partners23/MICcard.webp") },
+    { id: "16", logo: require("../images/partners23/rfw.png") },
+    { id: "17", logo: require("../images/partners23/SFClubSapienza.png") },
+    { id: "18", logo: require("../images/partners23/t4.png") },
+    { id: "19", logo: require("../images/partners23/jesap.png") },
+    { id: "20", logo: require("../images/partners23/Enea.png") },
+    { id: "21", logo: require("../images/partners23/cdp.png") },
+    { id: "22", logo: require("../images/partners23/Roma.png") },
+    { id: "23", logo: require("../images/partners23/CNR.png") },
+    { id: "24", logo: require("../images/partners23/lazio.webp") },
+    { id: "25", logo: require("../images/partners23/ep.webp") },    
+
   ];
 
   const scrollY = new Animated.Value(0);
@@ -53,7 +64,7 @@ const Partners = () => {
           overflow: "hidden",
         }}
       >
-        <Text style={styles.titlePage}>Partners</Text>
+        <Text style={styles.titlePage}>Sponsors</Text>
       </Animated.View>
       <Animated.FlatList
         columnWrapperStyle={{ justifyContent: "center" }}
@@ -66,7 +77,7 @@ const Partners = () => {
         )}
         renderItem={({ item }) => (
           <Card containerStyle={styles.card2}>
-            <ImageBackground source={item.logo} style={styles.logo2} />
+            <Image source={item.logo} style={styles.logo2} />
           </Card>
         )}
       />
@@ -103,7 +114,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 60,
     resizeMode: "contain",
-    transform: [{ scale: 1.1 }],
   },
   titlePage: {
     paddingLeft: 20,

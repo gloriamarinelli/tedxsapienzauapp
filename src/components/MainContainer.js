@@ -42,7 +42,7 @@ export default function MainContainer() {
 
             if (route.name === "Home") iconName = "home";
             else if (route.name === "FAQ") iconName = "question-circle";
-            else if (route.name === "Partners") iconName = "handshake";
+            else if (route.name === "Sponsors") iconName = "handshake";
             else if (route.name === "PARA DOXA") iconName = "times";
 
             return <FontAwesome5 name={iconName} size={size} color={color} />;
@@ -60,7 +60,7 @@ export default function MainContainer() {
       >
         <Tab.Screen name="Home" component={Speakers} />
         <Tab.Screen name="PARA DOXA" component={Paradoxa} />
-        <Tab.Screen name="Partners" component={Partners} />
+        <Tab.Screen name="Sponsors" component={Partners} />
         <Tab.Screen name="FAQ" component={FAQ} />
         <Tab.Screen
           name="descriptionSpeech"
