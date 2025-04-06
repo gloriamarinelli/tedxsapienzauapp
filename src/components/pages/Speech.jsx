@@ -22,8 +22,8 @@ const informazioni = [
     traduzione: require("../../../speech/TULLIO.aac"),
   },
   {
-    nome: "Ilaria Rossi",
-    traduzione: require("../../../speech/ILARIA-ROSSI.aac"),
+    nome: "Nicola Armaroli",
+    traduzione: require("../../../speech/ARMAROLI.aac"),
   },
   {
     nome: "Edward von Freymann",
@@ -32,6 +32,10 @@ const informazioni = [
   {
     nome: "Riccardo Basilone",
     traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
+  },
+  {
+    nome: "Silvano Onori",
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
     nome: "Gloria Schito",
@@ -44,6 +48,11 @@ const informazioni = [
   {
     nome: "Ana Estrela",
     traduzione: require("../../../speech/ANA-ESTRELA.aac"),
+    
+  },
+  {
+    nome: "Silvano Oofri",
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
     nome: "Nina Lambarelli",
