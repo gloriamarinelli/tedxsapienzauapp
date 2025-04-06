@@ -6,7 +6,7 @@ export const speaker24 = [
     image: require("../images/speakers24/dapoto.png"),
     time: "10:40",
     speechTitleIta:
-      "Come cambiare te stesso e la società grazie a una nuova materia scolasticaa",
+      "Come cambiare te stesso e la società grazie a una nuova materia scolasticaa",
     speechTitleEng:
       "How to change yourself and society thanks to a new school subject",
     bioIta:
@@ -63,13 +63,15 @@ export const speaker24 = [
     time: "11:40",
     speechTitleIta:
       "Lo spazio è qui: il suo impatto nella nostra vita quotidiana",
-    speechTitleEng: "Title 2",
+    speechTitleEng: "The Space is Here: Its Impact on Our Daily Lives",
     bioIta:
       "Lorenzo, pilota dell’Aeronautica Militare e ingegnere aerospaziale, ha completato l’iter da Ufficiale nel 6° Stormo di Ghedi. Laureato in discipline aerospaziali, svolge un Dottorato alla Sapienza. Collabora a progetti ASI, NASA ed UE, con un esperimento in lancio sulla ISS nel 2025.",
-    bioEng: "Bio in inglese",
+    bioEng:
+      "Lorenzo, a pilot in the Italian Air Force and aerospace engineer, completed his officer training with the 6th Wing in Ghedi. He holds a degree in aerospace disciplines and is currently pursuing a PhD at Sapienza University. He collaborates on projects with ASI, NASA, and the EU, with an experiment set to launch to the ISS in 2025.",
     resumeIta:
       "Perché investire nella ricerca aerospaziale quando abbiamo così tanti problemi qui sulla Terra? Spazio e Terra sono indissolubilmente connessi: Nardi, pilota e ingegnere aerospaziale, ci mostra come le innovazioni sviluppate per i cieli trovano applicazioni cruciali nella nostra vita quotidiana",
-    resumeEng: "",
+    resumeEng:
+      "Why invest in space research when we face so many problems here on Earth? Space and Earth are inextricably connected: Nardi, pilot and aerospace engineer, shows us how innovations developed for the skies have crucial applications in our everyday lives.",
     speechIta: "discorso in italiano",
     speechEng: "discorso in inglese",
   },
@@ -84,8 +86,8 @@ export const speaker24 = [
     name: "Lorenzo Saltarelli",
     image: require("../images/speakers24/saltarelli.webp"),
     time: "12:20",
-    speechTitleIta: "",
-    speechTitleEng: "",
+    speechTitleIta: "Il paradosso del cubo di Schrödinger",
+    speechTitleEng: "The Schrödinger's cube paradox",
     bioIta:
       "Lorenzo Saltarelli, prestigiatore professionista e studente di psicologia, tra i vincitori nella categoria 'artist' dei SapienzaU Awards",
     bioEng:
