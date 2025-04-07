@@ -19,51 +19,51 @@ const logoBack = require("../images/player/back.png");
 const informazioni = [
   {
     nome: "Alessia Dapoto",
-    // traduzione: require("../../../speech/TULLIO.aac"),
+    traduzione: require("../../../speech/TULLIO.aac"),
   },
   {
     nome: "Nicola Armaroli",
-    // traduzione: require("../../../speech/ARMAROLI.aac"),
+    traduzione: require("../../../speech/ARMAROLI.aac"),
   },
   {
     nome: "Abbozzo",
-    // traduzione: require("../../../speech/VON_FREYMANN.aac"),
+    traduzione: require("../../../speech/VON_FREYMANN.aac"),
   },
   {
     nome: "Lorenzo Nardi",
-    // traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
+    traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
   },
   {
     nome: "Break",
-    // traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
     nome: "Lorenzo Saltarelli",
-    // traduzione: require("../../../speech/GLORIA-SCHITO.aac"),
+    traduzione: require("../../../speech/GLORIA-SCHITO.aac"),
   },
   {
     nome: "Esmeralda Moretti",
-    // traduzione: require("../../../speech/MATTEO-CERVELLINI.aac"),
+    traduzione: require("../../../speech/MATTEO-CERVELLINI.aac"),
   },
   {
     nome: "Pepa Pasatu",
-    // traduzione: require("../../../speech/ANA-ESTRELA.aac"),
+    traduzione: require("../../../speech/ANA-ESTRELA.aac"),
   },
   {
     nome: "Pausa pranzo",
-    // traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
     nome: "Riccardo Azzali",
-    // traduzione: require("../../../speech/NINA-LAMBARELLI.aac"),
+    traduzione: require("../../../speech/NINA-LAMBARELLI.aac"),
   },
   {
     nome: "Carmen Panepinto Zayati",
-    // traduzione: require("../../../speech/ROSE-VILLAIN.aac"),
+    traduzione: require("../../../speech/ROSE-VILLAIN.aac"),
   },
   {
     nome: "Kento",
-    // traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/ONOFRI.aac"),
   },
 ];
 
