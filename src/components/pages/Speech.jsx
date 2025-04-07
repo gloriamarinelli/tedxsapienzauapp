@@ -18,7 +18,7 @@ const logoBack = require("../images/player/back.png");
 // Informazioni
 const informazioni = [
   {
-    nome: "Damiano Tullio",
+    nome: "Alessia Dapoto",
     traduzione: require("../../../speech/TULLIO.aac"),
   },
   {
@@ -26,44 +26,44 @@ const informazioni = [
     traduzione: require("../../../speech/ARMAROLI.aac"),
   },
   {
-    nome: "Edward von Freymann",
+    nome: "Abbozzo",
     traduzione: require("../../../speech/VON_FREYMANN.aac"),
   },
   {
-    nome: "Riccardo Basilone",
+    nome: "Lorenzo Nardi",
     traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
   },
   {
-    nome: "Silvano Onori",
+    nome: "Break",
     traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
-    nome: "Gloria Schito",
+    nome: "Lorenzo Saltarelli",
     traduzione: require("../../../speech/GLORIA-SCHITO.aac"),
   },
   {
-    nome: "Matteo Cervellini",
+    nome: "Esmeralda Moretti",
     traduzione: require("../../../speech/MATTEO-CERVELLINI.aac"),
   },
   {
-    nome: "Ana Estrela",
+    nome: "Pepa Pasatu",
     traduzione: require("../../../speech/ANA-ESTRELA.aac"),
     
   },
   {
-    nome: "Silvano Oofri",
+    nome: "Pausa pranzo",
     traduzione: require("../../../speech/ONOFRI.aac"),
   },
   {
-    nome: "Nina Lambarelli",
+    nome: "Riccardo Azzali",
     traduzione: require("../../../speech/NINA-LAMBARELLI.aac"),
   },
   {
-    nome: "Rose Villain",
+    nome: "Carmen Panepinto Zayati",
     traduzione: require("../../../speech/ROSE-VILLAIN.aac"),
   },
   {
-    nome: "Silvano Onofri",
+    nome: "Kento",
     traduzione: require("../../../speech/ONOFRI.aac"),
   },
 ];

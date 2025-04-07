@@ -22,7 +22,7 @@ export const speaker24 = [
   },
   {
     id: "2",
-    name: "Nicola Armaroli ",
+    name: "Nicola Armaroli",
     image: require("../images/speakers24/armaroli.webp"),
     time: "11:00",
     speechTitleIta: "La transizione energetica è una fregatura?",
