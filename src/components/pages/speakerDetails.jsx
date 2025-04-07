@@ -37,9 +37,9 @@ export const speaker24 = [
       "Pochi anni fa, ci siamo resi conto delle nostre debolezze di fronte ai cambiamenti della biosfera ed eravamo d'accordo sul dover prendere azioni decise. Oggi, la transizione energetica sembra non più necessaria e ci sentiamo dire che stanno solo cercando di fregarci. Perché il racconto è cambiato? ",
     resumeEng:
       "A few years ago, we realized our weaknesses in the face of changes in the biosphere, and we agreed that decisive action was needed. Today, the energy transition no longer seems necessary, and we are being told that they are just trying to deceive us. Why has the narrative changed?",
-    speechIta: "Ricordate questa ragazzina? E questi ragazzi? Sembra trascorso un secolo. Nessuno ne parla più, sono passati di moda. Eppure li avevamo presi molto sul serio. Così sul serio che i grandi della Terra avevano fatto solenni promesse di realizzare una transizione del sistema economico e produttivo per scongiurare il disastro climatico. In Europa avevamo varato il Green Deal: l’economia europea era pronta a cambiare pelle per non compromettere il futuro delle prossime generazioni. Anche negli Stati Uniti fu approvato un gigantesco piano di riconversione ecologica. Il nome non era così esplicito come quello europeo, però l’obiettivo era analogo. Il mondo era incamminato su una strada di riconversione industriale e progresso economico virtuoso. A consolidare quella idea contribuì in maniera determinante la tragedia del  COVID. Nel 2020 un’entità biologica di un decimillesimo di millimetro ci confinò tutti quanti tra il salotto, il bagno e la camera da letto. Toccammo con mano la nostra debolezza di fronte alle forze della natura. A dire il vero l’allarme pandemia era stato sollevato diverse volte. Sapevamo che non era questione di “se” ma solo di “quando”. Ma avevamo alzato le spalle e messo la testa sotto la sabbia. Perché, in fondo, non ci piace sentirci vulnerabili. Terrorizzati dal morbo che girava incontrollato, promettemmo solennemente che avremmo potenziato la sanità pubblica. Del resto, medici, infermieri e operatori ospedalieri erano diventati i nostri eroi. Avevamo anche capito che la collaborazione internazionale era una necessità vitale, nell’interesse di tutti.",
-    speechEng: "Do you remember this girl? And these guys? It feels like a century has passed. No one talks about them anymore—they're out of fashion. Yet we had taken them very seriously. So seriously, in fact, that the world's leaders made solemn promises to transform the economic and production system to avoid climate disaster. In Europe, we launched the Green Deal: the European economy was ready to change its skin so as not to jeopardize the future of the next generations. Even in the United States, a gigantic green transition plan was approved. The name wasn’t as explicit as the European one, but the goal was the same. The world was on a path of industrial transformation and virtuous economic progress. That idea was deeply reinforced by the tragedy of COVID. In 2020, a biological entity a ten-thousandth of a millimeter in size locked all of us between the living room, the bathroom, and the bedroom. We were confronted firsthand with our vulnerability to the forces of nature.",
-  },
+      speechIta: speeches["2"].speechIta,
+      speechEng: speeches["2"].speechEng
+    },
   {
     id: "3",
     name: "Abbozzo",
@@ -55,8 +55,8 @@ export const speaker24 = [
       "Attraverso la sua musica, giocherà sul non senso, lasciando il pubblico con un senso di smarrimento e riflessione. Con la sua esibizione coinvolgerà il pubblico in un viaggio affascinante, dimostrando come il paradosso si riveli una parte fondamentale della nostra esistenza.",
     resumeEng:
       "Through his music, he will play on nonsense, leaving the audience with a sense of bewilderment and reflection. His performance will engage the audience in a fascinating journey, demonstrating how paradox turns out to be a fundamental part of our existence.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+    speechIta: speeches["3"].speechIta,
+    speechEng: speeches["3"].speechEng
   },
   {
     id: "4",
@@ -74,8 +74,8 @@ export const speaker24 = [
       "Perché investire nella ricerca aerospaziale quando abbiamo così tanti problemi qui sulla Terra? Spazio e Terra sono indissolubilmente connessi: Nardi, pilota e ingegnere aerospaziale, ci mostra come le innovazioni sviluppate per i cieli trovano applicazioni cruciali nella nostra vita quotidiana",
     resumeEng:
       "Why invest in space research when we face so many problems here on Earth? Space and Earth are inextricably connected: Nardi, pilot and aerospace engineer, shows us how innovations developed for the skies have crucial applications in our everyday lives.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["4"].speechIta,
+      speechEng: speeches["4"].speechEng
   },
   {
     id: "5",
@@ -98,8 +98,8 @@ export const speaker24 = [
       "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
     resumeEng:
       "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["6"].speechIta,
+      speechEng: speeches["6"].speechEng
   },
   {
     id: "7",
@@ -116,8 +116,8 @@ export const speaker24 = [
       "La libertà di parola è essenziale, ma oggi è minacciata da polarizzazione e disinformazione. Con il “paradosso della tolleranza”, Karl Popper mostra che tollerare l’intolleranza senza limiti può distruggere la libertà. Difendere una società aperta significa promuovere dialogo critico e rispetto, rifiutando violenza e sopraffazione.",
     resumeEng:
       "Freedom of speech is essential, but today it is threatened by polarization and misinformation. With the 'paradox of tolerance,' Karl Popper shows that tolerating intolerance without limits can destroy freedom. Defending an open society means promoting critical dialogue and respect while rejecting violence and oppression.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["7"].speechIta,
+      speechEng: speeches["7"].speechEng
   },
   {
     id: "8",
@@ -135,8 +135,8 @@ export const speaker24 = [
       "Perché nel sesso seguiamo copioni non detti, eseguendo invece di sentire? E se sostituissimo la pressione con la curiosità e le aspettative con l'esplorazione? Vi invito a riconnettervi con i vostri desideri, a sintonizzarvi con le vostre sensazioni, abbracciando il vostro viaggio nel piacere elettrizzante.",
     resumeEng:
       "Why do we follow unspoken scripts in sex, performing instead of feeling? What if we replaced pressure with curiosity and expectation with exploration? I invite you to reconnect with your desires, tune into your sensations, by embracing your journey of electrifying pleasure.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["8"].speechIta,
+      speechEng: speeches["8"].speechEng
   },
   {
     id: "9",
@@ -159,8 +159,8 @@ export const speaker24 = [
       "Crediamo che i paradossi siano un’assurdità incomprensibile, ma in realtà sono motori di scoperta. Attraverso i paradossi più straordinari, Riccardo Azzali ci dimostra che dobbiamo accogliere le contraddizioni, perché è lì che la logica trova i suoi stimoli.",
     resumeEng:
       "We believe that paradoxes are an absurdity, but they are engines of discovery. Through the most extraordinary paradoxes, Riccardo Azzali shows us that we must embrace contradictions because that is where logic finds its inspiration.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["10"].speechIta,
+      speechEng: speeches["10"].speechEng
   },
   {
     id: "11",
@@ -177,8 +177,8 @@ export const speaker24 = [
       "Le STEM non sono solo per i geni, ma una cassetta degli attrezzi per tutti. Eppure, tendiamo a incasellare le persone, decidendo chi appartiene a cosa. E se abbattere queste barriere permettesse la prossima grande scoperta? Mettiamo in discussione i limiti e ripensiamo chi può costruire il futuro",
     resumeEng:
       "STEM isn’t just for geniuses, it’s a toolbox for everyone. Yet, we put people into boxes, shaping who belongs where. What if breaking those barriers unleashed the next big breakthrough? Let’s challenge the limits and rethink who gets to build the future.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["11"].speechIta,
+      speechEng: speeches["11"].speechEng
   },
   {
     id: "12",
@@ -195,7 +195,7 @@ export const speaker24 = [
       "Le immagini che abbiamo del carcere minorile sono spesso sbagliate. Opinioni diffuse nella società, media e fiction alimentano una narrazione irrealistica. Serve un cambiamento nella prospettiva e nelle opportunità offerte ai ragazzi, partendo dal ricordarci che dietro ogni errore c’è un essere umano.",
     resumeEng:
       "The idea we have of juvenile detention centers is often inaccurate. General opinions in society, media, and fiction fuel an unrealistic narrative. A change in perspective and in the opportunities offered to these young men and women is needed, starting with the reminder that behind every mistake, there is a human being.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+      speechIta: speeches["12"].speechIta,
+      speechEng: speeches["12"].speechEng
   },
 ];
