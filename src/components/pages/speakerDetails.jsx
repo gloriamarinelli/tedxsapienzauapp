@@ -1,4 +1,6 @@
 // Speaker24
+import speeches from "../speech_text/testi_speakers.json";
+
 export const speaker24 = [
   {
     id: "1",
@@ -17,8 +19,8 @@ export const speaker24 = [
       "Esploreremo un paradosso affascinante: cerchiamo tante esperienze nel mondo esterno ma a volte trascuriamo il viaggio più importante, quello interiore. Ci accompagnerà tra neuroscienze e medicina per scoprire come l’educazione emotiva può trasformare noi stessi e la società, rivoluzionando il mondo.",
     resumeEng:
       "The paradox: we seek countless experiences in the external world, yet often neglect the most important journey of all — the one inside ourselves. She will guide us through neuroscience and medicine to discover how emotional education can transform both ourselves and society, being a revolution for the world.",
-    speechIta: "discorso in italiano",
-    speechEng: "discorso in inglese",
+    speechIta: speeches["1"].speechIta,
+    speechEng: speeches["1"].speechEng
   },
   {
     id: "2",
