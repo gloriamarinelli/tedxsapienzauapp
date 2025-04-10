@@ -6,7 +6,7 @@ export const speaker24 = [
     id: "1",
     name: "Alessia Dapoto",
     image: require("../images/speakers24/dapoto.png"),
-    time: "10:40",
+    time: "10:00",
     speechTitleIta:
       "Come cambiare te stesso e la società grazie a una nuova materia scolasticaa",
     speechTitleEng:
@@ -20,13 +20,13 @@ export const speaker24 = [
     resumeEng:
       "The paradox: we seek countless experiences in the external world, yet often neglect the most important journey of all — the one inside ourselves. She will guide us through neuroscience and medicine to discover how emotional education can transform both ourselves and society, being a revolution for the world.",
     speechIta: speeches["1"].speechIta,
-    speechEng: speeches["1"].speechEng
+    speechEng: speeches["1"].speechEng,
   },
   {
     id: "2",
     name: "Nicola Armaroli",
     image: require("../images/speakers24/armaroli.webp"),
-    time: "11:00",
+    time: "10:20",
     speechTitleIta: "La transizione energetica è una fregatura?",
     speechTitleEng: "Is the energy transition a scam?,",
     bioIta:
@@ -37,14 +37,14 @@ export const speaker24 = [
       "Pochi anni fa, ci siamo resi conto delle nostre debolezze di fronte ai cambiamenti della biosfera ed eravamo d'accordo sul dover prendere azioni decise. Oggi, la transizione energetica sembra non più necessaria e ci sentiamo dire che stanno solo cercando di fregarci. Perché il racconto è cambiato? ",
     resumeEng:
       "A few years ago, we realized our weaknesses in the face of changes in the biosphere, and we agreed that decisive action was needed. Today, the energy transition no longer seems necessary, and we are being told that they are just trying to deceive us. Why has the narrative changed?",
-      speechIta: speeches["2"].speechIta,
-      speechEng: speeches["2"].speechEng
-    },
+    speechIta: speeches["2"].speechIta,
+    speechEng: speeches["2"].speechEng,
+  },
   {
     id: "3",
     name: "Abbozzo",
     image: require("../images/speakers24/abbozzo.webp"),
-    time: "11:20",
+    time: "10:40",
     speechTitleIta: "Tante Eccezioni Decentralizzate",
     speechTitleEng: "Many Decentralized Exceptions",
     bioIta:
@@ -56,13 +56,13 @@ export const speaker24 = [
     resumeEng:
       "Through his music, he will play on nonsense, leaving the audience with a sense of bewilderment and reflection. His performance will engage the audience in a fascinating journey, demonstrating how paradox turns out to be a fundamental part of our existence.",
     speechIta: speeches["3"].speechIta,
-    speechEng: speeches["3"].speechEng
+    speechEng: speeches["3"].speechEng,
   },
   {
     id: "4",
     name: "Lorenzo Nardi",
     image: require("../images/speakers24/nardi.webp"),
-    time: "11:40",
+    time: "11:00",
     speechTitleIta:
       "Lo spazio è qui: il suo impatto nella nostra vita quotidiana",
     speechTitleEng: "The Space is Here: Its Impact on Our Daily Lives",
@@ -74,20 +74,20 @@ export const speaker24 = [
       "Perché investire nella ricerca aerospaziale quando abbiamo così tanti problemi qui sulla Terra? Spazio e Terra sono indissolubilmente connessi: Nardi, pilota e ingegnere aerospaziale, ci mostra come le innovazioni sviluppate per i cieli trovano applicazioni cruciali nella nostra vita quotidiana",
     resumeEng:
       "Why invest in space research when we face so many problems here on Earth? Space and Earth are inextricably connected: Nardi, pilot and aerospace engineer, shows us how innovations developed for the skies have crucial applications in our everyday lives.",
-      speechIta: speeches["4"].speechIta,
-      speechEng: speeches["4"].speechEng
+    speechIta: speeches["4"].speechIta,
+    speechEng: speeches["4"].speechEng,
   },
   {
     id: "5",
     name: "Break",
     image: require("../images/paradoxalabirinth.png"),
-    time: "12:00",
+    time: "11:20",
   },
   {
     id: "6",
     name: "Lorenzo Saltarelli",
     image: require("../images/speakers24/saltarelli.webp"),
-    time: "12:20",
+    time: "11:50",
     speechTitleIta: "Il paradosso del cubo di Schrödinger",
     speechTitleEng: "The Schrödinger's cube paradox",
     bioIta:
@@ -98,14 +98,14 @@ export const speaker24 = [
       "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
     resumeEng:
       "When we watch a theater performance, we never think of peeking behind the scenes, but when we watch a magician perform, we always want to uncover the trick. Through his performance, Lorenzo Saltarelli will explain the paradox that magic inhabits within the world of the performing arts.",
-      speechIta: speeches["6"].speechIta,
-      speechEng: speeches["6"].speechEng
+    speechIta: speeches["6"].speechIta,
+    speechEng: speeches["6"].speechEng,
   },
   {
     id: "7",
     name: "Esmeralda Moretti",
     image: require("../images/speakers24/moretti.webp"),
-    time: "12:40",
+    time: "12:10",
     speechTitleIta: "Non si può dire più niente.",
     speechTitleEng: "You can't say anything anymore.",
     bioIta:
@@ -116,14 +116,14 @@ export const speaker24 = [
       "La libertà di parola è essenziale, ma oggi è minacciata da polarizzazione e disinformazione. Con il “paradosso della tolleranza”, Karl Popper mostra che tollerare l’intolleranza senza limiti può distruggere la libertà. Difendere una società aperta significa promuovere dialogo critico e rispetto, rifiutando violenza e sopraffazione.",
     resumeEng:
       "Freedom of speech is essential, but today it is threatened by polarization and misinformation. With the 'paradox of tolerance,' Karl Popper shows that tolerating intolerance without limits can destroy freedom. Defending an open society means promoting critical dialogue and respect while rejecting violence and oppression.",
-      speechIta: speeches["7"].speechIta,
-      speechEng: speeches["7"].speechEng
+    speechIta: speeches["7"].speechIta,
+    speechEng: speeches["7"].speechEng,
   },
   {
     id: "8",
     name: "Pepa Pasatu",
     image: require("../images/speakers24/pasatu.png"),
-    time: "13:00",
+    time: "12:30",
     speechTitleIta:
       "Volete un sesso elettrizzante? Abbandona la recita, senti il piacere.",
     speechTitleEng: "Want Electrifying Sex? Drop the Act, Feel the Pleasure.",
@@ -135,20 +135,20 @@ export const speaker24 = [
       "Perché nel sesso seguiamo copioni non detti, eseguendo invece di sentire? E se sostituissimo la pressione con la curiosità e le aspettative con l'esplorazione? Vi invito a riconnettervi con i vostri desideri, a sintonizzarvi con le vostre sensazioni, abbracciando il vostro viaggio nel piacere elettrizzante.",
     resumeEng:
       "Why do we follow unspoken scripts in sex, performing instead of feeling? What if we replaced pressure with curiosity and expectation with exploration? I invite you to reconnect with your desires, tune into your sensations, by embracing your journey of electrifying pleasure.",
-      speechIta: speeches["8"].speechIta,
-      speechEng: speeches["8"].speechEng
+    speechIta: speeches["8"].speechIta,
+    speechEng: speeches["8"].speechEng,
   },
   {
     id: "9",
     name: "Pausa pranzo",
     image: require("../images/paradoxalabirinth.png"),
-    time: "13:30 - 15:00",
+    time: "13:10 - 14:45",
   },
   {
     id: "10",
     name: "Riccardo Azzali",
     image: require("../images/speakers24/azzali.png"),
-    time: "15:00",
+    time: "14:45",
     speechTitleIta: "Il fascino dei paradossi",
     speechTitleEng: "The charm of paradoxes",
     bioIta:
@@ -159,14 +159,14 @@ export const speaker24 = [
       "Crediamo che i paradossi siano un’assurdità incomprensibile, ma in realtà sono motori di scoperta. Attraverso i paradossi più straordinari, Riccardo Azzali ci dimostra che dobbiamo accogliere le contraddizioni, perché è lì che la logica trova i suoi stimoli.",
     resumeEng:
       "We believe that paradoxes are an absurdity, but they are engines of discovery. Through the most extraordinary paradoxes, Riccardo Azzali shows us that we must embrace contradictions because that is where logic finds its inspiration.",
-      speechIta: speeches["10"].speechIta,
-      speechEng: speeches["10"].speechEng
+    speechIta: speeches["10"].speechIta,
+    speechEng: speeches["10"].speechEng,
   },
   {
     id: "11",
     name: "Carmen Panepinto Zayati",
     image: require("../images/speakers24/panepinto.webp"),
-    time: "15:20",
+    time: "15:05",
     speechTitleIta: "L'ingegnere in glitter",
     speechTitleEng: "The Engineer in Glitter",
     bioIta:
@@ -177,14 +177,14 @@ export const speaker24 = [
       "Le STEM non sono solo per i geni, ma una cassetta degli attrezzi per tutti. Eppure, tendiamo a incasellare le persone, decidendo chi appartiene a cosa. E se abbattere queste barriere permettesse la prossima grande scoperta? Mettiamo in discussione i limiti e ripensiamo chi può costruire il futuro",
     resumeEng:
       "STEM isn’t just for geniuses, it’s a toolbox for everyone. Yet, we put people into boxes, shaping who belongs where. What if breaking those barriers unleashed the next big breakthrough? Let’s challenge the limits and rethink who gets to build the future.",
-      speechIta: speeches["11"].speechIta,
-      speechEng: speeches["11"].speechEng
+    speechIta: speeches["11"].speechIta,
+    speechEng: speeches["11"].speechEng,
   },
   {
     id: "12",
     name: "Kento",
     image: require("../images/speakers24/kento.png"),
-    time: "15:40",
+    time: "15:30",
     speechTitleIta: "Una contro-opinione sul carcere minorile.",
     speechTitleEng: "A counter-opinion on juvenile detention.",
     bioIta:
@@ -195,7 +195,7 @@ export const speaker24 = [
       "Le immagini che abbiamo del carcere minorile sono spesso sbagliate. Opinioni diffuse nella società, media e fiction alimentano una narrazione irrealistica. Serve un cambiamento nella prospettiva e nelle opportunità offerte ai ragazzi, partendo dal ricordarci che dietro ogni errore c’è un essere umano.",
     resumeEng:
       "The idea we have of juvenile detention centers is often inaccurate. General opinions in society, media, and fiction fuel an unrealistic narrative. A change in perspective and in the opportunities offered to these young men and women is needed, starting with the reminder that behind every mistake, there is a human being.",
-      speechIta: speeches["12"].speechIta,
-      speechEng: speeches["12"].speechEng
+    speechIta: speeches["12"].speechIta,
+    speechEng: speeches["12"].speechEng,
   },
 ];
