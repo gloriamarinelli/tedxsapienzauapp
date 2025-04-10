@@ -19,7 +19,7 @@ const logoBack = require("../images/player/back.png");
 const informazioni = [
   {
     nome: "Alessia Dapoto",
-    traduzione: require("../../../speech/TULLIO.aac"),
+    traduzione: require("../../../speech/DAPOTO.mp3"),
   },
   {
     nome: "Nicola Armaroli",
@@ -27,43 +27,43 @@ const informazioni = [
   },
   {
     nome: "Abbozzo",
-    traduzione: require("../../../speech/VON_FREYMANN.aac"),
+    traduzione: require("../../../speech/ABBOZZO.mp3"),
   },
   {
     nome: "Lorenzo Nardi",
-    traduzione: require("../../../speech/RICCARDO-BASILONE.aac"),
+    traduzione: require("../../../speech/NARDI.mp3"),
   },
   {
     nome: "Break",
-    traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/NARDI.mp3"),
   },
   {
     nome: "Lorenzo Saltarelli",
-    traduzione: require("../../../speech/GLORIA-SCHITO.aac"),
+    traduzione: require("../../../speech/SALTARELLI.mp3"),
   },
   {
     nome: "Esmeralda Moretti",
-    traduzione: require("../../../speech/MATTEO-CERVELLINI.aac"),
+    traduzione: require("../../../speech/MORETTI.mp3"),
   },
   {
     nome: "Pepa Pasatu",
-    traduzione: require("../../../speech/ANA-ESTRELA.aac"),
+    traduzione: require("../../../speech/PASATU.mp3"),
   },
   {
     nome: "Pausa pranzo",
-    traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/PASATU.mp3"),
   },
   {
     nome: "Riccardo Azzali",
-    traduzione: require("../../../speech/NINA-LAMBARELLI.aac"),
+    traduzione: require("../../../speech/AZZALI.mp3"),
   },
   {
     nome: "Carmen Panepinto Zayati",
-    traduzione: require("../../../speech/ROSE-VILLAIN.aac"),
+    traduzione: require("../../../speech/PANEPINTO.mp3"),
   },
   {
     nome: "Kento",
-    traduzione: require("../../../speech/ONOFRI.aac"),
+    traduzione: require("../../../speech/KENTO.mp3"),
   },
 ];
 
@@ -75,8 +75,35 @@ const Speech = ({ speakerDes }) => {
   const [duration, setDuration] = useState(null);
   const [position, setPosition] = useState(null);
   const [everPlayed, setEverPlayed] = useState(false);
+  const [selectedSpeech, setSelectedSpeech] = useState(null);
 
-  const selectedSpeech = informazioni.find((item) => item.nome === speakerDes);
+  useEffect(() => {
+    console.log(speakerDes);
+    setSelectedSpeech(informazioni.find((item) => item.nome === speakerDes));
+    if (speakerDes.nome === "Break") {
+      setSelectedSpeech(informazioni[4]);
+    }
+    if (speakerDes.nome === "Pausa pranzo") {
+      setSelectedSpeech(informazioni[8]);
+    }
+
+    return () => {
+      console.log("UNMOUNT");
+      soundObject.unloadAsync();
+      setSoundObject(new Audio.Sound());
+      setIsPlaying(false);
+      setIsPaused(false);
+      setDuration(null);
+      setPosition(null);
+      setEverPlayed(false);
+      setSelectedSpeech(null);
+      console.log("Cleanup");
+    };
+  }, [speakerDes]);
+
+  useEffect(() => {}, []);
+
+  // const selectedSpeech = informazioni.find((item) => item.nome === speakerDes);
 
   const handlePlaySpeech = async () => {
     try {
