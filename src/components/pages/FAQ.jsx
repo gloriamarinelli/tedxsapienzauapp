@@ -23,17 +23,17 @@ const FAQ = () => {
     {
       question: "Come troverò l'Aula Magna?",
       answer:
-        "Potrai recarti presso l’Aula Magna tramite l’ingresso laterale del Palazzo del Rettorato, raggiungendo il secondo piano. Ad ogni modo, non preoccuparti: consulta la mappa!",
+        "Potrai recarti presso l’Aula Magna tramite l’ingresso laterale del Palazzo del Rettorato, raggiungendo il secondo piano. Ad ogni modo, non preoccuparti: i volontari TEDxSapienzaU saranno lì per aiutarti!",
     },
     {
       question: "Come avverrà l'accredito all'evento?",
       answer:
-        "Gli accrediti avverranno dalle ore 08:45 alle ore 09:30. Ti basterà mostrare ai volontari TEDxSapienzaU il QRCode del biglietto che avrai ricevuto in fase di prenotazione.",
+        "Gli accrediti avverranno dalle ore 08:30 alle ore 09:30. Ti basterà mostrare ai volontari TEDxSapienzaU il QRCode che avrai ricevuto in fase di prenotazione.",
     },
     {
       question: "Quanto durerà l'evento?",
       answer:
-        "L’evento si svolgerà dalle ore 09:30 alle ore 17:00. Non ti preoccupare, avrai modo di sgranchirti le gambe: sono previsti ben due momenti di break!",
+        "L’evento si svolgerà dalle ore 09:30 alle ore 17:00*. Non ti preoccupare, avrai modo di sgranchirti le gambe: sono previsti ben due momenti di break!",
     },
     {
       question: "Come potrò ritirare il mio lunch box?",
@@ -42,14 +42,9 @@ const FAQ = () => {
     },
     {
       question:
-        "Ho delle intolleranze/sono vegetarian*, potrò ritirare un lunch box adatto alle mie esigenze? ",
+        "Ho delle intolleranze/sono vegetarian*, potrò ritirare un lunch box adatto alle mie esigenze?",
       answer:
-        "Certamente. I lunch box sono pensati per essere inclusivi: tutti i pasti saranno vegetariani, gluten free o vegani. Per ulteriori indicazioni su questo punto, contattaci tramite l'indirizzo mail info@tedxsapienzau.com.",
-    },
-    {
-      question: "Ho difficoltà motorie, potrò portare un accompagnatore?",
-      answer:
-        "Se hai difficoltà motorie, ti basterà farcelo sapere: un posto sarà riservato al tuo accompagnatore. Contattaci tramite l’indirizzo mail info+biglietti@tedxsapienzau.com",
+        "Sarà possibile scegliere, tra le opzioni, una vegetariana. Purtroppo, non potendo garantire assenza di contaminazione, vi invitiamo a leggere gli ingredienti posti sull’etichetta della box del pranzo. La consumazione rimane a vostra discrezione",
     },
     {
       question: "Ho bisogno di ulteriori informazioni, a chi posso rivolgermi?",
